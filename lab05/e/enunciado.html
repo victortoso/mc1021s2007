@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_AIMGH_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 05e</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 05e - Correção de Erro</H3><B>Peso</B>: 4 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Uma <I>matriz booleana</I> tem <I>propriedade de paridade</I> 
+quando cada linha e cada coluna tem uma soma par, isto é, contém um número par 
+de bits "ligados". Por exemplo, a matriz abaixo tem propriedade de paridade: 
+</P>
+<CENTER>
+<TABLE cellPadding=5 border=0>
+  <TBODY>
+  <TR>
+    <TD><TT>1 0 1 0 0 1 1 0 0<BR>0 0 0 0 0 0 0 1 1<BR>1 1 1 1 0 0 0 0 0<BR>0 1 
+      0 1 0 1 1 1 1 </TT></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>As somas das linhas são 4, 2, 4 e 6. As somas das colunas são 
+2, 2, 2, 2, 0, 2, 2, 2 e 2. </P>
+<P align=justify>Quando uma matriz é transmitida via rede, eventualmente podem 
+ocorrer erros e alguns bits podem ser alterados. Uma matriz que tenha 
+propriedade de paridade pode ser corrigida caso apenas um bit tenha sido 
+alterado. Caso mais de um bit tenha sido alterado, dizemos que a matriz está 
+corrompida. As linhas e colunas são numeradas a partir de zero. </P>
+<P align=justify>Sua tarefa é escrever um programa em linguagem C 
+(<B>lab05e.c</B>) que, receba matrizes preenchidas com 0s e 1s e determine se 
+elas estão corretas, ou seja, se elas possuem propriedade de paridade. Se uma 
+matriz não estiver incorreta, o programa deverá indicar se é possível corrigi-lá 
+a partir da inversão de um único bit (ligar ou desligar) ou se a matriz está 
+corrompida. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_AIMGH_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P>
+<P align=justify><B>Importante:</B> seu programa deve fazer o menor número 
+possível de leituras a elementos da matriz dada. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada poderá conter várias matrizes. 
+  <LI>A entrada será composta por um par de inteiros positivos <I>M</I> e 
+  <I>N</I> tais que 0 &#8804; <I>M, N</I> &#8804; 100</I>. Estes valores significam: 
+  <UL>
+    <LI><I>M</I> Número de linhas da matriz que será verificada 
+    <LI><I>N</I> Número de colunas da matriz que será verificada </LI></UL>
+  <LI>Após este par de números, a entrada terá <I>M</I> linhas contendo <I>N</I> 
+  bits 0s ou 1s. 
+  <LI>A última linha da entrada conterá o par <B>0 0</B> indicando o seu final. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>O programa deverá determinar se a matriz está correta, se pode ser 
+  corrigida ou se está corrompida 
+  <LI>Se a matriz estiver correta, a seguinte mensagem deverá ser impressa: 
+  <UL>
+    <LI>Matriz correta </LI></UL>
+  <LI>Se a matriz estiver incorreta e puder ser corrigida invertendo o valor da 
+  posição (<I>X</I>,<I>Y</I>), a seguinte mensagem deverá ser impressa: 
+  <UL>
+    <LI>Inverter posicao (<I>X</I>, <I>Y</I>) </LI></UL>
+  <LI>Se a matriz estiver incorreta e não puder ser corrigida, a seguinte 
+  mensagem deverá ser impressa: 
+  <UL>
+    <LI>Matriz corrompida </LI></UL>
+  <LI>O par <B>0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ele. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>4 9<BR>1 0 1 0 0 1 
+      1 0 0<BR>0 0 0 0 0 0 0 1 1<BR>1 1 1 1 0 0 0 0 0<BR>0 1 0 1 0 1 1 1 
+      1<BR><BR>4 9<BR>1 0 1 0 0 1 1 0 0<BR>0 0 0 0 0 0 0 1 1<BR>1 1 1 1 0 0 0 1 
+      0<BR>0 1 0 1 0 1 1 1 1<BR><BR>4 9<BR>1 0 1 0 0 1 1 1 0<BR>0 0 0 0 0 0 0 1 
+      1<BR>1 1 1 1 0 0 0 1 0<BR>0 1 0 1 0 1 1 1 1<BR><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Matriz 
+      correta<BR>Inverter posicao (2,7)<BR>Matriz corrompida<BR></TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>3 3<BR>1 1 1<BR>1 
+      0 1<BR>1 1 1<BR><BR>4 4<BR>1 1 0 0<BR>0 1 1 0<BR>1 0 1 0<BR>0 0 0 
+      0<BR><BR>5 5<BR>0 1 0 0 1<BR>1 1 1 1 1<BR>0 0 0 0 0<BR>0 0 1 1 0<BR>1 1 0 
+      0 0<BR><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Matriz 
+      corrompida<BR>Matriz correta<BR>Inverter posicao (1,1) 
+</TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  int linhas, colunas;
+  int matriz[100][100];
+
+  // Le o tamanho da primeira entrada
+  scanf("%d %d", &amp;linhas, &amp;colunas);
+
+
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>14/04/2007</I></SMALL> </BODY></HTML>

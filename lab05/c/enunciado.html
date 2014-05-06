@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_XRHUF_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 05c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 05c - Áreas de Polígonos Convexos </H3><B>Peso</B>: 3 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Um polígono é convexo se não tiver nenhum ângulo interno cuja 
+medida seja maior do que 180º. </P>
+<P align=justify>Um outro modo de definir um polígono convexo é através da 
+verificação de que qualquer reta que que atravesse seu interior cortará as faces 
+do polígono em apenas dois pontos. </P>
+<P align=justify>Um polígono convexo de <I>N</I> vértices pode ser dividido em 
+<I>N &#8722; 2</I> triângulos. Dessa maneira, para calcular a área de um polígono 
+convexo, você pode calcular e somar as áreas dos <I>N &#8722; 2</I> triângulos. </P>
+<P align=justify>Um engenheiro grego chamado <I>Heron</I> provou em seu livro 
+<I>Metrica</I>, escrito em 60 DC, que a área <I>A</I> de um triângulo pode ser 
+calculada segundo a fórmula:<BR><BR>
+<CENTER><IMG title="Fórmula de Heron" 
+src="enunciado_arquivos/heron.png">,<BR><BR></CENTER>onde <I>a</I>, <I>b</I>, 
+<I>c</I> são os lados do triângulo e <I>s</I> é o semi-perímetro do triângulo, 
+que é definido pela fórmula:<BR><BR>
+<CENTER><IMG title="Semi-perímetro do triângulo" 
+src="enunciado_arquivos/semiperimetro.png"><BR><BR></CENTER>
+<P></P>
+<P align=justify>Sua tarefa será escrever um programa em linguagem C 
+(<B>lab05c.c</B>) que receba os vértices de polígonos convexos e calcule suas 
+áreas. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_XRHUF_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por uma lista de polígonos convexos, sendo que 
+  cada um será representado da seguinte forma: 
+  <TABLE cellSpacing=0 cellPadding=2 border=0>
+    <TBODY>
+    <TR>
+      <TD><I>N<I></I></I></TD></TR>
+    <TR>
+      <TD><I>X<SUB>1</SUB>&nbsp;Y<SUB>1</SUB><I></I></I></TD></TR>
+    <TR>
+      <TD><I>X<SUB>2</SUB>&nbsp;Y<SUB>2</SUB><I></I></I></TD></TR>
+    <TR>
+      <TD>...&nbsp;...</TD></TR>
+    <TR>
+      <TD><I>X<SUB>N</SUB>&nbsp;Y<SUB>N</SUB><I></I></I></TD></TR></TBODY></TABLE>
+  <LI>Nesta representação, <I>N</I> é um inteiro que indica o número de vértices 
+  do polígono convexo (3 &#8804; <I>N</I> &#8804; 100). Os valores reais 
+  <I>X<SUB>i</SUB></I> e <I>Y<SUB>i</SUB></I> (1 &#8804; <I>i</I> &#8804; N) representam as 
+  coordenadas do vértice <I>V<SUB>i</SUB></I> , ou seja, <I>V<SUB>i</SUB></I> = 
+  (<I>X<SUB>i</SUB></I> , <I>Y<SUB>i</SUB></I> ). Os pontos de cada polígono 
+  serão fornecidos ordenados. Se dois pontos <I>V<SUB>i</SUB></I> e 
+  <I>V<SUB>j</SUB></I> são consecutivos na lista de entrada então 
+  <I>V<SUB>i</SUB></I><I>V<SUB>j</SUB></I> é uma face do polígono. Nesta 
+  representação consideremos que os vértices <I>V<SUB>n</SUB></I><I> e 
+  <I>V<SUB>1</SUB></I><I> são consecutivos. 
+  <LI>A entrada termina quando for lido <I>N</I> igual a zero. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada polígono lido da entrada, a área <I>A</I> calculada deverá ser 
+  impressa no seguinte formato: 
+  <UL>
+    <LI>Area = <I>A</I></LI></UL>
+  <LI>Note que a área deve ter precisão de três casas decimais. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>5<BR>0 0<BR>3 
+      1<BR>4 3<BR>3 6<BR>1 5<BR><BR>3<BR>1 1<BR>4 1<BR>1 5<BR><BR>4<BR>4 3<BR>1 
+      5<BR>3 1<BR>4 2<BR><BR>0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Area = 
+      14.500<BR>Area = 6.000<BR>Area = 4.500 </TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>5<BR>0.3 
+      0.9<BR>3.4 1.2<BR>4.5 3.1<BR>3.6 6.3<BR>1.1 5.2<BR><BR>3<BR>1.23 
+      1.32<BR>4.34 1.54<BR>1.56 5.76<BR><BR>4<BR>24.723 23.127<BR>21.643 
+      25.342<BR>23.556 21.234<BR>24.412 22.097<BR><BR>0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Area = 
+      15.425<BR>Area = 6.868<BR>Area = 4.514 </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+// Define um ponto
+typedef struct _ponto {
+  double x;
+  double y;
+} Ponto;
+
+// Define um poligono
+typedef struct _poligono {
+  Ponto pontos[100];
+  int nPontos;
+} Poligono;
+
+// Calcula distancia entre dois pontos
+double distance(Ponto a, Ponto b) {
+
+  double resultado;
+
+  // Calcule aqui a distancia entre dois pontos a e b.
+  // A resposta deve ser colocada na variavel resultado
+
+  return resultado;
+}
+
+// Calcula a area de um triangulo de lados a, b e c
+double area(double a, double b, double c) {
+
+  double semi, resultado;
+
+  semi = (a + b + c)/2;
+
+  resultado = sqrt(semi*(semi-a)*(semi-b)*(semi-c));
+
+  return resultado;
+}
+
+int main() {
+  Poligono poligono;
+  int i;
+
+  // Le o tamanho do poligono
+  scanf("%d", &amp;poligono.nPontos);
+
+  // Enquanto o tamanho do poligono for valido
+  while (poligono.nPontos &gt; 2) {
+
+    // Le os pontos do poligono
+    for (i = 0; i &lt; poligono.nPontos; i++) {
+      scanf("%lf %lf", &amp;poligono.pontos[i].x, &amp;poligono.pontos[i].y);
+    }
+
+
+
+
+    // Le o tamanho do proximo poligono
+    scanf("%d", &amp;poligono.nPontos);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>14/04/2007</I></SMALL> </I></I></BODY></HTML>

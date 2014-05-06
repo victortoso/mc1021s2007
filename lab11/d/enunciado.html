@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_VfImP_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 11d</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 11d - Robô - Parte III</H3><B>Peso</B>: 3 (Bônus) 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Este exercício é uma continuação do <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_RTiMc_&amp;n=enunc.html&amp;user=mc102wy&amp;">Laboratório 
+11c</A>. </P>
+<P align=justify>A sua tarefa é escrever um programa em Linguagem C 
+(<B>lab11d.c</B>) que descubra se o robô é capaz de sair do labirinto ou se ele 
+fica preso. Se ele consegue sair, seu programa deverá dizer qual o menor número 
+de passos necessário para isso. </P>
+<P align=justify>Por exemplo, para o robô sair do labirinto abaixo, ele precisa 
+dar no mínimo <B>11</B> passos: 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><I>Nível 0</I></BIG></TT></TD>
+    <TD align=middle><TT><BIG><I>Nível 1</I></BIG></TT></TD>
+    <TD align=middle><TT><BIG><I>Nível 2</I></BIG></TT></TD></TR>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT 
+      color=red>I....</FONT><BR>.###<FONT color=red>.</FONT><BR>.##<FONT 
+      color=red>..</FONT><BR>###<FONT 
+      color=red>.</FONT>#<BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>#####<BR>#####<BR>##.##<BR>##.<FONT 
+      color=red>..</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>#####<BR>#####<BR>#.###<BR>####<FONT 
+      color=red>F</FONT><BR></B></BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_VfImP_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A forma de entrada é idêntica ao do <B>laboratório 11c</B> 
+  <LI>A entrada será formada pro diversas configurações de labirintos. 
+  <LI>Cada labirinto será lido da seguinte maneira: 
+  <UL>
+    <LI>Uma linha com três números inteiros positivos <B>N</B>, <B>L</B> e 
+    <B>C</B> que significam: 
+    <UL>
+      <LI><B>N</B> número de níveis do labirinto (1 &#8804; <B>N</B> &#8804; 10) 
+      <LI><B>L</B> número de linhas existentes nas matrizes que representam cada 
+      nível (1 &#8804; <B>L</B> &#8804; 10) 
+      <LI><B>C</B> número de colunas existentes nas matrizes que representam 
+      cada nível (1 &#8804; <B>C</B> &#8804; 10) </LI></UL>
+    <LI>Uma seqüência de <B>N</B> matrizes <B>L x C</B> representando cada um 
+    dos níveis. 
+    <LI>O ponto inicial será denotado pela letra <B>I</B> e aparecerá apenas uma 
+    vez no labirinto. 
+    <LI>O ponto final será denotado pela letra <B>F</B> e aparecerá apenas uma 
+    vez no labirinto. 
+    <LI>Áreas de trânsito livre são representadas por pontos (<B>.</B>). 
+    <LI>As paredes são representadas por <B>#</B>. </LI></UL>
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada. 
+  <LI>Para melhor entendimento da entrada, observe os exemplos. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada labirinto lido da entrada, seu programa deverá descobrir se o 
+  robô consegue sair ou não do labirinto: 
+  <LI>Se o robô consegue sair e <B>P</B> indica o número mínimo de passos que 
+  ele precisa dar, a seguinte mensagem deverá ser impressa: 
+  <UL>
+    <LI><BIG><TT>Sai do labirinto em <B>P</B> passos</TT></BIG> </LI></UL>
+  <LI>Se o robô não consegue sair, a seguinte mensagem deverá ser impressa: 
+  <UL>
+    <LI><BIG><TT>Preso no labirinto</TT></BIG> </LI></UL>
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. </LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue><BR>1 5 5 <BR><BR>I.... <BR>..... <BR>..... <BR>..... <BR>....F 
+      <BR><BR>1 5 5 <BR><BR>I.... <BR>..### <BR>..#.F <BR>..##. <BR>#.... 
+      <BR></FONT><FONT color=red><BR>1 10 10 <BR><BR>I##....... <BR>.#..#####. 
+      <BR>...#...#.. <BR>.##..#.... <BR>##..###### <BR>...#...... <BR>.####.##.. 
+      <BR>......#... <BR>#.#.###.## <BR>.##...#..F <BR></FONT><FONT 
+      color=blue><BR>1 10 10 <BR><BR>I##....... <BR>.#..#####. <BR>...#...#.. 
+      <BR>.##..#.... <BR>##..###### <BR>...#...... <BR>.####.##.. <BR>......#... 
+      <BR>#.#.###.## <BR>.##..F#... <BR><BR>1 10 10 <BR><BR>.##....... 
+      <BR>.#..#####. <BR>...#...#.. <BR>I##..#.... <BR>##..###### <BR>...#...... 
+      <BR>.####.##.. <BR>......#... <BR>#.#.###.## <BR>.##..F#... 
+      <BR></FONT><FONT color=red><BR>1 10 10 <BR><BR>.##....... <BR>.#..#####. 
+      <BR>...I#...#. <BR>.###..#... <BR>##...#.### <BR>...#...... <BR>.##F#.##.. 
+      <BR>......#... <BR>#.#.###.## <BR>.##...#... <BR></FONT><FONT 
+      color=blue><BR>1 10 10 <BR><BR>.##....... <BR>.#..#####. <BR>...I#...#. 
+      <BR>.###..#... <BR>##...#.### <BR>...#...... <BR>.##.#.##.. <BR>......#... 
+      <BR>#.#.###.## <BR>F##...#... <BR></FONT><BR>0 0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Sai do labirinto em 8 passos</FONT> <BR><FONT color=red>Sai do 
+      labirinto em 10 passos</FONT> <BR><FONT color=blue>Sai do labirinto em 48 
+      passos</FONT> <BR><FONT color=red>Sai do labirinto em 38 passos</FONT> 
+      <BR><FONT color=blue>Sai do labirinto em 37 passos</FONT> <BR><FONT 
+      color=red>Sai do labirinto em 26 passos</FONT> <BR><FONT color=blue>Preso 
+      no labirinto</FONT> </TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>3 
+      4 
+      5<BR>I....<BR>.###.<BR>.##..<BR>###.#<BR><BR>#####<BR>#####<BR>##.##<BR>##...<BR><BR>#####<BR>#####<BR>#.###<BR>####F<BR></FONT><BR><FONT 
+      color=red>4 5 
+      5<BR>I#..#<BR>.##.#<BR>..#.#<BR>#...#<BR>..#..<BR><BR>...##<BR>.##..<BR>..#..<BR>#...#<BR>..##.<BR><BR>#####<BR>###.#<BR>#...#<BR>..###<BR>#...#<BR><BR>##..F<BR>##.##<BR>#..##<BR>##..#<BR>###.#<BR></FONT><BR><FONT 
+      color=blue>4 5 
+      5<BR>I#..#<BR>.##.#<BR>..#.#<BR>##..#<BR>..#..<BR><BR>...##<BR>.##..<BR>.##..<BR>##..#<BR>..##.<BR><BR>#####<BR>###.#<BR>#.#.#<BR>#.###<BR>#...#<BR><BR>##..F<BR>##.##<BR>#..##<BR>###.#<BR>###.#<BR></FONT><BR><FONT 
+      color=red>4 5 
+      5<BR>I#..#<BR>.##.#<BR>..#.#<BR>#...#<BR>..#..<BR><BR>...##<BR>.##..<BR>.##..<BR>##..#<BR>..##.<BR><BR>#####<BR>###.#<BR>#.#.#<BR>#.###<BR>#...#<BR><BR>##..F<BR>##.##<BR>#..##<BR>###.#<BR>###.#<BR></FONT><BR><FONT 
+      color=blue>1 3 3<BR>I## <BR>#F# <BR>### <BR></FONT><BR>0 0 0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Sai do labirinto em 11 passos</FONT> <BR><FONT color=red>Sai do 
+      labirinto em 11 passos</FONT> <BR><FONT color=blue>Preso no 
+      labirinto</FONT> <BR><FONT color=red>Sai do labirinto em 15 passos</FONT> 
+      <BR><FONT color=blue>Preso no labirinto</FONT> 
+<BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 11d - Robo - Parte III
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+
+int main() {
+  char labirinto[10][10][11];
+  int niveis, linhas, colunas;
+
+
+
+}
+</PRE>
+<HR>
+<SMALL><I>02/06/2007</I></SMALL> </BODY></HTML>

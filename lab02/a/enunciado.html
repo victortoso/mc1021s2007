@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_A2cpC_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 02a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 02a - Identificação de Números Primos</H3><B>Peso</B>: 3 
+<P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+
+<P></P>
+<P align=justify>Escreva um programa em linguagem C (<B>lab02a.c</B>) que 
+indentifique em uma lista de números inteiros maiores ou iguais a 2 aqueles que 
+são primos.<BR>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_A2cpC_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de números inteiros positivos (um 
+  número por linha) menores que 1000000; 
+  <LI>O último elemento da lista deverá ser um número inteiro menor ou igual a 1 
+  que indicará ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Seja <I>N</I> um número pertencente à lista de entrada: 
+  <UL>
+    <LI>Se <I>N</I> não é primo, o programa deve imprimir: <I>N</I> is not prime 
+
+    <LI>Se <I>N</I> é primo, o programa deve imprimir: <I>N</I> is prime 
+</LI></UL>
+  <LI>O resultado de cada número deverá ser impresso em uma linha; 
+  <LI>O número inteiro menor ou igual a 1 presente na lista indica o final da 
+  entrada e, portanto, nada deve ser impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD width=150><I>Entrada</I></TD>
+    <TD width=150><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-LEFT: 50px">12<BR>21<BR>223<BR>2007<BR>2<BR>1</TD>
+    <TD style="PADDING-LEFT: 30px">12 is not prime<BR>21 is not prime<BR>223 
+      is prime<BR>2007 is not prime<BR>2 is prime<BR>&nbsp;</TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD 
+      style="PADDING-LEFT: 50px">103<BR>104<BR>105<BR>106<BR>107<BR>108<BR>109<BR>110<BR>-10</TD>
+    <TD style="PADDING-LEFT: 30px">103 is prime<BR>104 is not prime<BR>105 is 
+      not prime<BR>106 is not prime<BR>107 is prime<BR>108 is not prime<BR>109 
+      is prime<BR>110 is not 
+prime<BR>&nbsp;</TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco><PRE>// Incluir cabecalho padrao
+#include &lt;stdio.h&gt;
+
+int main() {
+  // Se necessario, declarar outras variaveis inteiras
+  int n, primo;
+
+  // Le a entrada
+  scanf("%d", &amp;n);
+
+  // Processa se o numero for maior que 1
+  while(n &gt; 1) {
+
+    // A principio todo numero eh primo
+    primo = 1;
+
+    // Incluir aqui um teste de primalidade.
+    // Se n nao for primo,fazer:
+    // primo = 0;
+
+    // Imprime a resposta
+    if (primo) {
+      printf("%d is prime\n", n);
+    } else {
+      printf("%d is not prime\n", n);
+    }
+
+    // Le uma nova entrada
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

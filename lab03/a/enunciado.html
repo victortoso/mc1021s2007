@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_Jc6iM_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 03a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 03a - Números Invertidos</H3><B>Peso</B>: 3 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Escreva um programa em linguagem C (<B>lab03a.c</B>) que receba 
+números inteiros de até 18 dígitos e os inverta. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_Jc6iM_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P>
+<P align=justify><I>Observação 1</I>: Neste laboratório não será permitida a 
+utilização da biblioteca matemática <I>math.h</I>. </P>
+<P align=justify><I>Observação 2</I>: É expressamente proibido alterar a forma 
+de leitura da entrada (<I>scanf</I>) e escrita da saída (<I>printf</I>) contidas 
+no esboço. </P><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de números inteiros positivos (um 
+  número por linha) com até 18 dígitos. Para conseguir manipular números deste 
+  tamanho, você deverá utilizar variáveis do tipo <B>long long int</B>; 
+  <LI>O último elemento da lista deverá ser o número <B>0</B> que indicará ao 
+  programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Para cada número <I>N</I> contido na lista o programa deverá escrevê-lo na 
+  ordem invertida. Por exemplo, <I>1234</I> será transformado em <I>4321</I>; 
+  <LI>Se os últimos dígitos do número forem <B>0</B>, o programa não deverá 
+  escrevê-los. Por exemplo, a saída do número <I>1200</I> será <I>21</I>; 
+  <LI>O resultado de cada número deverá ser impresso em uma linha; 
+  <LI>A entrada <B>0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD width=150><I>Entrada</I></TD>
+    <TD width=150><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-LEFT: 40px">123<BR>214<BR>22300<BR>2007<BR>2<BR>0</TD>
+    <TD 
+  style="PADDING-LEFT: 40px">321<BR>412<BR>322<BR>7002<BR>2<BR>&nbsp;</TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD 
+      style="PADDING-LEFT: 40px">123456789<BR>77665544<BR>70000000<BR>22<BR>220202<BR>0</TD>
+    <TD 
+      style="PADDING-LEFT: 40px">987654321<BR>44556677<BR>7<BR>22<BR>202022<BR>&nbsp;</TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  long long int n, inv;
+
+  // Le a entrada
+  scanf("%Ld", &amp;n);
+
+  // Processa se o numero for maior que 0
+  while (n &gt; 0) {
+
+
+    // Calcula o inverso do numero dado
+
+
+    // Imprime a resposta
+    printf("%Ld\n", inv);
+
+    // Le uma nova entrada
+    scanf("%Ld", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

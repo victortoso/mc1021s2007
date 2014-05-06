@@ -1,0 +1,482 @@
+No inicio:
+Jogador 1: 234Q4972Q
+Jogador 2: AK83K8T36A6A74T4752Q9JTJKJ
+
+Apos a 1a rodada:
+Jogador 1: 34Q4972Q
+Jogador 2: K83K8T36A6A74T4752Q9JTJKJA2
+
+Apos a 2a rodada:
+Jogador 1: 4Q4972Q
+Jogador 2: 83K8T36A6A74T4752Q9JTJKJA2K3
+
+Apos a 3a rodada:
+Jogador 1: Q4972Q
+Jogador 2: 3K8T36A6A74T4752Q9JTJKJA2K384
+
+Apos a 4a rodada:
+Jogador 1: 4972QQ3
+Jogador 2: K8T36A6A74T4752Q9JTJKJA2K384
+
+Apos a 5a rodada:
+Jogador 1: 972QQ3
+Jogador 2: 8T36A6A74T4752Q9JTJKJA2K384K4
+
+Apos a 6a rodada:
+Jogador 1: 72QQ398
+Jogador 2: T36A6A74T4752Q9JTJKJA2K384K4
+
+Apos a 7a rodada:
+Jogador 1: 2QQ398
+Jogador 2: 36A6A74T4752Q9JTJKJA2K384K4T7
+
+Apos a 8a rodada:
+Jogador 1: QQ398
+Jogador 2: 6A6A74T4752Q9JTJKJA2K384K4T732
+
+Apos a 9a rodada:
+Jogador 1: Q398Q6
+Jogador 2: A6A74T4752Q9JTJKJA2K384K4T732
+
+Apos a 10a rodada:
+Jogador 1: 398Q6
+Jogador 2: 6A74T4752Q9JTJKJA2K384K4T732AQ
+
+Apos a 11a rodada:
+Jogador 1: 98Q6
+Jogador 2: A74T4752Q9JTJKJA2K384K4T732AQ63
+
+Apos a 12a rodada:
+Jogador 1: 8Q6
+Jogador 2: 74T4752Q9JTJKJA2K384K4T732AQ63A9
+
+Apos a 13a rodada:
+Jogador 1: Q687
+Jogador 2: 4T4752Q9JTJKJA2K384K4T732AQ63A9
+
+Apos a 14a rodada:
+Jogador 1: 687Q4
+Jogador 2: T4752Q9JTJKJA2K384K4T732AQ63A9
+
+Apos a 15a rodada:
+Jogador 1: 87Q4
+Jogador 2: 4752Q9JTJKJA2K384K4T732AQ63A9T6
+
+Apos a 16a rodada:
+Jogador 1: 7Q484
+Jogador 2: 752Q9JTJKJA2K384K4T732AQ63A9T6
+
+Apos a 17a rodada:
+Jogador 1: 484Q577
+Jogador 2: 2Q9JTJKJA2K384K4T732AQ63A9T6
+
+Apos a 18a rodada:
+Jogador 1: 84Q57742
+Jogador 2: Q9JTJKJA2K384K4T732AQ63A9T6
+
+Apos a 19a rodada:
+Jogador 1: 4Q57742
+Jogador 2: 9JTJKJA2K384K4T732AQ63A9T6Q8
+
+Apos a 20a rodada:
+Jogador 1: Q57742
+Jogador 2: JTJKJA2K384K4T732AQ63A9T6Q894
+
+Apos a 21a rodada:
+Jogador 1: 57742QJ
+Jogador 2: TJKJA2K384K4T732AQ63A9T6Q894
+
+Apos a 22a rodada:
+Jogador 1: 7742QJ
+Jogador 2: JKJA2K384K4T732AQ63A9T6Q894T5
+
+Apos a 23a rodada:
+Jogador 1: 742QJ
+Jogador 2: KJA2K384K4T732AQ63A9T6Q894T5J7
+
+Apos a 24a rodada:
+Jogador 1: 42QJ
+Jogador 2: JA2K384K4T732AQ63A9T6Q894T5J7K7
+
+Apos a 25a rodada:
+Jogador 1: 2QJ
+Jogador 2: A2K384K4T732AQ63A9T6Q894T5J7K7J4
+
+Apos a 26a rodada:
+Jogador 1: QJ
+Jogador 2: 2K384K4T732AQ63A9T6Q894T5J7K7J4A2
+
+Apos a 27a rodada:
+Jogador 1: JQ2
+Jogador 2: K384K4T732AQ63A9T6Q894T5J7K7J4A2
+
+Apos a 28a rodada:
+Jogador 1: Q2
+Jogador 2: 384K4T732AQ63A9T6Q894T5J7K7J4A2KJ
+
+Apos a 29a rodada:
+Jogador 1: 2Q3
+Jogador 2: 84K4T732AQ63A9T6Q894T5J7K7J4A2KJ
+
+Apos a 30a rodada:
+Jogador 1: Q3
+Jogador 2: 4K4T732AQ63A9T6Q894T5J7K7J4A2KJ82
+
+Apos a 31a rodada:
+Jogador 1: 3Q4
+Jogador 2: K4T732AQ63A9T6Q894T5J7K7J4A2KJ82
+
+Apos a 32a rodada:
+Jogador 1: Q4
+Jogador 2: 4T732AQ63A9T6Q894T5J7K7J4A2KJ82K3
+
+Apos a 33a rodada:
+Jogador 1: 4Q4
+Jogador 2: T732AQ63A9T6Q894T5J7K7J4A2KJ82K3
+
+Apos a 34a rodada:
+Jogador 1: Q4
+Jogador 2: 732AQ63A9T6Q894T5J7K7J4A2KJ82K3T4
+
+Apos a 35a rodada:
+Jogador 1: 4Q7
+Jogador 2: 32AQ63A9T6Q894T5J7K7J4A2KJ82K3T4
+
+Apos a 36a rodada:
+Jogador 1: Q743
+Jogador 2: 2AQ63A9T6Q894T5J7K7J4A2KJ82K3T4
+
+Apos a 37a rodada:
+Jogador 1: 743Q2
+Jogador 2: AQ63A9T6Q894T5J7K7J4A2KJ82K3T4
+
+Apos a 38a rodada:
+Jogador 1: 43Q2
+Jogador 2: Q63A9T6Q894T5J7K7J4A2KJ82K3T4A7
+
+Apos a 39a rodada:
+Jogador 1: 3Q2
+Jogador 2: 63A9T6Q894T5J7K7J4A2KJ82K3T4A7Q4
+
+Apos a 40a rodada:
+Jogador 1: Q2
+Jogador 2: 3A9T6Q894T5J7K7J4A2KJ82K3T4A7Q463
+
+Apos a 41a rodada:
+Jogador 1: 2Q3
+Jogador 2: A9T6Q894T5J7K7J4A2KJ82K3T4A7Q463
+
+Apos a 42a rodada:
+Jogador 1: Q3
+Jogador 2: 9T6Q894T5J7K7J4A2KJ82K3T4A7Q463A2
+
+Apos a 43a rodada:
+Jogador 1: 3Q9
+Jogador 2: T6Q894T5J7K7J4A2KJ82K3T4A7Q463A2
+
+Apos a 44a rodada:
+Jogador 1: Q9
+Jogador 2: 6Q894T5J7K7J4A2KJ82K3T4A7Q463A2T3
+
+Apos a 45a rodada:
+Jogador 1: 9Q6
+Jogador 2: Q894T5J7K7J4A2KJ82K3T4A7Q463A2T3
+
+Apos a 46a rodada:
+Jogador 1: Q6
+Jogador 2: 894T5J7K7J4A2KJ82K3T4A7Q463A2T3Q9
+
+Apos a 47a rodada:
+Jogador 1: 6Q8
+Jogador 2: 94T5J7K7J4A2KJ82K3T4A7Q463A2T3Q9
+
+Apos a 48a rodada:
+Jogador 1: Q8
+Jogador 2: 4T5J7K7J4A2KJ82K3T4A7Q463A2T3Q996
+
+Apos a 49a rodada:
+Jogador 1: 8Q4
+Jogador 2: T5J7K7J4A2KJ82K3T4A7Q463A2T3Q996
+
+Apos a 50a rodada:
+Jogador 1: Q4
+Jogador 2: 5J7K7J4A2KJ82K3T4A7Q463A2T3Q996T8
+
+Jogador 2 venceu
+
+No inicio:
+Jogador 1: 2354Q56496872Q72958TAKQJKJ
+Jogador 2: AK8K83AA44
+
+Apos a 1a rodada:
+Jogador 1: 354Q56496872Q72958TAKQJKJ
+Jogador 2: K8K83AA44A2
+
+Apos a 2a rodada:
+Jogador 1: 54Q56496872Q72958TAKQJKJ
+Jogador 2: 8K83AA44A2K3
+
+Apos a 3a rodada:
+Jogador 1: 4Q56496872Q72958TAKQJKJ
+Jogador 2: K83AA44A2K385
+
+Apos a 4a rodada:
+Jogador 1: Q56496872Q72958TAKQJKJ
+Jogador 2: 83AA44A2K385K4
+
+Apos a 5a rodada:
+Jogador 1: 56496872Q72958TAKQJKJQ8
+Jogador 2: 3AA44A2K385K4
+
+Apos a 6a rodada:
+Jogador 1: 6496872Q72958TAKQJKJQ853
+Jogador 2: AA44A2K385K4
+
+Apos a 7a rodada:
+Jogador 1: 496872Q72958TAKQJKJQ853
+Jogador 2: A44A2K385K4A6
+
+Apos a 8a rodada:
+Jogador 1: 96872Q72958TAKQJKJQ853
+Jogador 2: 44A2K385K4A6A4
+
+Apos a 9a rodada:
+Jogador 1: 6872Q72958TAKQJKJQ85394
+Jogador 2: 4A2K385K4A6A4
+
+Apos a 10a rodada:
+Jogador 1: 872Q72958TAKQJKJQ8539464
+Jogador 2: A2K385K4A6A4
+
+Apos a 11a rodada:
+Jogador 1: 72Q72958TAKQJKJQ8539464
+Jogador 2: 2K385K4A6A4A8
+
+Apos a 12a rodada:
+Jogador 1: 2Q72958TAKQJKJQ853946472
+Jogador 2: K385K4A6A4A8
+
+Apos a 13a rodada:
+Jogador 1: Q72958TAKQJKJQ853946472
+Jogador 2: 385K4A6A4A8K2
+
+Apos a 14a rodada:
+Jogador 1: 72958TAKQJKJQ853946472Q3
+Jogador 2: 85K4A6A4A8K2
+
+Apos a 15a rodada:
+Jogador 1: 2958TAKQJKJQ853946472Q3
+Jogador 2: 5K4A6A4A8K287
+
+Apos a 16a rodada:
+Jogador 1: 958TAKQJKJQ853946472Q3
+Jogador 2: K4A6A4A8K28752
+
+Apos a 17a rodada:
+Jogador 1: 58TAKQJKJQ853946472Q3
+Jogador 2: 4A6A4A8K28752K9
+
+Apos a 18a rodada:
+Jogador 1: 8TAKQJKJQ853946472Q354
+Jogador 2: A6A4A8K28752K9
+
+Apos a 19a rodada:
+Jogador 1: TAKQJKJQ853946472Q354
+Jogador 2: 6A4A8K28752K9A8
+
+Apos a 20a rodada:
+Jogador 1: AKQJKJQ853946472Q354T6
+Jogador 2: A4A8K28752K9A8
+
+Apos a 21a rodada:
+Jogador 1: QJKJQ853946472Q354T6K4AA
+Jogador 2: A8K28752K9A8
+
+Apos a 22a rodada:
+Jogador 1: JKJQ853946472Q354T6K4AA
+Jogador 2: 8K28752K9A8AQ
+
+Apos a 23a rodada:
+Jogador 1: KJQ853946472Q354T6K4AAJ8
+Jogador 2: K28752K9A8AQ
+
+Apos a 24a rodada:
+Jogador 1: Q853946472Q354T6K4AAJ8J2KK
+Jogador 2: 8752K9A8AQ
+
+Apos a 25a rodada:
+Jogador 1: 853946472Q354T6K4AAJ8J2KKQ8
+Jogador 2: 752K9A8AQ
+
+Apos a 26a rodada:
+Jogador 1: 53946472Q354T6K4AAJ8J2KKQ887
+Jogador 2: 52K9A8AQ
+
+Apos a 27a rodada:
+Jogador 1: 946472Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: K9A8AQ
+
+Apos a 28a rodada:
+Jogador 1: 46472Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: 9A8AQK9
+
+Apos a 29a rodada:
+Jogador 1: 6472Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: A8AQK994
+
+Apos a 30a rodada:
+Jogador 1: 472Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: 8AQK994A6
+
+Apos a 31a rodada:
+Jogador 1: 72Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: AQK994A684
+
+Apos a 32a rodada:
+Jogador 1: 2Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: QK994A684A7
+
+Apos a 33a rodada:
+Jogador 1: Q354T6K4AAJ8J2KKQ8873255
+Jogador 2: K994A684A7Q2
+
+Apos a 34a rodada:
+Jogador 1: 354T6K4AAJ8J2KKQ8873255
+Jogador 2: 994A684A7Q2KQ
+
+Apos a 35a rodada:
+Jogador 1: 54T6K4AAJ8J2KKQ8873255
+Jogador 2: 94A684A7Q2KQ93
+
+Apos a 36a rodada:
+Jogador 1: 4T6K4AAJ8J2KKQ8873255
+Jogador 2: 4A684A7Q2KQ9395
+
+Apos a 37a rodada:
+Jogador 1: 6K4AAJ8J2KKQ8873255
+Jogador 2: 684A7Q2KQ9395AT44
+
+Apos a 38a rodada:
+Jogador 1: 4AAJ8J2KKQ8873255K866
+Jogador 2: 4A7Q2KQ9395AT44
+
+Apos a 39a rodada:
+Jogador 1: J8J2KKQ8873255K866A7AA44
+Jogador 2: Q2KQ9395AT44
+
+Apos a 40a rodada:
+Jogador 1: 8J2KKQ8873255K866A7AA44
+Jogador 2: 2KQ9395AT44QJ
+
+Apos a 41a rodada:
+Jogador 1: J2KKQ8873255K866A7AA4482
+Jogador 2: KQ9395AT44QJ
+
+Apos a 42a rodada:
+Jogador 1: 2KKQ8873255K866A7AA4482
+Jogador 2: Q9395AT44QJKJ
+
+Apos a 43a rodada:
+Jogador 1: KKQ8873255K866A7AA4482
+Jogador 2: 9395AT44QJKJQ2
+
+Apos a 44a rodada:
+Jogador 1: KQ8873255K866A7AA4482K9
+Jogador 2: 395AT44QJKJQ2
+
+Apos a 45a rodada:
+Jogador 1: Q8873255K866A7AA4482K9K3
+Jogador 2: 95AT44QJKJQ2
+
+Apos a 46a rodada:
+Jogador 1: 8873255K866A7AA4482K9K3Q9
+Jogador 2: 5AT44QJKJQ2
+
+Apos a 47a rodada:
+Jogador 1: 873255K866A7AA4482K9K3Q985
+Jogador 2: AT44QJKJQ2
+
+Apos a 48a rodada:
+Jogador 1: 73255K866A7AA4482K9K3Q985
+Jogador 2: T44QJKJQ2A8
+
+Apos a 49a rodada:
+Jogador 1: 3255K866A7AA4482K9K3Q985
+Jogador 2: 44QJKJQ2A8T7
+
+Apos a 50a rodada:
+Jogador 1: 255K866A7AA4482K9K3Q985
+Jogador 2: 4QJKJQ2A8T743
+
+Jogador 1 venceu
+
+No inicio:
+Jogador 1: 39Q6278AQJKJ
+Jogador 2: 838T6672JJ68
+
+Apos a 1a rodada:
+Jogador 1: 9Q6278AQJKJ
+Jogador 2: 38T6672JJ6883
+
+Apos a 2a rodada:
+Jogador 1: Q6278AQJKJ93
+Jogador 2: 8T6672JJ6883
+
+Apos a 3a rodada:
+Jogador 1: 6278AQJKJ93Q8
+Jogador 2: T6672JJ6883
+
+Apos a 4a rodada:
+Jogador 1: 278AQJKJ93Q8
+Jogador 2: 6672JJ6883T6
+
+Apos a 5a rodada:
+Jogador 1: 78AQJKJ93Q8
+Jogador 2: 672JJ6883T662
+
+Apos a 6a rodada:
+Jogador 1: 8AQJKJ93Q876
+Jogador 2: 72JJ6883T662
+
+Apos a 7a rodada:
+Jogador 1: AQJKJ93Q87687
+Jogador 2: 2JJ6883T662
+
+Apos a 8a rodada:
+Jogador 1: QJKJ93Q87687A2
+Jogador 2: JJ6883T662
+
+Apos a 9a rodada:
+Jogador 1: JKJ93Q87687A2QJ
+Jogador 2: J6883T662
+
+Apos a 10a rodada:
+Jogador 1: J93Q87687A2QJK6JJ
+Jogador 2: 883T662
+
+Apos a 11a rodada:
+Jogador 1: 93Q87687A2QJK6JJJ8
+Jogador 2: 83T662
+
+Apos a 12a rodada:
+Jogador 1: 3Q87687A2QJK6JJJ898
+Jogador 2: 3T662
+
+Apos a 13a rodada:
+Jogador 1: 87687A2QJK6JJJ898QT33
+Jogador 2: 662
+
+Apos a 14a rodada:
+Jogador 1: 7687A2QJK6JJJ898QT3386
+Jogador 2: 62
+
+Apos a 15a rodada:
+Jogador 1: 687A2QJK6JJJ898QT338676
+Jogador 2: 2
+
+Apos a 16a rodada:
+Jogador 1: 87A2QJK6JJJ898QT33867662
+Jogador 2: 
+
+Jogador 1 venceu
+

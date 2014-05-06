@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_LUCMa_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 04d</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 04d - Palíndromos</H3><B>Peso</B>: 4 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Um palíndromo é uma palavra, frase ou qualquer outra sequência 
+de unidades (como uma cadeia de DNA) que tenha a propriedade de poder ser lida 
+tanto da direita para a esquerda como da esquerda para a direita (o ajustamento 
+de espaços entre letras é geralmente permitido). A palavra "palíndromo" vem das 
+palavras gregas palin ("trás") e dromos ("corrida"). 
+<P align=justify>As frases formando um palíndromo também são chamadas de 
+"anacíclicas", do Grego anakúklein, significando que volta em sentido inverso, 
+que refaz inversamente o ciclo. 
+<P align=justify>Capicua (do catalão: cap i cua, que significa cabeça e ...) ou 
+Número Palíndromo é um número (ou conjunto de números) que lido da direita para 
+a esquerda ou da esquerda para a direita é idêntico. O mesmo pode ser dito de 
+datas ou horas. 
+<P align=justify>Atribuem-se certos poderes místicos a esses números ou 
+superstições sobre acontecimentos nas datas com essas propriedades. 
+<P align=justify>Escreva um programa em linguagem C (<B>lab04d.c</B>) que dado 
+um número N e uma palavra S verifique se a palavra contém um palíndromo de 
+tamanho N. No contexto deste problema uma palavra é definida como uma sequência 
+de um ou mais caracteres contíguos. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_LUCMa_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><BR><BR><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de pares <B>N</B> e <B>S</B>, onde N é 
+  um inteiro inteiro positivo e S é uma palavra (limitada em 100 caracteres), 
+  sendo um par por linha; 
+  <LI>A última linha da lista deverá ter apenas o número <B>0</B> que indicará 
+  ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><BR><BR><B>Saída</B> 
+<UL>
+  <LI>Para cada par <B>N</B> e <B>S</B>, o programa deverá imprimir a uma 
+  mensagem indicando se foi ou não encontrado um palíndromo com o tamanho 
+  exatamente igual ao especificado por N em S. As mensagens devem seguir o 
+  seguinte formato: 
+  <UL>
+    <LI>Nao foi encontrado palindromo de tamanho 5 
+    <LI>Foi encontrado palindromo de tamanho 5 </LI></UL>
+  <LI>A número <B>0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">10 subinoonibus<BR>6 
+      TUCanOnaCUT<BR>0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">Foi encontrado 
+      palindromo de tamanho 10<BR>Nao foi encontrado palindromo de tamanho 
+      6<BR>&nbsp; </TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">3 cgcgcgcggcgcgc<BR>8 
+      20/07/2007<BR>15 010101010100101010101111011001010101010<BR>0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">Foi encontrado 
+      palindromo de tamanho 3<BR>Nao foi encontrado palindromo de tamanho 
+      8<BR>Nao foi encontrado palindromo de tamanho 15<BR>&nbsp; 
+</TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main () {
+  // Declara as variaveis
+  char s[101];
+  int tamanho;
+
+  // Le o tamanho do palindromo procurado
+  scanf("%d", &amp;n);
+
+  // Processa caso n for positivo
+  while (n &gt; 0) {
+
+    // Le a palavra
+    scanf("%s", s);
+
+    // Obtem o tamanho da palavra
+    tamanho = strlen(s);
+
+
+    // Testa todos os possiveis palindromos de tamanho n
+
+
+    // Imprime a resposta
+
+
+    // Le um novo tamanho de palindromo
+    scanf("%d", &amp;n);
+  }
+
+  return(0);
+} 
+</PRE>
+<HR>
+<SMALL><I>30/03/2007</I></SMALL> </A></BODY></HTML>

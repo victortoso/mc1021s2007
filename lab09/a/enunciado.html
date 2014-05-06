@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_k9NSY_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 09a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 09a - Guerra</H3><B>Peso</B>: 7 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Em muitos lugares, o jogo de cartas <B>Guerra</B> é muito 
+popular entre as crianças. Como veremos a seguir, o resultado do jogo depende da 
+distribuição inicial das cartas entre dois jogadores, <B>A</B> e <B>B</B>. </P>
+<P align=justify>Este jogo utiliza <B>52</B> cartas de baralho e ignora os seus 
+naipes. Apenas a numeração das cartas importa para o jogo que utiliza 
+<B>4x13</B> cartas: Dois (<B>2</B>), Três (<B>3</B>), Quatro (<B>4</B>), Cinco 
+(<B>5</B>), Seis (<B>6</B>), Sete (<B>7</B>), Oito (<B>8</B>), Nove (<B>9</B>), 
+Dez (<B>T</B>), Valete (<B>J</B>), Rainha (<B>Q</B>), Rei (<B>K</B>) e Ás 
+(<B>A</B>). Entre estas cartas, o Ás é a mais forte e o Dois é a mais fraca 
+(<B>2 &lt; 3 &lt; ... &lt; 9 &lt; T &lt; J &lt; Q &lt; K &lt; A</B>). </P>
+<P align=justify>No início do jogo, cada jogador segura um monte de cartas em 
+suas mãos com as faces viradas para baixo. O <B>objetivo</B> do jogo é ganhar 
+<B>todas</B> as cartas. </P>
+<P align=justify>O jogo começa com uma <B>Batalha</B>. Ambos os jogadores 
+mostram as cartas que estão nos topos de seus respecitvos montes. Aquele que 
+tiver a maior carta pega as duas cartas e adiciona (com a face virada para 
+baixo) no final de seu monte. É importante observar que a maior carta (carta 
+vencedora) é adicionada primeiro. Na próxima rodada, os dois jogadores viram as 
+cartas que estão nos topos de seus montes e tudo se repete. </P>
+<P align=justify>Se as duas cartas que forem viradas pelos jogadores forem 
+iguais (ou seja, se tiverem o mesmo número) a <B>Batalha</B> vira uma 
+<B>Guerra</B>. As cartas empatadas permanecem na mesa e ambos os jogadores jogam 
+suas próximas cartas. Caso as novas cartas sejam diferentes, aquele que tiver a 
+maior carta pega a mesa para ele e adiciona todas as quatro cartas em seu monte. 
+Se houver um novo empate, a guerra continua. A guerra continuará enquanto as 
+cartas viradas forem iguais. Quando houver uma diferença, o jogador dono da 
+maior carta adiciona a carta vencedora no final de seu monte, seguida pela carta 
+perdedora e por todo o resto das cartas que estão na mesa, na ordem inversa de 
+que elas foram jogadas. </P>
+<P align=justify>Por exemplo, vamos assumir que os jogadores <B>A</B> e <B>B</B> 
+possuem os seguintes montes (primeira carta, em azul, é o topo do monte ): </P>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><B>Jogador</B></TD>
+    <TD align=middle><B>Monte</B></TD></TR>
+  <TR align=middle>
+    <TD align=middle>A</TD>
+    <TD align=left><FONT color=blue>A</FONT>KKQQJJTT998877A</TD></TR>
+  <TR align=middle>
+    <TD align=middle>B</TD>
+    <TD align=left><FONT color=blue>A</FONT>K7QQJJTT99887KA</TD></TR>
+  <TR align=middle>
+    <TD align=middle><B>Mesa</B></TD>
+    <TD align=left><I>-</I></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>A primeira rodada dá início a uma <B>Batalha</B>. Contudo, ela 
+já se torna uma <B>Guerra</B> porque ambos os jogadores <B>A</B> e <B>B</B> 
+jogam seus Áses que ficam na mesa (topo da mesa é a carta vermelha). </P>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><B>Jogador</B></TD>
+    <TD align=middle><B>Monte</B></TD></TR>
+  <TR align=middle>
+    <TD align=middle>A</TD>
+    <TD align=left><FONT color=blue>K</FONT>KQQJJTT998877A</TD></TR>
+  <TR align=middle>
+    <TD align=middle>B</TD>
+    <TD align=left><FONT color=blue>K</FONT>7QQJJTT99887KA</TD></TR>
+  <TR align=middle>
+    <TD align=middle><B>Mesa</B></TD>
+    <TD align=left><I>A<FONT 
+color=red>A</FONT></I></TD></TR></TBODY></TABLE></CENTER>A guerra continua 
+porque, novamente, ambos os jogadores possuem cartas iguais: 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><B>Jogador</B></TD>
+    <TD align=middle><B>Monte</B></TD></TR>
+  <TR align=middle>
+    <TD align=middle>A</TD>
+    <TD align=left><FONT color=blue>K</FONT>QQJJTT998877A</TD></TR>
+  <TR align=middle>
+    <TD align=middle>B</TD>
+    <TD align=left><FONT color=blue>7</FONT>QQJJTT99887KA</TD></TR>
+  <TR align=middle>
+    <TD align=middle><B>Mesa</B></TD>
+    <TD align=left><I>AAK<FONT 
+color=red>K</FONT></I></TD></TR></TBODY></TABLE></CENTER>Finalmente, a guerra 
+termina com o jogador <B>A</B> mostrando um Rei que é maior do que o Sete do 
+jogador <B>B</B>. Note que, a maior carta sempre é colocada por cima da cartas 
+que estão na mesa: 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><B>Jogador</B></TD>
+    <TD align=middle><B>Monte</B></TD></TR>
+  <TR align=middle>
+    <TD align=middle>A</TD>
+    <TD align=left><FONT color=blue>Q</FONT>QJJTT998877A</TD></TR>
+  <TR align=middle>
+    <TD align=middle>B</TD>
+    <TD align=left><FONT color=blue>Q</FONT>QJJTT99887KA</TD></TR>
+  <TR align=middle>
+    <TD align=middle><B>Mesa</B></TD>
+    <TD align=left><I>AAKK7<FONT 
+color=red>K</FONT></I></TD></TR></TBODY></TABLE></CENTER>Como a guerra terminou, 
+o jogador vencedor (<B>A</B>) coloca as cartas da mesa em ordem inversa no final 
+do seu monte e o jogo fica na seguinte situação: 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=3 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><B>Jogador</B></TD>
+    <TD align=middle><B>Monte</B></TD></TR>
+  <TR align=middle>
+    <TD align=middle>A</TD>
+    <TD align=left><FONT color=blue>Q</FONT>QJJTT998877AK7KKAA</TD></TR>
+  <TR align=middle>
+    <TD align=middle>B</TD>
+    <TD align=left><FONT color=blue>Q</FONT>QJJTT99887KA</TD></TR>
+  <TR align=middle>
+    <TD align=middle><B>Mesa</B></TD>
+    <TD align=left><I>-</I></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Observação importante: Note que durante a seqüência de eventos 
+demonstrada acima, apenas uma <B>Batalha</B> ocorreu. A próxima rodada, daria 
+início a uma nova <B>Batalha</B>. </P>
+<P align=justify>O destino do jogo pode se encaminhar para <B>4</B> situações: 
+<OL>
+  <LI>Jogador <B>A</B> ganha o jogo quando o monte do jogador <B>B</B> acaba e 
+  <B>A</B> ainda tem cartas. 
+  <LI>Jogador <B>B</B> ganha o jogo na situação simétrica. 
+  <LI>Ocorre um empate, quando ambos os jogadores acabam suas cartas 
+  simultaneamente. 
+  <LI>O jogo é encerrado se for alcançado o número máximo de <B>Batalhas</B> 
+  pré-determinado. Neste caso, temos: 
+  <OL>
+    <LI>Ganha o jogador que tiver o maior monte 
+    <LI>Se os montes forem de tamanhos iguais, teremos um empate 
+</LI></OL></LI></OL>
+<P></P>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab09a.c</B>) que simule o jogo <B>Guerra</B> a partir da configuração 
+inicial dos montes de cartas de dois jogadores. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_k9NSY_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>Neste laboratório, cada arquivo de teste será composto por diversas 
+  configurações de entrada. 
+  <LI>Cada configuração é composta por uma linha contendo um número inteiro 
+  positivo <B>N</B> seguido por duas linhas contendo duas strings <B>A</B> e 
+  <B>B</B> representado os montes dos jogadores. 
+  <LI><B>N</B> indica o número máximo de batalhas. 
+  <LI>A entrada termina quando <B>N</B> for igual a zero. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada configuração de entrada o programa deverá imprimir o estado 
+  inicial e após cada uma das batalhas. 
+  <LI>Veja detalhes do formato de saída no <A 
+  href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_k9NSY_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço</A> 
+  do programa e nos <A 
+  href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_k9NSY_&amp;n=enunc.html&amp;user=mc102wy&amp;#exemplos">exemplos</A>. 
+  </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+<A name=exemplos></A>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" vAlign=top><TT><FONT 
+      color=blue><BR>50 <BR>AKKQQJJTT998877A <BR>AK7QQJJTT99887KA </FONT><FONT 
+      color=red><BR>50 <BR>AAKKQQJJTT998877 <BR>AAKKQQJJTT998877 </FONT><FONT 
+      color=blue><BR>50 <BR>87TT8799QJAAQJKK <BR>T8T79897AQAJKQKJ </FONT><FONT 
+      color=red><BR>0 </FONT><BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue><BR>No inicio: <BR>Jogador 1: AKKQQJJTT998877A <BR>Jogador 2: 
+      AK7QQJJTT99887KA <BR><BR>Apos a 1a rodada: <BR>Jogador 1: 
+      QQJJTT998877AK7KKAA <BR>Jogador 2: QQJJTT99887KA <BR><BR>Apos a 2a rodada: 
+      <BR>Jogador 1: AK7KKAA <BR>Jogador 2: AK77788889999TTTTJJJJQQQQ 
+      <BR><BR>Apos a 3a rodada: <BR>Jogador 1: KAAK777KKAA <BR>Jogador 2: 
+      788889999TTTTJJJJQQQQ <BR><BR>Apos a 4a rodada: <BR>Jogador 1: 
+      AAK777KKAAK7 <BR>Jogador 2: 88889999TTTTJJJJQQQQ <BR><BR>Apos a 5a rodada: 
+      <BR>Jogador 1: AK777KKAAK7A8 <BR>Jogador 2: 8889999TTTTJJJJQQQQ 
+      <BR><BR>Apos a 6a rodada: <BR>Jogador 1: K777KKAAK7A8A8 <BR>Jogador 2: 
+      889999TTTTJJJJQQQQ <BR><BR>Apos a 7a rodada: <BR>Jogador 1: 
+      777KKAAK7A8A8K8 <BR>Jogador 2: 89999TTTTJJJJQQQQ <BR><BR>Apos a 8a rodada: 
+      <BR>Jogador 1: 77KKAAK7A8A8K8 <BR>Jogador 2: 9999TTTTJJJJQQQQ87 
+      <BR><BR>Apos a 9a rodada: <BR>Jogador 1: 7KKAAK7A8A8K8 <BR>Jogador 2: 
+      999TTTTJJJJQQQQ8797 <BR><BR>Apos a 10a rodada: <BR>Jogador 1: KKAAK7A8A8K8 
+      <BR>Jogador 2: 99TTTTJJJJQQQQ879797 <BR><BR>Apos a 11a rodada: <BR>Jogador 
+      1: KAAK7A8A8K8K9 <BR>Jogador 2: 9TTTTJJJJQQQQ879797 <BR><BR>Apos a 12a 
+      rodada: <BR>Jogador 1: AAK7A8A8K8K9K9 <BR>Jogador 2: TTTTJJJJQQQQ879797 
+      <BR><BR>Apos a 13a rodada: <BR>Jogador 1: AK7A8A8K8K9K9AT <BR>Jogador 2: 
+      TTTJJJJQQQQ879797 <BR><BR>Apos a 14a rodada: <BR>Jogador 1: 
+      K7A8A8K8K9K9ATAT <BR>Jogador 2: TTJJJJQQQQ879797 <BR><BR>Apos a 15a 
+      rodada: <BR>Jogador 1: 7A8A8K8K9K9ATATKT <BR>Jogador 2: TJJJJQQQQ879797 
+      <BR><BR>Apos a 16a rodada: <BR>Jogador 1: A8A8K8K9K9ATATKT <BR>Jogador 2: 
+      JJJJQQQQ879797T7 <BR><BR>Apos a 17a rodada: <BR>Jogador 1: 
+      8A8K8K9K9ATATKTAJ <BR>Jogador 2: JJJQQQQ879797T7 <BR><BR>Apos a 18a 
+      rodada: <BR>Jogador 1: A8K8K9K9ATATKTAJ <BR>Jogador 2: JJQQQQ879797T7J8 
+      <BR><BR>Apos a 19a rodada: <BR>Jogador 1: 8K8K9K9ATATKTAJAJ <BR>Jogador 2: 
+      JQQQQ879797T7J8 <BR><BR>Apos a 20a rodada: <BR>Jogador 1: K8K9K9ATATKTAJAJ 
+      <BR>Jogador 2: QQQQ879797T7J8J8 <BR><BR>Apos a 21a rodada: <BR>Jogador 1: 
+      8K9K9ATATKTAJAJKQ <BR>Jogador 2: QQQ879797T7J8J8 <BR><BR>Apos a 22a 
+      rodada: <BR>Jogador 1: K9K9ATATKTAJAJKQ <BR>Jogador 2: QQ879797T7J8J8Q8 
+      <BR><BR>Apos a 23a rodada: <BR>Jogador 1: 9K9ATATKTAJAJKQKQ <BR>Jogador 2: 
+      Q879797T7J8J8Q8 <BR><BR>Apos a 24a rodada: <BR>Jogador 1: K9ATATKTAJAJKQKQ 
+      <BR>Jogador 2: 879797T7J8J8Q8Q9 <BR><BR>Apos a 25a rodada: <BR>Jogador 1: 
+      9ATATKTAJAJKQKQK8 <BR>Jogador 2: 79797T7J8J8Q8Q9 <BR><BR>Apos a 26a 
+      rodada: <BR>Jogador 1: ATATKTAJAJKQKQK897 <BR>Jogador 2: 9797T7J8J8Q8Q9 
+      <BR><BR>Apos a 27a rodada: <BR>Jogador 1: TATKTAJAJKQKQK897A9 <BR>Jogador 
+      2: 797T7J8J8Q8Q9 <BR><BR>Apos a 28a rodada: <BR>Jogador 1: 
+      ATKTAJAJKQKQK897A9T7 <BR>Jogador 2: 97T7J8J8Q8Q9 <BR><BR>Apos a 29a 
+      rodada: <BR>Jogador 1: TKTAJAJKQKQK897A9T7A9 <BR>Jogador 2: 7T7J8J8Q8Q9 
+      <BR><BR>Apos a 30a rodada: <BR>Jogador 1: KTAJAJKQKQK897A9T7A9T7 
+      <BR>Jogador 2: T7J8J8Q8Q9 <BR><BR>Apos a 31a rodada: <BR>Jogador 1: 
+      TAJAJKQKQK897A9T7A9T7KT <BR>Jogador 2: 7J8J8Q8Q9 <BR><BR>Apos a 32a 
+      rodada: <BR>Jogador 1: AJAJKQKQK897A9T7A9T7KTT7 <BR>Jogador 2: J8J8Q8Q9 
+      <BR><BR>Apos a 33a rodada: <BR>Jogador 1: JAJKQKQK897A9T7A9T7KTT7AJ 
+      <BR>Jogador 2: 8J8Q8Q9 <BR><BR>Apos a 34a rodada: <BR>Jogador 1: 
+      AJKQKQK897A9T7A9T7KTT7AJJ8 <BR>Jogador 2: J8Q8Q9 <BR><BR>Apos a 35a 
+      rodada: <BR>Jogador 1: JKQKQK897A9T7A9T7KTT7AJJ8AJ <BR>Jogador 2: 8Q8Q9 
+      <BR><BR>Apos a 36a rodada: <BR>Jogador 1: KQKQK897A9T7A9T7KTT7AJJ8AJJ8 
+      <BR>Jogador 2: Q8Q9 <BR><BR>Apos a 37a rodada: <BR>Jogador 1: 
+      QKQK897A9T7A9T7KTT7AJJ8AJJ8KQ <BR>Jogador 2: 8Q9 <BR><BR>Apos a 38a 
+      rodada: <BR>Jogador 1: KQK897A9T7A9T7KTT7AJJ8AJJ8KQQ8 <BR>Jogador 2: Q9 
+      <BR><BR>Apos a 39a rodada: <BR>Jogador 1: QK897A9T7A9T7KTT7AJJ8AJJ8KQQ8KQ 
+      <BR>Jogador 2: 9 <BR><BR>Apos a 40a rodada: <BR>Jogador 1: 
+      K897A9T7A9T7KTT7AJJ8AJJ8KQQ8KQQ9 <BR>Jogador 2: <BR><BR>Jogador 1 venceu 
+      <BR></FONT><FONT color=red><BR>No inicio: <BR>Jogador 1: AAKKQQJJTT998877 
+      <BR>Jogador 2: AAKKQQJJTT998877 <BR><BR>Apos a 1a rodada: <BR>Jogador 1: 
+      <BR>Jogador 2: <BR><BR>Empate <BR></FONT><FONT color=blue><BR>No inicio: 
+      <BR>Jogador 1: 87TT8799QJAAQJKK <BR>Jogador 2: T8T79897AQAJKQKJ 
+      <BR><BR>Apos a 1a rodada: <BR>Jogador 1: 7TT8799QJAAQJKK <BR>Jogador 2: 
+      8T79897AQAJKQKJT8 <BR><BR>Apos a 2a rodada: <BR>Jogador 1: TT8799QJAAQJKK 
+      <BR>Jogador 2: T79897AQAJKQKJT887 <BR><BR>Apos a 3a rodada: <BR>Jogador 1: 
+      8799QJAAQJKKT7TT <BR>Jogador 2: 9897AQAJKQKJT887 <BR><BR>Apos a 4a rodada: 
+      <BR>Jogador 1: 799QJAAQJKKT7TT <BR>Jogador 2: 897AQAJKQKJT88798 
+      <BR><BR>Apos a 5a rodada: <BR>Jogador 1: 99QJAAQJKKT7TT <BR>Jogador 2: 
+      97AQAJKQKJT8879887 <BR><BR>Apos a 6a rodada: <BR>Jogador 1: 
+      QJAAQJKKT7TT9799 <BR>Jogador 2: AQAJKQKJT8879887 <BR><BR>Apos a 7a rodada: 
+      <BR>Jogador 1: JAAQJKKT7TT9799 <BR>Jogador 2: QAJKQKJT8879887AQ 
+      <BR><BR>Apos a 8a rodada: <BR>Jogador 1: AAQJKKT7TT9799 <BR>Jogador 2: 
+      AJKQKJT8879887AQQJ <BR><BR>Apos a 9a rodada: <BR>Jogador 1: 
+      QJKKT7TT9799AJAA <BR>Jogador 2: KQKJT8879887AQQJ <BR><BR>Apos a 10a 
+      rodada: <BR>Jogador 1: JKKT7TT9799AJAA <BR>Jogador 2: QKJT8879887AQQJKQ 
+      <BR><BR>Apos a 11a rodada: <BR>Jogador 1: KKT7TT9799AJAA <BR>Jogador 2: 
+      KJT8879887AQQJKQQJ <BR><BR>Apos a 12a rodada: <BR>Jogador 1: 
+      T7TT9799AJAAKJKK <BR>Jogador 2: T8879887AQQJKQQJ <BR><BR>Apos a 13a 
+      rodada: <BR>Jogador 1: TT9799AJAAKJKK <BR>Jogador 2: 879887AQQJKQQJ87TT 
+      <BR><BR>Apos a 14a rodada: <BR>Jogador 1: T9799AJAAKJKKT8 <BR>Jogador 2: 
+      79887AQQJKQQJ87TT <BR><BR>Apos a 15a rodada: <BR>Jogador 1: 
+      9799AJAAKJKKT8T7 <BR>Jogador 2: 9887AQQJKQQJ87TT <BR><BR>Apos a 16a 
+      rodada: <BR>Jogador 1: 99AJAAKJKKT8T7 <BR>Jogador 2: 87AQQJKQQJ87TT8799 
+      <BR><BR>Apos a 17a rodada: <BR>Jogador 1: 9AJAAKJKKT8T798 <BR>Jogador 2: 
+      7AQQJKQQJ87TT8799 <BR><BR>Apos a 18a rodada: <BR>Jogador 1: 
+      AJAAKJKKT8T79897 <BR>Jogador 2: AQQJKQQJ87TT8799 <BR><BR>Apos a 19a 
+      rodada: <BR>Jogador 1: AAKJKKT8T79897 <BR>Jogador 2: QJKQQJ87TT8799QJAA 
+      <BR><BR>Apos a 20a rodada: <BR>Jogador 1: AKJKKT8T79897AQ <BR>Jogador 2: 
+      JKQQJ87TT8799QJAA <BR><BR>Apos a 21a rodada: <BR>Jogador 1: 
+      KJKKT8T79897AQAJ <BR>Jogador 2: KQQJ87TT8799QJAA <BR><BR>Apos a 22a 
+      rodada: <BR>Jogador 1: KKT8T79897AQAJ <BR>Jogador 2: QJ87TT8799QJAAQJKK 
+      <BR><BR>Apos a 23a rodada: <BR>Jogador 1: KT8T79897AQAJKQ <BR>Jogador 2: 
+      J87TT8799QJAAQJKK <BR><BR>Apos a 24a rodada: <BR>Jogador 1: 
+      T8T79897AQAJKQKJ <BR>Jogador 2: 87TT8799QJAAQJKK <BR><BR>Apos a 25a 
+      rodada: <BR>Jogador 1: 8T79897AQAJKQKJT8 <BR>Jogador 2: 7TT8799QJAAQJKK 
+      <BR><BR>Apos a 26a rodada: <BR>Jogador 1: T79897AQAJKQKJT887 <BR>Jogador 
+      2: TT8799QJAAQJKK <BR><BR>Apos a 27a rodada: <BR>Jogador 1: 
+      9897AQAJKQKJT887 <BR>Jogador 2: 8799QJAAQJKKT7TT <BR><BR>Apos a 28a 
+      rodada: <BR>Jogador 1: 897AQAJKQKJT88798 <BR>Jogador 2: 799QJAAQJKKT7TT 
+      <BR><BR>Apos a 29a rodada: <BR>Jogador 1: 97AQAJKQKJT8879887 <BR>Jogador 
+      2: 99QJAAQJKKT7TT <BR><BR>Apos a 30a rodada: <BR>Jogador 1: 
+      AQAJKQKJT8879887 <BR>Jogador 2: QJAAQJKKT7TT9799 <BR><BR>Apos a 31a 
+      rodada: <BR>Jogador 1: QAJKQKJT8879887AQ <BR>Jogador 2: JAAQJKKT7TT9799 
+      <BR><BR>Apos a 32a rodada: <BR>Jogador 1: AJKQKJT8879887AQQJ <BR>Jogador 
+      2: AAQJKKT7TT9799 <BR><BR>Apos a 33a rodada: <BR>Jogador 1: 
+      KQKJT8879887AQQJ <BR>Jogador 2: QJKKT7TT9799AJAA <BR><BR>Apos a 34a 
+      rodada: <BR>Jogador 1: QKJT8879887AQQJKQ <BR>Jogador 2: JKKT7TT9799AJAA 
+      <BR><BR>Apos a 35a rodada: <BR>Jogador 1: KJT8879887AQQJKQQJ <BR>Jogador 
+      2: KKT7TT9799AJAA <BR><BR>Apos a 36a rodada: <BR>Jogador 1: 
+      T8879887AQQJKQQJ <BR>Jogador 2: T7TT9799AJAAKJKK <BR><BR>Apos a 37a 
+      rodada: <BR>Jogador 1: 879887AQQJKQQJ87TT <BR>Jogador 2: TT9799AJAAKJKK 
+      <BR><BR>Apos a 38a rodada: <BR>Jogador 1: 79887AQQJKQQJ87TT <BR>Jogador 2: 
+      T9799AJAAKJKKT8 <BR><BR>Apos a 39a rodada: <BR>Jogador 1: 9887AQQJKQQJ87TT 
+      <BR>Jogador 2: 9799AJAAKJKKT8T7 <BR><BR>Apos a 40a rodada: <BR>Jogador 1: 
+      87AQQJKQQJ87TT8799 <BR>Jogador 2: 99AJAAKJKKT8T7 <BR><BR>Apos a 41a 
+      rodada: <BR>Jogador 1: 7AQQJKQQJ87TT8799 <BR>Jogador 2: 9AJAAKJKKT8T798 
+      <BR><BR>Apos a 42a rodada: <BR>Jogador 1: AQQJKQQJ87TT8799 <BR>Jogador 2: 
+      AJAAKJKKT8T79897 <BR><BR>Apos a 43a rodada: <BR>Jogador 1: 
+      QJKQQJ87TT8799QJAA <BR>Jogador 2: AAKJKKT8T79897 <BR><BR>Apos a 44a 
+      rodada: <BR>Jogador 1: JKQQJ87TT8799QJAA <BR>Jogador 2: AKJKKT8T79897AQ 
+      <BR><BR>Apos a 45a rodada: <BR>Jogador 1: KQQJ87TT8799QJAA <BR>Jogador 2: 
+      KJKKT8T79897AQAJ <BR><BR>Apos a 46a rodada: <BR>Jogador 1: 
+      QJ87TT8799QJAAQJKK <BR>Jogador 2: KKT8T79897AQAJ <BR><BR>Apos a 47a 
+      rodada: <BR>Jogador 1: J87TT8799QJAAQJKK <BR>Jogador 2: KT8T79897AQAJKQ 
+      <BR><BR>Apos a 48a rodada: <BR>Jogador 1: 87TT8799QJAAQJKK <BR>Jogador 2: 
+      T8T79897AQAJKQKJ <BR><BR>Apos a 49a rodada: <BR>Jogador 1: 7TT8799QJAAQJKK 
+      <BR>Jogador 2: 8T79897AQAJKQKJT8 <BR><BR>Apos a 50a rodada: <BR>Jogador 1: 
+      TT8799QJAAQJKK <BR>Jogador 2: T79897AQAJKQKJT887 <BR><BR>Jogador 2 venceu 
+      </FONT><BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B> 
+<A name=esboco></A><BR><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define tamanhoBaralho 52
+
+// Define um monte de cartas (PROIBIDO ALTERAR)
+typedef struct _monte {
+  char cartas[tamanhoBaralho];
+  int inicio, fim, quantidade;
+} Monte;
+
+
+// Inicializa um monte de cartas (PROIBIDO ALTERAR)
+void inicializaMonte(Monte * monte, char cartas[]) {
+
+  strcpy((*monte).cartas, cartas);
+  (*monte).inicio = 0;
+  (*monte).quantidade = strlen(cartas);
+  (*monte).fim = (*monte).quantidade;
+}
+
+
+// Verifica se um monte de carta esta vazio
+int vazioMonte(Monte * monte) {
+
+  return (*monte).quantidade == 0;
+}
+
+
+// Retorna o tamanho de um monte
+int tamanho(Monte * monte) {
+  
+  return (*monte).quantidade;
+}
+
+
+// Verifica o valor de uma carta (PROIBIDO ALTERAR)
+int valor(char carta) {
+  
+  switch (carta) {
+    case 'T': return 10; 
+    case 'J': return 11;
+    case 'Q': return 12;
+    case 'K': return 13;   
+    case 'A': return 14;   
+    default: return carta - '0';
+  }
+}
+
+
+// Disputa uma guerra
+void guerra(Monte * monte1, Monte * monte2) {
+
+
+}
+
+
+// Imprime um monte de cartas (PROIBIDO ALTERAR)
+void imprime(Monte * monte, int jogador) {
+  int i;
+
+  printf("Jogador %d: ", jogador);
+
+  for (i = (*monte).inicio; i != (*monte).fim; 
+       i = (i + 1) % tamanhoBaralho) {
+    printf("%c", (*monte).cartas[i]);
+  } 
+  printf("\n");
+}
+
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  char cartas1[tamanhoBaralho+1], cartas2[tamanhoBaralho+1];
+  Monte monte1, monte2;
+  int batalha, maxBatalhas;
+
+  // Le o numero maximo de batalhas
+  scanf("%d", &amp;maxBatalhas);
+
+  while (maxBatalhas) {
+
+    // Le os montes de cartas dos dois jogadores
+    scanf("%s %s", cartas1, cartas2);
+    
+    // Inicializacoes
+    inicializaMonte(&amp;monte1, cartas1);
+    inicializaMonte(&amp;monte2, cartas2);
+    batalha = 0;
+
+    printf("No inicio:\n");
+    imprime(&amp;monte1,1);
+    imprime(&amp;monte2,2);
+
+    // Enquanto nao acabou o jogo
+    do {
+      batalha ++;
+
+      guerra(&amp;monte1, &amp;monte2);
+
+      printf("\nApos a %da rodada:\n", batalha);
+      imprime(&amp;monte1,1);
+      imprime(&amp;monte2,2);
+
+    } while (batalha &lt; maxBatalhas &amp;&amp; 
+	     !(vazioMonte(&amp;monte1) || vazioMonte(&amp;monte2)));
+
+    // Imprime a resposta
+    if (tamanho(&amp;monte1) == tamanho(&amp;monte2)) {
+      printf("\nEmpate\n\n");
+    } else if (tamanho(&amp;monte1) &gt; tamanho(&amp;monte2)) {
+      printf("\nJogador 1 venceu\n\n");
+    } else {
+      printf("\nJogador 2 venceu\n\n");
+    }
+
+    // Le o novo numero maximo de batalhas
+    scanf("%d", &amp;maxBatalhas);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>19/05/2007</I></SMALL> </BODY></HTML>

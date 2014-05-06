@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_mxxtd_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 07c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 07c - Brasileirão 2007</H3><B>Peso</B>: 5 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Os <B>campeonatos regionais</B> estão acabando e em breve (dia 
+12 de Maio) começará o <B>Brasileirão 2007</B>, com o jogo <I>São Paulo x 
+Goiás</I> no Morumbi. </P>
+<P align=justify><B>Asdrúbal</B> é um torcedor fanático do <B>Palmeiras</B>. Ele 
+espera que o time tenha em 2007 um desempenho bem melhor do que o do ano 
+passado, quando o <I>Parmera</I> amargou um 16º lugar, apenas uma posição acima 
+da temida <B>zona de rebaixamento</B>. </P>
+<P align=justify>Asdrúbal é completamente louco pelo seu time, mas também tem 
+outra paixão: <B>estatísticas de jogo</B>. Sempre anota tudo... os times, o 
+placar, os números de faltas, de cartões e de impedimentos... enfim, tudo em um 
+jogo de futebol que possa ser convertido em números. </P>
+<P align=justify><B>Deocrécio</B> é o cunhado corintiano do Asdrúbal. Deocrécio 
+é a <B>razão</B> de Asdrúbal ponderar as vantagens e <B>desvantagens</B> de se 
+ter uma irmã.</P>
+<P align=justify>Como todo bom corintiano, Deocrécio não perde a chance de 
+<B>azucrinar</B> a vida daqueles que torcem para o Porcão. Apesar de ser um 
+autêntico <B>mala-sem-alça</B>, ele é super bem-intencionado no que se refere a 
+fazer amizade com seu cunhado. Mesmo assim, os dois sempre acabam brigando. </P>
+<P align=justify>A última idéia de Deocrécio para se aproximar de seu cunhado 
+está na tentativa de compartilhar a paixão que Asdrúbal tem pelas estatísticas 
+de jogos. Assim, o nosso amigo corintiano perguntou para o seu cunhado 
+palmeirense se ele gostaria de ter um programa para ajudá-lo na análise dos 
+resultados dos jogos. </P>
+<P align=justify>Asdrúbal, mais uma vez duvidando das capacidades de seu 
+cunhado, pensou em uma alternativa para se livrar dele logo. Rapidamente ele 
+teve a idéia de pedir a Deocrécio que implementasse um programa que recebesse a 
+lista de resultados de jogos do campeonato e produzisse a tabela de 
+classificação completamente ordenada, seguindo todos os <B>critérios</B> 
+estipulados no seguinte <B>regulamento</B>: </P>
+<H4>Regulamento Brasileirão</H4>
+<UL>
+  <LI><I>Vitória</I> vale <B>3 pontos</B> para o time vencedor 
+  <LI><I>Empate</I> vale <B>1 ponto</B> para cada um dos times 
+  <LI><I>Critérios de ordenação</I> 
+  <OL>
+    <LI>Número de pontos 
+    <LI>Número de vitórias 
+    <LI>Saldo de gols 
+    <LI>Gols pró 
+    <LI>Nomes dos times em ordem alfabética <I>(apenas para este programa)</I> 
+    </LI></OL></LI></UL>
+<P align=justify>Deocrécio falou que Asdrúbal não ia se arrepender. Porém, 
+programação está longe de ser um dos fortes do nosso companheiro torcedor do 
+Timão. Assim, ele pede desesperadamente a sua ajuda. </P>
+<P align=justify>A sua tarefa, portanto, é escrever um programa em Linguagem C 
+(<B>lab07c.c</B>) que receba uma lista de resultados de jogos e produza a 
+<B>tabela de classificação ordenada</B> segundo os <B>critérios do 
+regulamento</B> acima. Vamos ajudar Deocrécio a se entender com seu cunhado. 
+</P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_mxxtd_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por um número inteiro positivo <I>N</I> seguido 
+  por uma lista de <I>N</I> resultados de jogos no seguinte formato: 
+  <UL>
+    <LI><I>Nome_Time_1</I> <I>G1<I> x <I>G2<I> <I>Nome_Time_2</I></LI></UL>
+  <LI><I>Nome_Time_1</I> indica o nome do time mandante do jogo 
+  <LI><I>Nome_Time_2</I> indica o nome do time visitante do jogo 
+  <LI><I>G1</I> é um número inteiro maior ou igual a 0 que indica o número de 
+  gols marcados por <I>Nome_Time_1</I> 
+  <LI><I>G2</I> é um número inteiro maior ou igual a 0 que indica o número de 
+  gols marcados por <I>Nome_Time_2</I> 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Deverá seguir o formato especificado no <A 
+  href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_mxxtd_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço</A> 
+  do programa. Veja os <A 
+  href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_mxxtd_&amp;n=enunc.html&amp;user=mc102wy&amp;#exemplos">exemplos</A> 
+  para maiores detalhes. 
+  <LI>A saída deverá ser escrita na saída padrão. </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+<A name=exemplos></A>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>33 <BR>Juventude 1 
+      x 0 Parana <BR>Vasco 1 x 1 Internacional <BR>Sao_Paulo 1 x 0 Flamengo 
+      <BR>Gremio 2 x 0 Corinthians <BR>Botafogo 1 x 0 Fortaleza <BR>Sao_Caetano 
+      2 x 1 Cruzeiro <BR>Palmeiras 2 x 3 PontePreta <BR>SantaCruz 0 x 0 
+      Figueirense <BR>Atletico-PR 1 x 2 Fluminense <BR>Goias 0 x 0 Santos 
+      <BR>Corinthians 3 x 0 Sao_Caetano <BR>Fluminense 1 x 0 Goias 
+      <BR>Figueirense 6 x 1 Palmeiras <BR>Internacional 1 x 0 SantaCruz 
+      <BR>Santos 2 x 0 Atletico-PR <BR>PontePreta 1 x 2 Vasco <BR>Flamengo 3 x 1 
+      Juventude <BR>Cruzeiro 3 x 1 Gremio <BR>Parana 0 x 0 Botafogo 
+      <BR>Fortaleza 1 x 0 Sao_Paulo <BR>Fortaleza 2 x 1 Sao_Caetano <BR>Botafogo 
+      0 x 4 Atletico-PR <BR>Sao_Paulo 4 x 0 SantaCruz <BR>PontePreta 3 x 2 
+      Corinthians <BR>Internacional 1 x 0 Flamengo <BR>Parana 5 x 2 Gremio 
+      <BR>Palmeiras 1 x 2 Santos <BR>Vasco 1 x 1 Fluminense <BR>Juventude 1 x 1 
+      Goias <BR>Figueirense 0 x 2 Cruzeiro <BR>SantaCruz 1 x 1 PontePreta 
+      <BR>Fluminense 2 x 1 Parana <BR>Santos 2 x 0 Fortaleza <BR><BR>12 
+      <BR><BR>AudaxItaliano 0 x 0 SaoPaulo <BR>AlianzaLima 1 x 2 Necaxa 
+      <BR>SaoPaulo 4 x 0 AlianzaLima <BR>Necaxa 2 x 0 AudaxItaliano 
+      <BR>AlianzaLima 1 x 3 AudaxItaliano <BR>Necaxa 2 x 1 SaoPaulo 
+      <BR>AudaxItaliano 1 x 0 AlianzaLima <BR>SaoPaulo 3 x 0 Necaxa 
+      <BR>AudaxItaliano 2 x 1 Necaxa <BR>AlianzaLima 0 x 1 SaoPaulo <BR>SaoPaulo 
+      2 x 2 AudaxItaliano <BR>Necaxa 2 x 0 AlianzaLima <BR><BR>0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><PRE>
+                TIME     P       J       V       E       D       GP      GC      SG
+              Santos     10       4       3       1       0       6       1       5
+          Fluminense     10       4       3       1       0       6       3       3
+       Internacional      7       3       2       1       0       3       1       2
+          PontePreta      7       4       2       1       1       8       7       1
+           Sao_Paulo      6       3       2       0       1       5       1       4
+            Cruzeiro      6       3       2       0       1       6       3       3
+           Fortaleza      6       4       2       0       2       3       4      -1
+               Vasco      5       3       1       2       0       4       3       1
+         Figueirense      4       3       1       1       1       6       3       3
+              Parana      4       4       1       1       2       6       5       1
+           Juventude      4       3       1       1       1       3       4      -1
+            Botafogo      4       3       1       1       1       1       4      -3
+         Atletico-PR      3       3       1       0       2       5       4       1
+         Corinthians      3       3       1       0       2       5       5       0
+            Flamengo      3       3       1       0       2       3       3       0
+              Gremio      3       3       1       0       2       5       8      -3
+         Sao_Caetano      3       3       1       0       2       3       6      -3
+               Goias      2       3       0       2       1       1       2      -1
+           SantaCruz      2       4       0       2       2       1       6      -5
+           Palmeiras      0       3       0       0       3       4      11      -7
+
+                TIME     P       J       V       E       D       GP      GC      SG
+              Necaxa     12       6       4       0       2       9       7       2
+            SaoPaulo     11       6       3       2       1      11       4       7
+       AudaxItaliano     11       6       3       2       1       8       6       2
+         AlianzaLima      0       6       0       0       6       2      13     -11
+
+</PRE></TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><BR>3 
+      <BR><BR>Gremio 0 x 0 CucutaDeportivo <BR>Gremio 1 x 0 DeportesTolima 
+      <BR>Gremio 1 x 0 CerroPorteno <BR><BR>2 <BR><BR>VelezSarsfield 1 x 1 
+      Nacional <BR>Internacional 1 x 0 Nacional <BR><BR>2 <BR><BR>Flamengo 3 x 1 
+      UnionMaracaibo <BR>Flamengo 1 x 0 RealPotosi <BR><BR>2 <BR><BR>Caracas 3 x 
+      1 RiverPlate <BR>RiverPlate 1 x 0 ColoColo <BR><BR>1 <BR><BR>Toluca 3 x 0 
+      Cienciano <BR><BR>1 <BR><BR>GimnasiaLP 3 x 0 Defensor <BR><BR>0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><PRE>                TIME     P       J       V       E       D       GP      GC      SG
+              Gremio      7       3       2       1       0       2       0       2
+     CucutaDeportivo      1       1       0       1       0       0       0       0
+        CerroPorteno      0       1       0       0       1       0       1      -1
+      DeportesTolima      0       1       0       0       1       0       1      -1
+
+                TIME     P       J       V       E       D       GP      GC      SG
+       Internacional      3       1       1       0       0       1       0       1
+      VelezSarsfield      1       1       0       1       0       1       1       0
+            Nacional      1       2       0       1       1       1       2      -1
+
+                TIME     P       J       V       E       D       GP      GC      SG
+            Flamengo      6       2       2       0       0       4       1       3
+          RealPotosi      0       1       0       0       1       0       1      -1
+      UnionMaracaibo      0       1       0       0       1       1       3      -2
+
+                TIME     P       J       V       E       D       GP      GC      SG
+             Caracas      3       1       1       0       0       3       1       2
+          RiverPlate      3       2       1       0       1       2       3      -1
+            ColoColo      0       1       0       0       1       0       1      -1
+
+                TIME     P       J       V       E       D       GP      GC      SG
+              Toluca      3       1       1       0       0       3       0       3
+           Cienciano      0       1       0       0       1       0       3      -3
+
+                TIME     P       J       V       E       D       GP      GC      SG
+          GimnasiaLP      3       1       1       0       0       3       0       3
+            Defensor      0       1       0       0       1       0       3      -3
+
+</PRE></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// Define um time (PROIBIDO ALTERAR)
+typedef struct _time {
+  char nome[21];
+  int vitorias;
+  int derrotas;
+  int empates;
+  int golspro;
+  int golscontra;
+} Time;
+
+// Calcula o numero de pontos de um certo time
+// (IMPLEMENTACAO OBRIGATORIA)
+int pontos(Time time);
+
+
+// Calcula o saldo de gols de um certo time
+// (IMPLEMENTACAO OBRIGATORIA)
+int saldo(Time time);
+
+
+// Retorna verdadeiro (1) se o time1 deve aparecer na frente do time2
+// na tabela de classificacao. Retorna falso (0) caso contrario.
+// (IMPLEMENTACAO OBRIGATORIA)
+int compara2Times (Time time1, Time time2);
+
+
+// Faz a troca de duas variaveis do tipo Time
+// (IMPLEMENTACAO OBRIGATORIA)
+void trocaTimes(Time * time1, Time * time2);
+
+
+// Ordena os times de acordo com os criterios do campeonato
+// (PROIBIDO ALTERAR)
+void ordenaTimes(Time times[], int nTimes) {
+  int i, j, max;
+
+  for (i = 0; i &lt; nTimes; i++) {
+
+    max = i;
+
+    for (j = i + 1; j &lt; nTimes; j++) {
+      if (compara2Times(times[j],times[max])) {
+        max = j;
+      }
+    }
+
+    trocaTimes(&amp;times[i],&amp;times[max]);
+  }
+}
+
+// Dado o vetor de times, o tamanho do vetor e o nome de um time,
+// inicializa um novo time no vetor de times com o nome dado e altera
+// o numero de times existentes (IMPLEMENTACAO OBRIGATORIA)
+void inicializaTime(Time times[], int * nTimes, char time[]);
+
+
+// Dado o vetor de times, o tamanho do vetor e o nome de um time
+// retorna o indice da posicao do vetor onde o time esta. Caso o time
+// nao existia previamente, uma nova posicao do vetor eh inicializada
+// e o indice desta posicao eh retornado (IMPLEMENTACAO OBRIGATORIA)
+int encontraTime(Time times[], int * nTimes, char time[]);
+
+
+// Dado o vetor de times, o tamanho do vetor, o nome de um time e o
+// numero de gols pro e contra de uma partida, atualiza as informacoes
+// daquele time (IMPLEMENTACAO OBRIGATORIA)
+void atualizaTime(Time times[], int * nTimes, char time1[21],
+                  int golspro, int golscontra);
+
+
+// Imprime a tabela de classificacao do campeonato (PROIBIDO ALTERAR)
+void imprimeClassificacao(Time times[], int nTimes) {
+  int i;
+
+  // Imprime cabecalho
+  printf("                TIME");
+  printf("\t P\t J\t V\t E\t D\t GP\t GC\t SG\n");
+
+  // Imprime a tabela de classificacao
+  for (i = 0; i &lt; nTimes; i++) {
+
+    printf("%20s\t%3d\t%3d\t%3d\t%3d\t%3d\t%3d\t%3d\t%3d\n",
+           times[i].nome, pontos(times[i]),
+           times[i].vitorias + times[i].empates + times[i].derrotas,
+           times[i].vitorias, times[i].empates, times[i].derrotas,
+           times[i].golspro, times[i].golscontra, saldo(times[i]));
+  }
+
+  // Pula de linha depois de imprimir a tabela
+  printf("\n");
+}
+
+
+// Programa Principal (PROIBIDO ALTERAR)
+int main() {
+  Time times[50];
+  char time1[21], time2[21];
+  int nPartidas, nTimes, i, gols1, gols2;
+
+  // Le o numero de partidas
+  scanf("%d", &amp;nPartidas);
+
+  // Enquanto a entrada for valida
+  while (nPartidas &gt; 0) {
+
+    nTimes = 0;
+
+    // Le todas as partidas
+    for (i = 0; i &lt; nPartidas; i++) {
+      scanf("%s %d x %d %s", time1, &amp;gols1, &amp;gols2, time2);
+
+      atualizaTime(times, &amp;nTimes, time1, gols1, gols2);
+      atualizaTime(times, &amp;nTimes, time2, gols2, gols1);
+    }
+
+    // Ordenar os times
+    ordenaTimes(times, nTimes);
+
+    // Imprime a tabela de classificacao
+    imprimeClassificacao(times, nTimes);
+
+    // Le o numero de partidas
+    scanf("%d", &amp;nPartidas);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>05/05/2007</I></SMALL> </I></I></I></I></BODY></HTML>

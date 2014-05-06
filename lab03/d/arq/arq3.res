@@ -1,0 +1,17 @@
+1232 base 4 = 110 base 10
+2342 base 5 = 347 base 10
+5423 base 3 = invalido
+10200 base 2 = invalido
+410000 base 5 = 13125 base 10
+999 base 9 = invalido
+101010101010101010 base 2 = 525252 base 8
+666 base 7 = 342 base 10
+511 base 2 = invalido
+1 base 3 = 1 base 4
+19 base 9 = invalido
+10101010 base 2 = 170 base 10
+101010 base 3 = 273 base 10
+1234567 base 6 = invalido
+1010 base 4 = 68 base 10
+10 base 5 = 5 base 10
+10 base 10 = 10 base 10

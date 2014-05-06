@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_vnMtP_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 06c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 06c - Apagão em Aérea</H3><B>Peso</B>: 5 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify><B>Shu I</B>, no período de 1952 a 2006, foi o rei de 
+<B>Aérea</B>, país que possui um extenso litoral sem recortes e uma mar 
+territorial pontilhado de pequenas ilhas. </P>
+<P align=justify>Este país possuía em seu solo incontáveis riquezas que foram 
+exploradas intensamente durante o longo reinado de <B>Shu I</B>. Isso garantiu 
+ao país um período de grande prosperidade, que foi marcado por grandes obras 
+faraônicas.</P>
+<P></P>
+<P align=justify>Durante este período, ao descobrir que seu nome era idêntico ao 
+do <B>deus egípcio do ar</B> e perceber a ligação com o nome do seu país, <B>Shu 
+I</B> decidiu construir uma rede aérea para possibilitar a ligação de todas as 
+ilhas com a parte continental do país. </P>
+<P align=justify>Graças aos imensos recursos financeiros disponíveis na época, 
+cada uma das ilhas recebeu um aeroporto e <B>pontes aéreas</B> foram criadas 
+para ligar o continente às ilhas. Para cada ilha foi criado um aeroporto irmão, 
+localizado na costa do país, na menor distância possível entre a ilha e o 
+continente. Por questões de segurança, o país não adotou nenhuma ligação aérea 
+direta entre ilhas. A interligação entre os aeroportos do continente é feita por 
+via terrestre, através de um moderno trem-bala. Um gigantesco <B>radar</B> foi 
+comprado para controlar todo o espaço aéreo do país. </P>
+<P align=justify>O imenso incentivo público que o transporte aéreo recebeu levou 
+ao sucateamento de toda a frota marítima do país, algo estranho se considerarmos 
+que o país possui um extenso litoral e inúmeras ilhas. </P>
+<P align=justify>E o período de prosperidade acabou... </P>
+<P align=justify>Com o esgotamento dos recursos, o país passou a enfrentar 
+sérios problemas de endividamento externo. Assim, todo dinheiro arrecadado em 
+impostos acaba sendo utilizado para pagar juros da <B>dívida externa</B>. <B>Shu 
+II</B>, herdeiro de <B>Shu I</B>, assumiu recentemente o governo após a morte do 
+pai e encontrou o caixa do governo na mais completa <B>pindaíba</B>. </P>
+<P align=justify>Devido à falta de dinheiro, serviços básicos passaram a sofrer 
+com cortes de verbas. Entre estes serviços, o mais prejudicado foi o de 
+manutenção do gigantesco radar. <B>Buracos negros</B> começaram a aparecer na 
+área de cobertura do grande radar, tornando impossível a realização de um 
+monitoramento do espaço aéreo com segurança. Diante deste problema, os 
+<B>controladores de vôo</B> iniciaram uma série de greves reinvidicando melhores 
+condições de trabalho. O resultado é que o país passa agora pela maior e mais 
+grave crise dos últimos tempos pois todo o transporte de cargas e de passageiros 
+entre o continente e as ilhas é feito via aérea. </P>
+<P align=justify>Consertar o gigantesco radar se tornou inviável. A única 
+solução possível é a utilização de uma <B>rede de pequenos radares</B> para a 
+cobertura do espaço aéreo. Os pequenos radares possuem todos a <B>mesma potência 
+nominal</B> e, portanto, o <B>mesmo raio de alcance</B>. Além disso, devido às 
+especificações do fabricante, estes radares <B>só podem ser instalados na costa 
+do país</B>. Estes radares serão utilizados apenas para monitorar as ligações 
+aéreas entre as ilhas e o continente. </P>
+<P align=justify><B>Shu II</B> precisa comprar os radares, mas precisa saber 
+qual o número mínimo necessário para evitar o desperdício de dinheiro. As 
+figuras abaixo trazem exemplos de como dispor dois radares para envolver três 
+ilhas, e por conseqüência cobrir as rotas entre as três ilhas e o continente. 
+Note que, nestes exemplos, é impossível envolver as três ilhas com apenas um 
+radar, pois não existe posicionamento de <B>R1</B> que consiga envolver as três 
+ilhas ao mesmo tempo. </P><BR><BR>
+<CENTER><IMG src="enunciado_arquivos/radar1.gif"> </CENTER><BR><BR><BR><BR>
+<CENTER><IMG src="enunciado_arquivos/radar2.gif"> </CENTER><BR><BR>
+<P align=justify>Sua tarefa será escrever um programa em linguagem C 
+(<B>lab06c.c</B>) que ajude <B>Shu II</B> a descobrir qual o número mínimo de 
+radares para resolução do problema. Para isso, você deve assumir que a 
+<B>costa</B> é representada pelo <B>eixo X</B> e que as <B>ilhas</B> são 
+representadas por <B>pontos acima desse eixo</B> (ou seja, a coordenarda Y dos 
+pontos da ilha são sempre maiores do que 0). Como nas figuras acima, para que 
+uma ilha seja coberta pelo radar basta que sua distância ao ponto onde o radar 
+foi colocado seja menor ou igual ao raio de cobertura do radar (veja as posições 
+da ilha <B>I3</B> em ambas as figuras). </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_vnMtP_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por diversas configurações para o problema. 
+  <LI>A primeira linha de cada configuração traz dois valores <I>N</I> e 
+  <I>R</I> que representam: 
+  <UL>
+    <LI><I>N</I> = Número inteiro maior que zero que indica a quantidade de 
+    ilhas existente no litoral de Aérea (0 &lt; <I>N</I> &amp;le 100). 
+    <LI><I>R</I> = Número real maior que zero que indica o raio de alcance dos 
+    radares utilizados na resolução do problema. </LI></UL>
+  <LI>As <I>N</I> linhas seguintes trazem duplas de valores <I>X<SUB>i</SUB></I> 
+  e <I>Y<SUB>i</SUB></I> que indicam as coordenadas x e y do ponto que 
+  representa a <I>i-ésima</I> ilha. 
+  <LI>A última linha da entrada conterá a dupla <B>0 0</B> indicando o seu final 
+  (<I>N</I> = <I>R</I> = 0). 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada configuração lida da entrada, o programa deverá determinar se é 
+  possível resolver o problema e, em caso positivo, calcular o número mínimo de 
+  radares necessários. 
+  <LI>Se o programa chegar a conclusão de que <I>não é possível</I> encontrar 
+  uma solução para a configuração lida, ele deverá imprimir a seguinte frase: 
+  <UL>
+    <LI>Problema sem solucao</LI></UL>
+  <LI>Se o programa chegar a conclusão de que <I>é possível</I> encontrar uma 
+  solução, ele deverá determinar o número mínimo de radares <I>M</I> e imprimir 
+  a resposta no seguinte formato: 
+  <UL>
+    <LI>Numero minimo de radares: <I>M</I></LI></UL>
+  <LI>A dupla <B>0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. 
+  <LI>A saída deverá ser escrita na saída padrão. </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>5 10<BR>1 2<BR>2 
+      9<BR>4 10<BR>6 6<BR>9 9<BR><BR>5 10<BR>1 2<BR>2 9<BR>4 8<BR>6 6<BR>9 
+      9<BR><BR>5 9<BR>1 2<BR>2 9<BR>4 8<BR>6 6<BR>9 9<BR><BR>5 9<BR>-1 2<BR>-2 
+      9<BR>-4 8<BR>-6 6<BR>-9 9<BR><BR>5 10<BR>1.4 2.7<BR>2.4 9.7<BR>4.4 
+      8.7<BR>6.4 6.7<BR>9.4 9.7<BR><BR>5 10.9<BR>1.4 2.7<BR>2.4 9.7<BR>4.4 
+      8.7<BR>6.4 6.7<BR>9.4 9.7<BR><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Numero minimo de 
+      radares: 2<BR>Numero minimo de radares: 1<BR>Numero minimo de radares: 
+      2<BR>Numero minimo de radares: 2<BR>Numero minimo de radares: 2<BR>Numero 
+      minimo de radares: 1<BR>&nbsp; </TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>10 100<BR>450 
+      67<BR>101 82<BR>341 52<BR>232 79<BR>007 11<BR>144 27<BR>256 66<BR>239 
+      19<BR>378 78<BR>123 45<BR><BR>10 82 <BR>450 67<BR>101 82<BR>341 52<BR>232 
+      79<BR>007 11<BR>144 27<BR>256 66<BR>239 19<BR>378 78<BR>123 45<BR><BR>10 
+      80 <BR>450 67<BR>101 82<BR>341 52<BR>232 79<BR>007 11<BR>144 27<BR>256 
+      66<BR>239 19<BR>378 78<BR>123 45<BR><BR>10 150<BR>450 67<BR>101 82<BR>341 
+      52<BR>232 79<BR>007 11<BR>144 27<BR>256 66<BR>239 19<BR>378 78<BR>123 
+      45<BR><BR>10 230<BR>450 67<BR>101 82<BR>341 52<BR>232 79<BR>007 11<BR>144 
+      27<BR>256 66<BR>239 19<BR>378 78<BR>123 45<BR><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Numero minimo de 
+      radares: 3<BR>Numero minimo de radares: 4<BR>Problema sem 
+      solucao<BR>Numero minimo de radares: 2<BR>Numero minimo de radares: 
+      1<BR>&nbsp; </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+// Define uma posicao geografica
+typedef struct _posicao {
+  double x;
+  double y;
+} Posicao;
+
+// Define um conjunto de ilhas
+typedef struct _ilhas {
+  Posicao posicao[100];
+  int n;
+} Ilhas;
+
+// Verifica se o radar cobre a posicao
+int radarCoverage(double radarX, double raio, Posicao posicao);
+
+// Posiciona um radar de forma cobrir uma dada posicao, retorna a
+// coordenada X do radar (a coordenada Y sera sempre zero)
+double radarPosition(Posicao posicao, double raio);
+
+// Verifica se as ilhas podem ser alcancadas pelos radares
+int verifyIslands(Posicao posicao[], int n, double raio);
+
+// Ordena um vetor de posicoes de acordo com a coordenada X
+void sortingByX(Posicao posicao[], int n);
+
+int main() {
+  Ilhas ilhas;
+  double raio;
+
+  // Le uma entrada
+  scanf("%d %lf", &amp;ilhas.n, &amp;raio);
+
+  // Enquanto a entrada for valida
+  while ((ilhas.n &gt; 0) &amp;&amp; (raio &gt; 0)) {
+
+    // Le as posicoes das ilhas
+
+
+    // Verifica se o problema tem solucao
+
+
+    // Se for possivel resolve-lo, determina o numero minimo de
+    // radares necessario para cobrir todas as ilhas
+
+
+    // Imprime a resposta
+
+
+    // Le uma nova entrada
+    scanf("%d %lf", &amp;ilhas.n, &amp;raio);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>28/04/2007</I></SMALL> </BODY></HTML>

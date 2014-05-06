@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_qoMOO_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 05f</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 05f - Combinatória</H3><B>Peso</B>: 4 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Calcular o número exato de combinações que podem ser formadas a 
+partir da distribuição (sem repetição) de <I>N</I> elementos distintos em grupos 
+de tamanho <I>M</I> pode se tornar um grande desafio quando <I>M</I> e/ou 
+<I>N</I> são muito grandes. </P>
+<P align=justify>Dados: 
+<CENTER>
+<TABLE cellPadding=5 border=0>
+  <TBODY>
+  <TR>
+    <TD>1 &#8804; <I>N</I> &#8804; 200</TD>
+    <TD>e</TD>
+    <TD>1 &#8804; <I>M</I> &#8804; 200</TD>
+    <TD>e</TD>
+    <TD><I>M</I> &#8804; <I>N</I></TD></TR></TBODY></TABLE></CENTER>Sua tarefa será 
+escrever um programa em linguagem C (<B>lab05f.c</B>) que calcule o valor exato 
+de: 
+<CENTER>
+<TABLE cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=right rowSpan=2><I>C</I> = </TD>
+    <TD vAlign=bottom align=middle><I>N</I>!</TD></TR>
+  <TR>
+    <TD style="BORDER-TOP: black 1px solid" vAlign=top align=middle>(<I>N</I> 
+      &#8722; <I>M</I>)! × <I>M</I>!</TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=justify>Você deve assumir que o valor final de C caberá em uma variável 
+do tipo <I>long long int</I>. </P>
+<P align=justify>Apenas para registro, 100! é: </P><PRE>     93.326.215.443.944.152.681.699.238.856.266.700.490.715.968.264.381.621.
+        468.592.963.895.217.599.993.229.915.608.941.463.976.156.518.286.253.
+        697.920.827.223.758.251.185.210.916.864.000.000.000.000.000.000.000.000
+</PRE>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_qoMOO_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por uma lista de pares de números inteiros 
+  positivos (<I>N</I> e <I>M</I>). 
+  <UL>
+    <LI>1 &#8804; <I>N</I> &#8804; 200 
+    <LI>1 &#8804; <I>M</I> &#8804; 200 
+    <LI><I>M</I> &#8804; <I>N</I> </LI></UL>
+  <LI>A última linha da entrada conterá o par <B>0 0</B> indicando o seu final. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada par <I>N</I> e <I>M</I> lidos da entrada, o resultado do cálculo 
+  (<I>C</I>) deverá ser escrito no seguinte formato: 
+  <UL>
+    <LI>Existe(m) <I>C</I> forma(s) de se escolher <I>M</I> elemento(s) num 
+    conjunto de tamanho <I>N</I> </LI></UL>
+  <LI>O par <B>0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ele. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>100 6<BR>20 
+      5<BR>18 6<BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Existe(m) 
+      1192052400 forma(s) de se escolher 6 elemento(s) num conjunto de tamanho 
+      100<BR>Existe(m) 15504 forma(s) de se escolher 5 elemento(s) num conjunto 
+      de tamanho 20<BR>Existe(m) 18564 forma(s) de se escolher 6 elemento(s) num 
+      conjunto de tamanho 18<BR>&nbsp; </TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>100 15<BR>30 
+      5<BR>30 30<BR>77 75<BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Existe(m) 
+      253338471349988640 forma(s) de se escolher 15 elemento(s) num conjunto de 
+      tamanho 100<BR>Existe(m) 142506 forma(s) de se escolher 5 elemento(s) num 
+      conjunto de tamanho 30<BR>Existe(m) 1 forma(s) de se escolher 30 
+      elemento(s) num conjunto de tamanho 30<BR>Existe(m) 2926 forma(s) de se 
+      escolher 75 elemento(s) num conjunto de tamanho 77<BR>&nbsp; 
+  </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>14/04/2007</I></SMALL> </BODY></HTML>

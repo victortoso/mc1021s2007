@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_k1zsX_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 12c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 12c - Ordenando Panquecas</H3><B>Peso</B>: 9 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Este problema começa com uma pilha de <B>N</B> panquecas de 
+tamanhos distintos. Nosso objetivo é ordenar esta pilha de tal forma que a menor 
+panqueca fique no topo e a maior na base.</P>
+<P align=justify>Para fazer isso, a única operação permitida é a inversão de 
+parte do topo da pilha de panquecas. Dado um número inteiro <B>K</B> (1 &lt; 
+<B>K</B> &#8804; <B>N</B>) a inversão das K primeiras panquecas do topo faz, por 
+exemplo, com que a panqueca que estava no topo da pilha inicial fique na posição 
+<B>K</B> e que a <B>K</B>-ésima panqueca da pilha inicial fique no topo da pilha 
+resultante. Esta operação simula a utilização de uma espátula para inverter um 
+determinando número de panquecas que estão no topo da pilha. </P>
+<P align=justify>A seqüência abaixo ilustra uma maneira de se ordernar uma pilha 
+de panquecas utilizando a operação descrita acima: </P>
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD style="WIDTH: 200px" align=middle>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 30px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">1</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 90px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">3</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 60px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">2</DIV></TD>
+    <TD style="WIDTH: 200px" align=middle>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 90px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">3</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 30px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">1</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 60px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">2</DIV></TD>
+    <TD style="WIDTH: 200px" align=middle>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 60px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">2</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 30px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">1</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 90px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">3</DIV></TD>
+    <TD style="WIDTH: 200px" align=middle>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 30px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">1</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 60px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">2</DIV>
+      <DIV 
+      style="BORDER-RIGHT: red 1px solid; BORDER-TOP: red 1px solid; DISPLAY: block; FONT-SIZE: 12px; BORDER-LEFT: red 1px solid; WIDTH: 90px; BORDER-BOTTOM: red 1px solid; BACKGROUND-COLOR: yellow; TEXT-ALIGN: center">3</DIV></TD></TR>
+  <TR>
+    <TD align=middle><I>Pilha original</I></TD>
+    <TD align=middle><I>Após inverter com <B>K</B>=2</I></TD>
+    <TD align=middle><I>Após inverter com <B>K</B>=3</I></TD>
+    <TD align=middle><I>Após inverter com 
+<B>K</B>=2</I></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab12c.c</B>) que encontre o número mínimo de inversões necessário para 
+ordenar uma pilha de panquecas. </P>
+<P align=justify>Todo "panquequeiro" que se preze sabe que qualquer pilha de 
+panquecas pode ser ordenada usando no máximo <B>2N &#8722; 3</B> inversões. Você pode 
+usar esta informação para ajudá-lo a resolver o problema. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_k1zsX_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>Cada teste será composto por diversas configurações de pilhas de 
+  panquecas. 
+  <LI>Cada linha da entrada será composta por um número inteiro positivo 
+  <B>N</B>, que representará o tamanho da pilha de panquecas, seguido por 
+  <B>N</B> números inteiros distintos, distribuídos no intervalo de <B>1</B> até 
+  <B>N</B>, representando a pilha de panquecas a ser ordenada (a primeira 
+  panqueca é a que está no topo da pilha). 
+  <LI>A última linha terá um número <B>0</B> indicando o final da entrada. 
+</LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada pilha de panquecas lida da entrada, o seu programa deverá 
+  calcular o número mínimo <B>M</B> de inversões necessário para ordernar a 
+  pilha e imprimir a seguinte mensagem: 
+  <UL>
+    <LI><TT><BIG>Numero de movimentos = M</BIG></TT> </LI></UL></LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>3 1 3 2 <BR>5 4 3 
+      2 5 1 <BR>6 6 1 5 2 4 3 <BR>7 4 3 2 1 7 6 5 <BR>8 1 2 3 4 5 6 8 7 <BR>0 
+      </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Numero de 
+      movimentos = 3<BR>Numero de movimentos = 3<BR>Numero de movimentos = 
+      5<BR>Numero de movimentos = 4<BR>Numero de movimentos = 
+  3<BR><BR></TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>3 3 1 2 <BR>5 3 4 
+      5 2 1 <BR>6 2 4 3 6 1 5 <BR>7 4 1 7 2 3 5 6 <BR>0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Numero de 
+      movimentos = 2<BR>Numero de movimentos = 2<BR>Numero de movimentos = 
+      5<BR>Numero de movimentos = 5<BR><BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 12c - Ordenando Panquecas
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+// Encontra o numero minimo de inversoes
+// necessario para ordenar as panquecas
+void pancake(int panquecas[], int n, int * minimo, int movimentos) {
+
+}
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  int * panquecas;
+  int n, i, minimo;
+  
+  // Le o numero de panquecas
+  scanf("%d", &amp;n);
+
+  // Enquanto a entrada for valida
+  while (n &gt; 0) {
+
+    panquecas = (int *) malloc(sizeof(int)*n);
+
+    // Le as panquecas
+    for (i = 0; i &lt; n; i++) {
+      scanf("%d", &amp;panquecas[i]);
+    }
+
+    // Toda pilha de panqueca pode ser ordenada com 
+    // no maximo 2n - 3 movimentos
+    minimo = 2*n - 3;
+
+    // Resolve o problema
+    pancake(panquecas, n, &amp;minimo, 0);
+
+    // Imprime a resposta
+    printf("Numero de movimentos = %d\n", minimo);
+
+    free(panquecas);
+
+    // Le outro numero de panquecas
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>16/06/2007</I></SMALL> </BODY></HTML>

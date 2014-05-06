@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_5I6J0_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 03c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 03c - Frações de Cantor</H3><B>Peso</B>: 2 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>No final do século XIX, o matemático alemão Geoge Cantor 
+forneceu evidências de que um conjunto de frações positivas <I>Q<SUP>+</SUP></I> 
+é equipotente ao conjunto de inteiros positivos <I>N</I>, significando que eles 
+são ambos infinitos, mas de mesma classe. Para justificar isto, ele exibiu um 
+mapeamento de <I>N</I> para <I>Q<SUP>+</SUP></I>. Este mapeamento é apenas um 
+percurso sobre o plano <I>N</I> x <I>N</I> que cobre todos os pares: </P>
+<CENTER><IMG title="Mapeamento de Cantor - Fonte: ACM" 
+src="enunciado_arquivos/p880a.gif"> </CENTER>
+<P align=justify>
+<P align=justify>As primeiras frações de Cantor são: </P>
+<CENTER><IMG title="Frações de Cantor - Fonte: ACM" 
+src="enunciado_arquivos/p880b.gif"> </CENTER>
+<P align=justify>Nesta tarefa você escreverá um programa em linguagem C 
+(<B>lab03c.c</B>) que calcule a i-ésima fração de Cantor. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_5I6J0_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><B>Entrada</B> 
+<P align=justify>
+<UL>
+  <LI>O programa deverá receber uma lista números inteiros positivos (um número 
+  por linha); 
+  <LI>A última linha da lista deverá ter o número <B>0</B> que indicará ao 
+  programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Para cada número <I>i</I> lido da entrada, o programa deverá imprimir a 
+  <I>i</I>-ésima fração de Cantor; 
+  <LI>O programa não precisa simplificar as frações. Por exemplo, <I>2/2</I> não 
+  deve ser escrito como <I>1</I>, <I>2/6</I> não deve ser escrito como 
+  <I>1/3</I>, etc; 
+  <LI>O número <B>0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. </LI></UL>
+<P></P><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">1<BR>2<BR>3<BR>4<BR>5<BR>6<BR>0 
+    </TD>
+    <TD 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">1/1<BR>2/1<BR>1/2<BR>3/1<BR>2/2<BR>1/3<BR>&nbsp; 
+    </TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">10<BR>20<BR>30<BR>40<BR>50<BR>60<BR>70<BR>0 
+    </TD>
+    <TD 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">1/4<BR>2/5<BR>7/2<BR>6/4<BR>6/5<BR>7/5<BR>9/4<BR>&nbsp; 
+    </TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A name=esboco><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  // Caso necassario, declarar outras variaveis inteiras
+  int n;
+
+  // Le a entrada
+  scanf("%d", &amp;n);
+
+  // Processa se n for maior que 0
+  while (n &gt; 0) {
+
+
+    // Calcula a n-esima fracao de Cantor
+
+
+    // Imprime a resposta
+
+
+    // Le uma nova entrada
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

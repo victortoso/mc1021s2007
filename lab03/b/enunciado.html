@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_MdNAA_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 03b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 03b - Caracol</H3><B>Peso</B>: 2 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Um simpático caracol está na base de um poço de 600 centímetros 
+de altura. Enquanto o sol está alto, ele consegue subir 300 centímetros mas 
+durante a noite ele dorme e se descuida escorregando 100 centímetros para baixo. 
+Além disso, conforme os dias vão passando o nosso amigo caracol começa a ficar 
+cansado e consegue subir apenas 30 centímetros a menos que no dia anterior. </P>
+<P align=justify>O problema aqui é descobrir em que dia o nosso amigo caracol 
+irá conseguir sair do poço, ou seja, o primeiro dia em que a altura total subida 
+será maior que a altura do poço. Um dia consiste em um período de sol (diurno) 
+seguido por um período de escuridão (noturno). </P>
+<P align=justify>Como podemos ver na tabela abaixo, o nosso amigo caracol 
+consegue sair do poço no terceiro dia. </P>
+<CENTER>
+<TABLE cellPadding=2 border=1>
+  <TBODY>
+  <TR style="FONT-WEIGHT: bold" align=middle>
+    <TD style="WIDTH: 50px">Dia</TD>
+    <TD style="WIDTH: 250px">Distância escalada</TD>
+    <TD style="WIDTH: 250px">Altura no final do período diurno</TD>
+    <TD style="WIDTH: 250px">Altura no final do período noturno</TD></TR>
+  <TR align=middle>
+    <TD>0</TD>
+    <TD>300</TD>
+    <TD>300</TD>
+    <TD>200</TD></TR>
+  <TR align=middle>
+    <TD>200</TD>
+    <TD>270</TD>
+    <TD>470</TD>
+    <TD>370</TD>
+  <TR>
+  <TR align=middle>
+    <TD>370</TD>
+    <TD>240</TD>
+    <TD>610</TD>
+    <TD>--</TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Neste laboratório você deverá escrever um programa em linguagem 
+C (<B>lab03b.c</B>) que generalize o problema do caracol descrito acima. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_MdNAA_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><B>Entrada</B> 
+<P align=justify>
+<UL>
+  <LI>O programa deverá receber uma lista composta por <B>4</B> números por 
+  linha. Os números significarão, respectivamente: 
+  <UL>
+    <LI><I>A</I>: Altura do poço; 
+    <LI><I>S</I>: Distância que o caracol consegue subir no primeiro dia; 
+    <LI><I>D</I>: Distância que o caracol desce durante a noite; 
+    <LI><I>C</I>: Fator de cansaço, ou seja, quanto a menos o caracol sobe dia 
+    após dia. </LI></UL>
+  <LI>O caracol pode ficar muito cansado, mas ele consegue, de dia, pelo menos 
+  se manter na mesma posição e, portanto, nunca desce o poço durante o período 
+  diurno. Isso significa que ele nunca "sobe" uma distância negativa; 
+  <LI>Como o caracol dorme durante a noite, ele não consegue impedir o 
+  escorregamento. Assim, durante a noite ele sempre desce <I>D</I> centímetros; 
+  <LI>A última linha da lista deverá ter a seqüência <B>0 0 0 0</B> que indicará 
+  ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Para cada conjunto de <B>4</B> números <I>A</I>, <I>S</I>, <I>D</I> e 
+  <I>C</I> o programa deverá indicar o número do dia em que o caracol teve 
+  sucesso (conseguiu sair do poço) ou falhou (voltou para o fundo do poço); 
+  <LI>Se o caracol teve sucesso no dia <I>X</I>, ou seja se a altura escalada 
+  for maior que a altura do poço, o programa deverá escrever: 
+  <UL>
+    <LI>Chegou ao topo no dia <I>X</I> </LI></UL>
+  <LI>Se o caracol falhou no dia <I>X</I>, ou seja se a altura escalada se 
+  tornar negativa, o programa deverá escrever: 
+  <UL>
+    <LI>Voltou ao chao no dia <I>X</I> </LI></UL>
+  <LI>O resultado de cada conjunto de <B>4</B> números <I>A</I>, <I>S</I>, 
+  <I>D</I> e <I>C</I> deverá ser impresso em uma linha; 
+  <LI>A seqüência <B>0 0 0 0</B> indica o final da entrada e, portanto, nada 
+  deve ser impresso sobre ela; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. </LI></UL>
+<P></P><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD><I>Entrada</I></TD>
+    <TD><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">10 5 1 1<BR>11 5 1 
+      1<BR>60 30 10 3<BR>10 2 1 1<BR>0 0 0 0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">Chegou ao topo no dia 
+      4<BR>Voltou ao chao no dia 16<BR>Chegou ao topo no dia 3<BR>Voltou ao chao 
+      no dia 4<BR>&nbsp; </TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">4 3 2 1<BR>9 5 4 
+      3<BR>5000 600 300 6<BR>1 1 1 1<BR>0 0 0 0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">Voltou ao chao no dia 
+      4<BR>Voltou ao chao no dia 2<BR>Chegou ao topo no dia 20<BR>Voltou ao chao 
+      no dia 2<BR>&nbsp; </TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  int altura, sobe, desce, cansa, dia, atual;
+
+  // Le a entrada
+  scanf("%d %d %d %d", &amp;altura, &amp;sobe, &amp;desce, &amp;cansa);
+
+  // Processa se a altura for maior que 0
+  while (altura &gt; 0) {
+
+    // Inicializa dia e distancia atual
+
+
+    // Calcula em quantos dias o caracol consegue
+    // subir o muro ou enquantos dias ele desiste
+
+
+    // Imprime a resposta
+    if (atual &gt; altura) {
+      printf("Chegou ao topo no dia %d\n", dia);
+    } else {
+      printf("Voltou ao chao no dia %d\n", dia);
+    }
+
+    // Le uma nova entrada
+    scanf("%d %d %d %d", &amp;altura, &amp;sobe, &amp;desce, &amp;cansa);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

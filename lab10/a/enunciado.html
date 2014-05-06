@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_y5tsi_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 10a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 10a - Júlio César</H3><B>Peso</B>: 6 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>A <B>Criptografia de César</B>, também conhecida como 
+<B>Criptografia de Troca</B> ou ainda <B>Código de César</B> é uma das mais 
+simples e conhecidas técnicas de <B>encriptação</B>. </P>
+<P align=justify>A Criptografia de César foi assim denominada após seu uso pelo 
+imperador romano Júlio César (100 a.C. - 44 a.C.) que, de acordo com Suetônio, a 
+usava com uma troca de 3 posições para proteger mensagens de significado 
+militar. Se ele tinha qualquer coisa confidencial a dizer, escrevia cifrado, 
+isto é, mudando a ordem das letras do alfabeto, e nenhuma palavra poderia ser 
+compreendida. Se alguém quisesse decifrar a mensagem e entender seu significado, 
+deveria substituir a quarta letra do alfabeto, "D", por "A", a quinta, "E", por 
+"B", e assim por diante. </P>
+<P align=justify>Embora Júlio César seja o primeiro a ser lembrado por usar este 
+esquema, outros métodos criptográficos de substituição já eram conhecidos e 
+usados anteriormente. </P>
+<P align=justify>É desconhecido o quão efetiva seria a criptografia de César 
+nesta época, mas é provável que tivesse uma razoável segurança, não apenas 
+porque muitos dos inimigos de César eram analfabetos, mas porque poucos seriam 
+capazes de considerar a utilização de criptoanálise. Assumindo que um inimigo 
+interceptasse uma mensagem, provavelmente não conseguiria entendê-la, já que não 
+existem registros daquela época de nenhuma técnica para a solução de uma simples 
+criptografia de substituição. Os primeiros registros de técnicas para quebra de 
+criptografias datam do século IX, no mundo Árabe, com a descoberta da análise de 
+freqüência. </P>
+<P align=justify>Como dito anteriormente, a Criptografia de César trata-se de 
+uma criptografia de <B>substituição</B> onde cada letra do texto é substituída 
+por outra, que é obtida por um deslocamento de tamanho fixo. Por exemplo, se 
+considerarmos um deslocamento de tamanho <B>3</B> (o mesmo usado na época por 
+Júlio César), cada uma das letras do alfabeto seriam cifradas como mostrado 
+abaixo: </P>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=5 border=0>
+  <TBODY>
+  <TR>
+    <TD><BIG><TT><I>Texto original:</I></TT></BIG></TD>
+    <TD><BIG><TT><FONT color=red>A B C D E F G H I J K L M N O P Q R S T U V W 
+      X Y Z</FONT></TT></BIG></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><BIG><TT>| | | | | | | | | | | | | | | | | | | | | | | | | 
+    |</TT></BIG></TD></TR>
+  <TR>
+    <TD><BIG><TT><I>Texto cifrado:</I></TT></BIG></TD>
+    <TD><BIG><TT><FONT color=blue>D E F G H I J K L M N O P Q R S T U V W X Y 
+      Z A B C</FONT></TT></BIG></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Este modo de criptografia também pode ser representada por 
+<B>aritmética modular</B>. Transformando as letras em números (<B>A = 0, B = 1, 
+C = 2, ...., Z = 25</B>), a <B>encriptação</B> pode ser feita de acordo com a 
+seguinte fórmula: 
+<CENTER><BIG><BIG><B>E<SUB>n</SUB>(x) = (x + n) mod 
+26</B>,</BIG></BIG></CENTER>onde <B>x</B> é o valor correspondente a letra e 
+<B>n</B> é o deslocamento. 
+<P></P>
+<P align=justify>A <B>decriptação</B> funciona de forma semelhante e é dada pela 
+seguinte fórmula: 
+<CENTER><BIG><BIG><B>D<SUB>n</SUB>(x) = (x + 26 - n) mod 
+26</B></BIG></BIG></CENTER>
+<P></P>
+<P align=justify>Sua tarefa será escrever um programa em Linguagem C 
+(<B>lab10a.c</B>) que receba, como entrada, o valor do deslocamento 
+(representado por um número inteiro não negativo) e uma frase e produza, como 
+saída, o texto cifrado segundo a <B>Criptografia de César</B>. </P>
+<P align=justify>Note que você cifrará apenas letras. Números e outros símbolos 
+devem permanecer como estão no texto. Letras maíusculas são cifradas em letras 
+maíusculas e letras minúsculas são cifradas em letras mínusculas (veja os <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_y5tsi_&amp;n=enunc.html&amp;user=mc102wy&amp;#exemplos">exemplos</A>). 
+</P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_y5tsi_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho, incluir comentários 
+pertinentes e remover os comentários em letras maiúsculas. </P>
+<P align=justify><B>Observação importante:</B> Neste laboratório é expressamente 
+proibida a utilização da biblioteca <B>string.h</B>. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por apenas uma linha no seguinte formato: 
+  <UL>
+    <LI><B>n</B> # <B>&lt;frase&gt;</B> 
+    <LI><B>n</B> é um número inteiro não negativo que indica o deslocamento 
+    <LI><B>&lt;frase&gt;</B> é uma seqüência de caracteres (<I>letras, números, 
+    espaços e caracteres de pontuação</I>) terminada por um ponto final 
+    <B>"."</B> (<I>não existem pontos finais no meio da frase</I>). 
+    <LI><B>&lt;frase&gt;</B> terá tamanho máximo de <B>200</B> caracteres 
+    (incluindo o ponto final). </LI></UL></LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>O programa deverá imprimir na saída padrão o resultado da <B>Criptografia 
+  de César</B> utilizando o deslocamento <B>n</B> sobre <B>&lt;frase&gt;</B>. 
+  </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+<A name=exemplos></A>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>4 # Jogada 
+      ensaiada numero 3: Rogerio finge que chuta direto para o gol, mas acaba 
+      tocando para quem vem de tras bater. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Nskehe irwemehe 
+      ryqivs 3: Vskivms jmrki uyi glyxe hmvixs teve s ksp, qew egefe xsgerhs 
+      teve uyiq ziq hi xvew fexiv. </TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>0 # Texto claro: 
+      apos a criptografia o texto continuara legivel. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Texto claro: apos 
+      a criptografia o texto continuara legivel. </TT></TD></TR><!-- Exemplo 3 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>3 # Ataque pelos 
+      flancos: lateral vai ate a linha de fundo e cruza para o meio da area. 
+      </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Dwdtxh shorv 
+      iodqfrv: odwhudo ydl dwh d olqkd gh ixqgr h fuxcd sdud r phlr gd duhd. 
+      </TT></TD><!-- Exemplo 4 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>123456789 # E 
+      agora Jose? Como sera que ficara esta frase? Dificil prever. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>F bhpsb Kptf? Dpnp 
+      tfsb rvf gjdbsb ftub gsbtf? Ejgjdjm qsfwfs. </TT></TD><!-- Exemplo 5 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>52 # Outro texto 
+      claro. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Outro texto claro. 
+      </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// PROIBIDO USAR QUALQUER OUTRA BIBLIOTECA
+#include &lt;stdio.h&gt;
+
+
+// Criptografa uma frase
+void cesar(int numero, char frase[]) {
+
+
+}
+
+// Le uma frase, caracter a caracter, ate encontrar um ponto final
+void leFrase(char frase[]) {
+
+
+}
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  char frase[201];
+  int numero;
+
+  scanf("%d # ", &amp;numero);
+
+  leFrase(frase);
+
+  cesar(numero, frase);
+
+  printf("%s\n", frase);
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>26/05/2007</I></SMALL> </BODY></HTML>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_YBEGr_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 05a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 05a - Onde está o tesouro?</H3><B>Peso</B>: 3 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Encontrar um tesouro é muito simples! Tudo o que você precisa é 
+um mapa que indique onde ele está. Bom, isso é verdade se você não tiver a 
+bússola mágica do <I>Capitão Jack Sparrow</I> que indica a direção de qualquer 
+coisa que você deseje. </P>
+<P align=justify>Os piratas do Caribe, famosos por aterrorizarem outros barcos e 
+lutarem com mortos-vivos com caras de molusco, possuíam enormes tesouros e mapas 
+muito elaborados. Estes mapas normalmente eram lidos da seguinte maneira: 
+"Comece na palmeira solitária. Ande três passos em direção à floresta. Vire para 
+a esquerda e ande 22 passos. Passe atrás da grande rocha e ande 113 passos até a 
+pequena fonte de água. ... blá, blá, blá, blá ... Finalmente, ande 5 passos para 
+o Norte e cave para encontrar o baú." </P>
+<P align=justify>Mapas detalhados como os dos piratas eram muito interessantes 
+e, com certeza, tinham um forte potencial turístico já que você era obrigado a 
+dar volta pela ilha toda e observar os pontos de referências. </P>
+<P align=justify>Um modo muito mais rápido e prático de se indicar as direções é 
+através da utilização dos 4 pontos cardeais (<B>N</B> - Norte, <B>S</B> - Sul, 
+<B>E</B> - Leste e <B>W</B> - Oeste). </P>
+<CENTER>
+<TABLE cellPadding=5 border=0>
+  <TBODY>
+  <TR>
+    <TD><IMG title="Pontos cardeais" 
+      src="enunciado_arquivos/pontoscardeais.gif"></TD>
+    <TD><IMG title="Mapa exemplo" 
+  src="enunciado_arquivos/mapa.gif"></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Por exemplo, o caminho para o tesouro indicado no mapa acima 
+poderia ser descrito como: "Ande três passos para o Norte. Ande um passo para o 
+Leste. Ande 1 passo para o Norte. Ande três passos para o Leste. Ande dois 
+passos para o Sul. Ande um passo para o Oeste." </P>
+<P align=justify>Se ao invés de utilizar o mapa acima, você tivesse a bússola do 
+pirata <I>Capitão Jack Sparrow</I>, você poderia ir direto da origem até o 
+tesouro e andar a distância de aproximadamente 3,6 passos. </P>
+<P align=justify>Sua tarefa é escrever um programa em linguagem C 
+(<B>lab05a.c</B>) que, dado um mapa de pirata (seqüência de passos) descubra as 
+coordenadas no espaço em que o tesouro se encontra e indique a distância que o 
+<I>Capitão Jack Sparrow</I> andaria se estivesse sóbrio. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_YBEGr_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>O programa deverá ler um mapa (seqüência de passos no seguinte formato: 
+  <UL>
+    <LI><I>A<SUB>0</SUB>&nbsp;&nbsp;P<SUB>0</SUB>&nbsp;&nbsp;A<SUB>1</SUB>&nbsp;&nbsp;P<SUB>1</SUB>&nbsp;&nbsp;A<SUB>2</SUB>&nbsp;&nbsp;P<SUB>2</SUB>&nbsp;&nbsp;...&nbsp;&nbsp;A<SUB>N</SUB>&nbsp;&nbsp;P<SUB>N</SUB>&nbsp;&nbsp;X</I> 
+
+    <LI><I>A<SUB>i</SUB></I> é um carácter que representa um dos quatro pontos 
+    cardeais (<B>N</B>, <B>S</B>, <B>E</B> e <B>W</B>) 
+    <LI><I>P<SUB>i</SUB></I> é um número real positivo que indica o número de 
+    passos dados na direção definida por <I>A<SUB>i</SUB></I> 
+    <LI><I>X</I> indica o local onde está o tesouro e, portanto, o final do mapa 
+    </LI></UL>
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>O programa deverá descobrir a coordenada (<I>X, Y</I>) do tesouro e 
+  calcular a distância <I>D</I> da origem até o tesouro e imprimir no seguinte 
+  formato: 
+  <UL>Coordenadas: (<I>X</I>,<I>Y</I>) <BR>Distancia: <I>D</I> </UL>
+  <LI><I>X</I>,<I>Y</I> e <I>D</I> deve ser escritos com 3 casas de precisão. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>N 3 E 1 N 1 E 3 S 
+      2 W 1 X<BR>&nbsp; </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Coordenadas: 
+      (3.000,2.000)<BR>Distancia: 3.606 </TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>N 10 S 15 
+      X<BR>&nbsp; </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Coordenadas: 
+      (0.000,-5.000)<BR>Distancia: 5.000 </TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>N 10.5 S 20.1 W 
+      5.4 N 2 W 34.32 E 5.55 X<BR>&nbsp; </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Coordenadas: 
+      (-34.170,-7.600)<BR>Distancia: 35.005 </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+  double x, y, distancia;
+  char action;
+  double move;
+
+  // Le o primeiro movimento
+  scanf("%c", &amp;action);
+
+  // Enquanto nao encontrou o tesouro
+  while (action != 'X') {
+
+    // Le a distancia a se locomover
+    scanf(" %lf", &amp;move);
+
+
+
+
+    // Le o proximo movimento
+    scanf(" %c", &amp;action);
+  }
+
+
+
+
+  // Imprime a resposta
+  printf("Coordenadas: (%0.3lf,%0.3lf)\n", x, y);
+  printf("Distancia: %0.3lf\n", distancia);
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>14/04/2007</I></SMALL> </BODY></HTML>

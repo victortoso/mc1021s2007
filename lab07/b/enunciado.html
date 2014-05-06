@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_qsrQY_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 07b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 07b - Caça-Palavras - Parte I</H3><B>Peso</B>: 5 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Neste laboratório sua tarefa é solucionar o popular passatempo 
+conhecido como "Caça-Palavras". </P>
+<P align=justify>O problema pode ser definido da seguinte forma. Dada uma matriz 
+de caracteres (letras ou números) e uma lista de palavras (letras e números são 
+considerados caracteres válidos para palavras), determinar se as palavras podem 
+ser encontradas na matriz. Uma palavra pode ser escrita em oito sentidos 
+diferentes (N, NE, L, SE, S, SO, O, NO). Para cada palavra, deseja-se saber 
+todas as posições iniciais onde ela pode ser encontrada (caso exista alguma). 
+</P>
+<P align=justify>Escreva um programa em linguagem C (<B>lab07b.c</B>) que 
+resolve o problema proposto acima. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_qsrQY_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada poderá conter vários conjuntos de teste. 
+  <LI>Cada conjunto de teste começará com uma trinca de inteiros positivos 
+  <I>L</I>, <I>C</I> e <I>P</I> tais que 0 &#8804; <I>L, C, P</I> &#8804; 50</I>. Estes 
+  valores significam: 
+  <UL>
+    <LI><I>L</I>: Número de linhas da matriz de caracteres 
+    <LI><I>C</I>: Número de colunas da matriz de caracteres 
+    <LI><I>P</I>: Número de palavras a serem procuradas na matriz </LI></UL>
+  <LI>Após esta trinca de números, a entrada fornecerá a matriz de caracteres 
+  (<I>L</I> linhas e <I>C</I> Colunas). 
+  <LI>A última informação de cada conjunto de teste é a lista de <I>P</I> 
+  palavras a serem procuradas na matriz. Cada palavra terá no mínimo 1 e no 
+  máximo 50 caracteres. 
+  <LI>A última linha da entrada conterá a trinca <B>0 0 0</B> indicando o seu 
+  final. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Em cada conjunto de teste, para cada umas das <I>P</I> palavras do 
+  conjunto, caso a palavra possa ser encontrada na matriz, deverá ser impressa a 
+  seguinte mensagem para cada uma das posições iniciais onde a palavra pode ser 
+  lida: 
+  <UL>
+    <LI><I>palavra</I>: linha <I>X</I>, coluna <I>Y</I> </LI></UL>Onde 
+  <I>palavra</I> é a palavra em questão, <I>X</I> é o número da linha (1 &#8804; 
+  <I>X</I> &#8804;<I>L</I>) e <I>Y</I> é o número da coluna (1 &#8804; <I>Y</I> &#8804;<I>C</I>). 
+  <LI>Caso a palavra não possa ser localiza em nenhuma posição da matriz, a 
+  seguinte mensagem deve ser impressa: 
+  <UL>
+    <LI><I>palavra</I>: nao encontrada </LI></UL>
+  <LI>Ao final de cada conjunto de teste deve ser impressa a seguinte mensagem: 
+  <UL>
+    <LI>------ FIM ------ </LI></UL>
+  <LI>Após esta mensagem, uma linha em branco deve ser impressa. 
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>8 11 
+      6<BR><BR>abcdefghigg<BR>hebkwaldork<BR>ftyawaldorm<BR>ftsimrlqsrc<BR>byoarbedeyv<BR>klcbqwikomk<BR>strebgadhrb<BR>yuiqlxcnbjf<BR><BR>waldorf<BR>bambi<BR>betty<BR>paralelepipedo<BR>dagbert<BR>frod<BR><BR>20 
+      20 
+      10<BR><BR>QWSPILAATIRAGRAMYKEI<BR>AGTRCLQAXLPOIJLFVBUQ<BR>TQTKAZXVMRWALEMAPKCW<BR>LIEACNKAZXKPOTPIZCEO<BR>FGKLSTCBTROPICALBLBC<BR>JEWHJEEWSMLPOEKORORA<BR>LUPQWRNJOAAGJKMUSJAE<BR>KRQEIOLOAOQPRTVILCBZ<BR>QOPUCAJSPPOUTMTSLPSF<BR>LPOUYTRFGMMLKIUISXSW<BR>WAHCPOIYTGAKLMNAHBVA<BR>EIAKHPLBGSMCLOGNGJML<BR>LDTIKENVCSWQAZUAOEAL<BR>HOPLPGEJKMNUTIIORMNC<BR>LOIUFTGSQACAXMOPBEIO<BR>QOASDHOPEPNBUYUYOBXB<BR>IONIAELOJHSWASMOUTRK<BR>HPOIYTJPLNAQWDRIBITG<BR>LPOINUYMRTEMPTMLMNBO<BR>PAFCOPLHAVAIANALBPFS<BR><BR>MARGARITA<BR>ALEMA<BR>BARBECUE<BR>TROPICAL<BR>SUPREMA<BR>LOUISIANA<BR>CHEESEHAM<BR>EUROPA<BR>HAVAIANA<BR>CAMPONESA<BR><BR>0 
+      0 0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>waldorf: linha 2, 
+      coluna 5<BR>bambi: linha 2, coluna 3<BR>betty: linha 1, coluna 
+      2<BR>paralelepipedo: não encontrada<BR>dagbert: linha 7, coluna 8<BR>frod: 
+      linha 8, coluna 11<BR>------ FIM ------<BR><BR>MARGARITA: linha 1, coluna 
+      16<BR>ALEMA: linha 3, coluna 12<BR>BARBECUE: linha 8, coluna 
+      19<BR>TROPICAL: linha 5, coluna 9<BR>SUPREMA: linha 17, coluna 
+      14<BR>LOUISIANA: linha 5, coluna 16<BR>CHEESEHAM: linha 11, coluna 
+      4<BR>EUROPA: linha 6, coluna 2<BR>HAVAIANA: linha 20, coluna 
+      8<BR>CAMPONESA: linha 12, coluna 12<BR>------ FIM 
+------<BR><BR></TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>8 11 
+      5<BR><BR>abcdefghigg<BR>hebkwaldork<BR>frodorfdori<BR>ftsimrlqsrb<BR>byoardedeym<BR>klcbowikoma<BR>strrbgadhrb<BR>yufqlxcnbjf<BR><BR>waldorf<BR>bambi<BR>betty<BR>dagbert<BR>frod<BR><BR>13 
+      15 
+      12<BR><BR>cGtrFHJuJiKhelT<BR>nygsrefhimWCdft<BR>BJyoztHopjSdrFg<BR>CDDbrsfTGeuGkii<BR>GtfeRexEdvyuiui<BR>vfTYTRcEvhjBSIO<BR>dERERxTRtvTYSyu<BR>cyTovabUInnUIni<BR>RTcRtTYvYveUBUb<BR>WESUWEzERxcCRcv<BR>TrcTRCtyvBuioui<BR>RxTRcTYvBnionni<BR>YCFTYcyuvUuihII<BR><BR>TatU<BR>tatu<BR>kiss<BR>kiSS<BR>TEco<BR>tiCO<BR>i<BR>A<BR>inocente<BR>InoCentE<BR>sobe<BR>deSCe<BR><BR>0 
+      0 0<BR><BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>waldorf: não 
+      encontrada<BR>bambi: linha 7, coluna 11<BR>betty: não 
+      encontrada<BR>dagbert: não encontrada<BR>frod: linha 3, coluna 1<BR>frod: 
+      linha 3, coluna 7<BR>frod: linha 8, coluna 3<BR>frod: linha 8, coluna 
+      11<BR>------ FIM ------<BR><BR>TatU: linha 7, coluna 7<BR>tatu: não 
+      encontrada<BR>kiss: não encontrada<BR>kiSS: linha 4, coluna 13<BR>TEco: 
+      linha 11, coluna 1<BR>tiCO: não encontrada<BR>i: linha 1, coluna 10<BR>i: 
+      linha 2, coluna 9<BR>i: linha 4, coluna 14<BR>i: linha 4, coluna 15<BR>i: 
+      linha 5, coluna 13<BR>i: linha 5, coluna 15<BR>i: linha 8, coluna 15<BR>i: 
+      linha 11, coluna 12<BR>i: linha 11, coluna 15<BR>i: linha 12, coluna 
+      11<BR>i: linha 12, coluna 15<BR>i: linha 13, coluna 12<BR>A: não 
+      encontrada<BR>inocente: não encontrada<BR>InoCentE: linha 13, coluna 
+      15<BR>sobe: linha 2, coluna 4<BR>deSCe: linha 5, coluna 9<BR>------ FIM 
+      ------<BR><BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+  char matriz[50][51];
+  int linhas, colunas, palavras, i;
+
+  // Le uma entrada
+  scanf("%d %d %d", &amp;linhas, &amp;colunas, &amp;palavras);
+
+  // Enquanto a entrada for valida
+  while ((linhas &gt; 0) &amp;&amp; (colunas &gt; 0) &amp;&amp; (palavras &gt; 0)) {
+
+    // Le o matriz
+    for(i = 0; i &lt; linhas; i++) {
+      scanf("%s", matriz[i]);
+    }
+
+    // Procura as palavras
+
+
+
+    // Le uma nova entrada
+    scanf("%d %d %d", &amp;linhas, &amp;colunas, &amp;palavras);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>05/05/2007</I></SMALL> </BODY></HTML>

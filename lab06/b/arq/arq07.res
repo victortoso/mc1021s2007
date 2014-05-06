@@ -1,0 +1,99 @@
+Posicao 1: 99.27% de chance de sobrevivencia
+Posicao 2: 99.60% de chance de sobrevivencia
+Posicao 3: 99.81% de chance de sobrevivencia
+Posicao 4: 99.25% de chance de sobrevivencia
+Posicao 5: 99.82% de chance de sobrevivencia
+Posicao 6: 99.74% de chance de sobrevivencia
+Posicao 7: 99.72% de chance de sobrevivencia
+Posicao 8: 99.59% de chance de sobrevivencia
+Posicao 9: 99.43% de chance de sobrevivencia
+Posicao 10: 99.70% de chance de sobrevivencia
+
+Posicao 1: 93.47% de chance de sobrevivencia
+Posicao 2: 96.40% de chance de sobrevivencia
+Posicao 3: 98.33% de chance de sobrevivencia
+Posicao 4: 93.24% de chance de sobrevivencia
+Posicao 5: 98.39% de chance de sobrevivencia
+Posicao 6: 97.62% de chance de sobrevivencia
+Posicao 7: 97.49% de chance de sobrevivencia
+Posicao 8: 96.31% de chance de sobrevivencia
+Posicao 9: 94.84% de chance de sobrevivencia
+Posicao 10: 97.29% de chance de sobrevivencia
+
+Posicao 1: 81.86% de chance de sobrevivencia
+Posicao 2: 90.00% de chance de sobrevivencia
+Posicao 3: 95.35% de chance de sobrevivencia
+Posicao 4: 81.22% de chance de sobrevivencia
+Posicao 5: 95.52% de chance de sobrevivencia
+Posicao 6: 93.38% de chance de sobrevivencia
+Posicao 7: 93.04% de chance de sobrevivencia
+Posicao 8: 89.76% de chance de sobrevivencia
+Posicao 9: 85.67% de chance de sobrevivencia
+Posicao 10: 92.46% de chance de sobrevivencia
+
+Posicao 1: 64.44% de chance de sobrevivencia
+Posicao 2: 80.40% de chance de sobrevivencia
+Posicao 3: 90.89% de chance de sobrevivencia
+Posicao 4: 63.19% de chance de sobrevivencia
+Posicao 5: 91.21% de chance de sobrevivencia
+Posicao 6: 87.02% de chance de sobrevivencia
+Posicao 7: 86.36% de chance de sobrevivencia
+Posicao 8: 79.92% de chance de sobrevivencia
+Posicao 9: 71.90% de chance de sobrevivencia
+Posicao 10: 85.23% de chance de sobrevivencia
+
+Posicao 1: 41.22% de chance de sobrevivencia
+Posicao 2: 67.60% de chance de sobrevivencia
+Posicao 3: 84.93% de chance de sobrevivencia
+Posicao 4: 39.15% de chance de sobrevivencia
+Posicao 5: 85.47% de chance de sobrevivencia
+Posicao 6: 78.54% de chance de sobrevivencia
+Posicao 7: 77.45% de chance de sobrevivencia
+Posicao 8: 66.81% de chance de sobrevivencia
+Posicao 9: 53.56% de chance de sobrevivencia
+Posicao 10: 75.58% de chance de sobrevivencia
+
+Posicao 1: 12.19% de chance de sobrevivencia
+Posicao 2: 51.60% de chance de sobrevivencia
+Posicao 3: 77.49% de chance de sobrevivencia
+Posicao 4: 9.10% de chance de sobrevivencia
+Posicao 5: 78.30% de chance de sobrevivencia
+Posicao 6: 67.94% de chance de sobrevivencia
+Posicao 7: 66.31% de chance de sobrevivencia
+Posicao 8: 50.42% de chance de sobrevivencia
+Posicao 9: 30.62% de chance de sobrevivencia
+Posicao 10: 63.52% de chance de sobrevivencia
+
+Posicao 1: 0.00% de chance de sobrevivencia
+Posicao 2: 32.40% de chance de sobrevivencia
+Posicao 3: 68.57% de chance de sobrevivencia
+Posicao 4: 0.00% de chance de sobrevivencia
+Posicao 5: 69.69% de chance de sobrevivencia
+Posicao 6: 55.22% de chance de sobrevivencia
+Posicao 7: 52.95% de chance de sobrevivencia
+Posicao 8: 30.75% de chance de sobrevivencia
+Posicao 9: 3.10% de chance de sobrevivencia
+Posicao 10: 49.05% de chance de sobrevivencia
+
+Posicao 1: 0.00% de chance de sobrevivencia
+Posicao 2: 10.00% de chance de sobrevivencia
+Posicao 3: 58.15% de chance de sobrevivencia
+Posicao 4: 0.00% de chance de sobrevivencia
+Posicao 5: 59.65% de chance de sobrevivencia
+Posicao 6: 40.38% de chance de sobrevivencia
+Posicao 7: 37.36% de chance de sobrevivencia
+Posicao 8: 7.80% de chance de sobrevivencia
+Posicao 9: 0.00% de chance de sobrevivencia
+Posicao 10: 32.17% de chance de sobrevivencia
+
+Posicao 1: 0.00% de chance de sobrevivencia
+Posicao 2: 0.00% de chance de sobrevivencia
+Posicao 3: 46.25% de chance de sobrevivencia
+Posicao 4: 0.00% de chance de sobrevivencia
+Posicao 5: 48.17% de chance de sobrevivencia
+Posicao 6: 23.42% de chance de sobrevivencia
+Posicao 7: 19.54% de chance de sobrevivencia
+Posicao 8: 0.00% de chance de sobrevivencia
+Posicao 9: 0.00% de chance de sobrevivencia
+Posicao 10: 12.88% de chance de sobrevivencia
+

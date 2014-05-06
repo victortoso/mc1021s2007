@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_FOB8j_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 02c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 02c - Möbius</H3><B>Peso</B>: 1 
+<P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+
+<P></P>
+<P align=justify>A função clássica Möbius é uma importante função multiplicativa 
+nas áreas de Teoria dos Números e Combinatória. Seu nome foi dado em homenagem 
+ao matemático alemão August Ferdinand Möbius que a introduziu em 
+1831.<BR><BR>Esta função, é aplicada sobre números naturais e o seu resultado 
+depende da decomposição deles em seus fatores primos. <BR><BR>Seja <I>N</I> um 
+número natural: 
+<UL>
+  <LI>Möbius(<I>N</I>) = 0, se <I>N</I> possui ao menos um fator primo que 
+  apareça pelo menos duas vezes (Exemplo: Möbius(40) = 0, pois 40 = 2*2*2*5); 
+  <LI>Möbius(<I>N</I>) = 1, se <I>N</I> possui um número <B>par</B> de fatores 
+  primos sendo que nenhum deles se repete (Exemplo: Möbius(6) = 1, pois 6 = 
+  2*3); 
+  <LI>Möbius(<I>N</I>) = -1, se <I>N</I> possui um número <B>ímpar</B> de 
+  fatores primos sendo que nenhum deles se repete (Exemplo: Möbius(30) = 1, pois 
+  30 = 2*3*5). </LI></UL>Escreva um programa em linguagem C (<B>lab02c.c</B>) que 
+calcule o valor da função Möbius para uma lista de números inteiros maiores ou 
+iguais a 2.<BR>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_FOB8j_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. 
+<P></P><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de números inteiros positivos (um 
+  número por linha) menores que 1000000; 
+  <LI>O último elemento da lista deverá ser um número inteiro menor ou igual a 1 
+  que indicará ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Seja <I>N</I> um número pertencente à lista de entrada e <I>m</I> o 
+  resultado da função Möbius(<I>N</I>). O programa deverá imprimir o resultado 
+  do cálculo da função Möbius(<I>N</I>) no seguinte formato: 
+  <UL>
+    <LI>Mobius(<I>N</I>) = <I>m</I> </LI></UL>
+  <LI>O resultado de cada número deverá ser impresso em uma linha; 
+  <LI>O número inteiro menor ou igual a 1 presente na lista indica o final da 
+  entrada e, portanto, nada deve ser impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD width=150><I>Entrada</I></TD>
+    <TD width=150><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-LEFT: 50px">12<BR>21<BR>223<BR>2007<BR>2<BR>1</TD>
+    <TD style="PADDING-LEFT: 30px">Mobius(12) = 0<BR>Mobius(21) = 
+      1<BR>Mobius(223) = -1<BR>Mobius(2007) = 0<BR>Mobius(2) = 
+-1<BR>&nbsp;</TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD 
+      style="PADDING-LEFT: 50px">103<BR>104<BR>105<BR>106<BR>107<BR>108<BR>109<BR>110<BR>-10</TD>
+    <TD style="PADDING-LEFT: 30px">Mobius(103) = -1<BR>Mobius(104) = 
+      0<BR>Mobius(105) = -1<BR>Mobius(106) = 1<BR>Mobius(107) = 
+      -1<BR>Mobius(108) = 0<BR>Mobius(109) = -1<BR>Mobius(110) = 
+  -1<BR>&nbsp;</TD></TR></TBODY></TABLE><BR><BR><B>Esbo&amp;ccedi;o</B><BR><A 
+name=esboco><PRE>// Incluir cabecalho padrao
+#include &lt;stdio.h&gt;
+
+int main() {
+  // Se necessario, declarar outras variaveis inteiras
+  int n;
+
+  // Le um numero inteiro
+  scanf("%d", &amp;n);
+
+  // Processa se o numero for maior que 1
+  while(n &gt; 1) {
+
+    printf("Mobius(%d) = ", n);
+
+    // Executa a fatoracao do numero
+
+
+    // Apos a fatoracao, imprime o valor Mobius (-1, 0 ou 1)
+    // Por exemplo:
+    printf("1\n");
+
+    // Le outro numero inteiro
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

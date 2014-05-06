@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_601sv_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 06a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 06a - Rio 2007 - O Pan do Brasil - Parte I</H3><B>Peso</B>: 3 
+
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Como todos sabem este ano teremos os <B>XV Jogos 
+Pan-americanos</B> que serão realizados entre <B>13</B> e <B>29</B> de 
+<B>Julho</B> na cidade maravilhosa, o <B>Rio de Janeiro</B>. </P>
+<P align=justify>Faltam, portanto, apenas <B>77</B> dias para o início das 
+competições. Contudo, como todos nós sabemos, <B>atrasos</B> nos cronogramas 
+ocorreram e a comissão organizadora trabalha a todo o vapor para conseguir 
+concluir as obras das instalações onde serão realizados os jogos. </P>
+<P align=justify>Algumas obras, apesar de inacabadas já foram até inauguradas. 
+Vejamos o exemplo do novo e moderníssimo <B>Parque Aquático</B> construído 
+dentro do <B>Autódromo Nelson Piquet</B>. Uma festa pomposa, com presença de 
+prefeitos, governadores, deputados e dirigentes esportivos, inaugurou a imensa 
+<B>piscina olímpica</B>. Tudo estaria perfeito se não fosse um pequeno 
+detalhe... a piscina não tem uma gota de água! Na verdade ela ainda nem sequer 
+recebeu os ladrilhos... </P>
+<P align=justify>Para alegria da comissão, as prelimares de natação só começam 
+no dia <B>16</B> de <B>Julho</B>. Assim, temos <B>80</B> dias de prazo para 
+concluir a obra. </P>
+<P align=justify>Porém, <B>tempo</B> não é o único problema da comissão 
+organizadora. Ela tem que se preocupar com o <B>custo da obra</B>. Para não 
+estourar o orçamento, já superfaturado, a comissão deve escolher conjuntos de 
+ladrilhos que <B>minimizem</B> o custo. Ela possui à sua disposição ladrilhos de 
+<B>3</B> tamanhos diferentes: <B>30 x 30 cm</B>, <B>10 x 10 cm</B> e <B>05 x 05 
+cm</B> que custam, respectivamente, <B>R$ 2,00</B>, <B>R$ 0,30</B> e <B>R$ 
+0,10</B> a unidade. Para evitar o desperdício de material, apenas ladrilhos 
+<B>inteiros</B> podem ser utilizados no revestimento da piscina. </P>
+<P align=justify>Você que é <B>brasileiro</B> e não desiste <B>nunca</B>, 
+motivado pela vontade de ver os jogos acontecerem sem problemas, se alistou como 
+voluntário para resolver este problema de otimização. </P>
+<P align=justify>Sua tarefa será escrever um programa em linguagem C 
+(<B>lab06a.c</B>) que produza para a comissão organizadora dos <B>XV Jogos 
+Pan-americanos</B> a solução do problema de otimização proposto acima. Note que, 
+para isso você pode misturar os tipos de ladrilhos para cobrir cada lado da 
+piscina. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_601sv_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por uma lista de trincas de números inteiros 
+  positivos (<I>L</I>, <I>C</I> e <I>P</I>). 
+  <UL>
+    <LI><I>L</I> = Largura da piscina em centímetros 
+    <LI><I>C</I> = Comprimento da piscina em centímetros 
+    <LI><I>P</I> = Profundidade da piscina em centímetros </LI></UL>
+  <LI><I>L</I>, <I>C</I> e <I>P</I> serão <B>múltiplos</B> de <B>5</B>. Isso 
+  significa que sempre será possível ladrilhar a piscina com ladrilhos inteiros. 
+
+  <LI>A última linha da entrada conterá a trinca <B>0 0 0</B> indicando o seu 
+  final. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada trinca <I>L</I>, <I>C</I> e <I>P</I> lida da entrada, o programa 
+  deverá calcular o valor <I>V</I> que indica o custo mínimo em Reais para se 
+  ladrilhar a piscina definida pelas dimensões lidas. 
+  <LI>Este valor <I>V</I> deverá ser impresso no seguinte formato: 
+  <UL>
+    <LI>Preco minimo para ladrilhar a piscina: R$<I>V</I> </LI></UL>
+  <LI><I>V</I> deverá ter duas casas decimais de precisão 
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. 
+  <LI>A saída deverá ser escrita na saída padrão. </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>300 400 100<BR>300 
+      300 90<BR>1250 1250 160<BR>300 300 100<BR>0 0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Preco minimo para 
+      ladrilhar a piscina: R$592.40<BR>Preco minimo para ladrilhar a piscina: 
+      R$440.00<BR>Preco minimo para ladrilhar a piscina: R$5336.80<BR>Preco 
+      minimo para ladrilhar a piscina: R$476.00<BR>&nbsp; </TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>30 30 30<BR>10 10 
+      10<BR>5 5 5<BR>30 10 5<BR>25 15 5<BR>0 0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Preco minimo para 
+      ladrilhar a piscina: R$10.00<BR>Preco minimo para ladrilhar a piscina: 
+      R$1.50<BR>Preco minimo para ladrilhar a piscina: R$0.50<BR>Preco minimo 
+      para ladrilhar a piscina: R$2.50<BR>Preco minimo para ladrilhar a piscina: 
+      R$2.90<BR>&nbsp; </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>28/04/2007</I></SMALL> </BODY></HTML>

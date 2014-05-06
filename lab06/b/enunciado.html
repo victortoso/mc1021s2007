@@ -1,0 +1,317 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_F6SyC_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 06b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 06b - Resgate em Cáprica</H3><B>Peso</B>: 4 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify><!-- 
+<table>
+<tr><td>
+
+<i> Prologue:
+
+<br>The Cylons were created by Man.
+<br>They were created to make life easier on the Twelve Colonies.
+<br>And then the day came when the Cylons decided to kill their masters.
+<br>After a long and bloody war, an armistice was declared.
+<br>The Cylons left for another world to call their own.
+<br>A remote space station was built, where Cylon and Human 
+<br>could meet and maintain diplomatic relations.
+<br>Every year, the Colonials send an officer.
+<br>The Cylons send no one.
+<br>No one has seen or heard from the Cylons in over forty years. 
+
+</i>
+
+<td>
+--><I>Prólogo: 
+
+<P>Os Cilônios foram criados pelos Humanos. <BR>Eles foram projetados para 
+facilitar a vida nas Doze Colônias. <BR>E então chegou o dia em que os Cilônios 
+decidiram eliminar seus mestres. <BR>Depois de uma longa e sangrenta guerra, um 
+armistício foi declarado. <BR>Os Cilônios foram para um outro planeta, um que 
+eles podiam chamar de seu. <BR>Uma remota estação espacial foi construída, onde 
+Cilônios e Humanos <BR>poderiam se encontrar para manter relações diplomáticas. 
+<BR>Todo ano, os Humanos enviavam um oficial colonial. <BR>Os Cilônios não 
+enviavam ninguém. <BR>Ninguém viu ou ouviu falar dos Cilônios por quarenta anos. 
+</I>
+<P align=justify><B>Planeta Cáprica</B>, capital das <B>Doze Colônias</B>. Sem o 
+conhecimento dos <B>Humanos</B>, os <B>Cilônios</B> evoluíram e tornaram-se 
+<B>humanóides</B>. Assim, eles conseguiram se infiltrar em Cáprica e sabotaram o 
+<B>sistema de defesa</B> das colônias. </P>
+<P align=justify>O que se seguiu foi inesparado e arrasador. Um 
+<B>fulminante</B> ataque cilônio de <B>bombas</B> termo-nucleares contra as Doze 
+Colônias. </P>
+<P align=justify><B>Poucos</B> sobreviveram ao massacre, principalmente aqueles 
+que no momento dos ataques estavam em trânsito entre as colônias. Eles se 
+reuniram e agora formam um pequena frota de cerca de 50 naves. A primeira 
+contagem oficial indica que a raça humana foi <B>reduzida</B> a 47874 pessoas. 
+Não se sabe se há <B>sobreviventes</B> nas colônias. </P>
+<P align=justify>Após dois anos fugindo dos Cilônios pelo Espaço, a frota 
+colonial está planejando uma <B>missão de resgate</B> em Cáprica. </P>
+<P align=justify>A frota colonial possui a <B>localização exata</B> e a 
+<B>potência</B> de cada uma das bombas detonadas na superfície de Cáprica. </P>
+<P align=justify>Toda bomba possui uma <B>potência nominal</B> que indica qual a 
+<B>distância máxima</B> em relação ao <B>ponto de detonação</B> da bomba onde há 
+garantias de <B>100% de destruição</B>. A porcentagem de destruição causada 
+pelas bombas termo-nucleares usadas pelos Cilônios, para <B>distâncias 
+maiores</B> que a sua potência nominal, pode ser determinada pela seguinte 
+fórmula: </P>
+<CENTER>
+<TABLE cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=center align=right rowSpan=2><I>E</I> = </TD>
+    <TD vAlign=bottom align=middle><I>100%</I></TD></TR>
+  <TR>
+    <TD style="BORDER-TOP: black 1px solid" vAlign=top align=middle>(D / P) 
+      <SUP>2</SUP> </TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=justify>Onde <I>E</I> é o efeito de destruição da bomba (em 
+porcentagem), <I>D</I> é a distância em relação ao local de detonação e <I>P</I> 
+é a potência nominal da bomba. </P>
+<P align=justify>Por exemplo, a tabela abaixo indica a destruição efetiva, dadas 
+certas distâncias em relação ao ponto de detonação de uma bomba de potência 
+nominal de 100km. </P>
+<CENTER>
+<TABLE cellPadding=2 border=1>
+  <TBODY>
+  <TR>
+    <TD>Distância (em km) 
+    <TD>25 
+    <TD>50 
+    <TD>100 
+    <TD>125 
+    <TD>150 
+    <TD>175 
+    <TD>200 
+    <TD>300 
+    <TD>400 
+    <TD>800 
+    <TD>1000 
+  <TR>
+    <TD>Destruição efetiva 
+    <TD>100.00% 
+    <TD>100.00% 
+    <TD>100.00% 
+    <TD>64.00% 
+    <TD>44.44% 
+    <TD>32.65% 
+    <TD>25.00% 
+    <TD>11.11% 
+    <TD>6.25% 
+    <TD>1.56% 
+    <TD>1.00% </TR></TBODY></TABLE></CENTER>
+<P align=justify>Dado o <B>número</B>, as <B>posições</B> e as <B>potências</B> 
+das bombas detonadas em Cáprica, além de uma lista de <B>posições de 
+interesse</B>, sua tarefa é determinar a <B>chance de sobrevivência</B> em cada 
+uma destas posições, de forma a direcionar os <B>esforços</B> da missão de 
+resgate. </P>
+<P align=justify>Note que uma posição pode ser afetada <B>simultaneamente</B> 
+por <B>várias</B> bombas. Seu programa deve calcular o <B>efeito total</B> das 
+bombas em cada uma das posições. </P>
+<P align=justify>Por exemplo, a tabela abaixo indica a destruição efetiva de 
+cada bomba em cada uma das posições, e a chance de sobrevivência naquelas 
+posições. </P>
+<CENTER>
+<TABLE cellPadding=2 border=1>
+  <TBODY>
+  <TR align=right>
+    <TD>
+    <TD>Posição 1 
+    <TD>Posição 2 
+    <TD>Posição 3 
+    <TD>Posição 4 
+    <TD>Posição 5 
+    <TD>Posição 6 
+    <TD>Posição 7 
+    <TD>Posição 8 
+  <TR align=right>
+    <TD>Bomba A 
+    <TD>40.00% 
+    <TD>50.00% 
+    <TD>50.00% 
+    <TD>25.00% 
+    <TD>10.00% 
+    <TD>20.00% 
+    <TD>5.00% 
+    <TD>34.00% 
+  <TR align=right>
+    <TD>Bomba B 
+    <TD>20.00% 
+    <TD>100.00% 
+    <TD>50.00% 
+    <TD>50.00% 
+    <TD>10.00% 
+    <TD>30.00% 
+    <TD>10.00% 
+    <TD>66.00% 
+  <TR align=right>
+    <TD>Bomba C 
+    <TD>50.00% 
+    <TD>50.00% 
+    <TD>50.00% 
+    <TD>50.00% 
+    <TD>10.00% 
+    <TD>1.00% 
+    <TD>15.00% 
+    <TD>12.50% 
+  <TR align=right>
+    <TD>Chance de sobrevivência 
+    <TD>24.00% 
+    <TD>0.00% 
+    <TD>12.50% 
+    <TD>18.75% 
+    <TD>72.90% 
+    <TD>55.44% 
+    <TD>72.68% 
+    <TD>19.64% </TR></TBODY></TABLE></CENTER>
+<P align=justify>Na tabela acima, a Posição 1 sofre ataque de 3 bombas com 
+efeitos de destruição de 40,00%, 20,00% e 50.00%. Logo, as chances de 
+sobrevivência após cada bomba é respectivamente, 60,00%, 80,00% e 50,00%. Assim, 
+a chance de sobrevivência total naquela posição é de 60,00% * 80,00% * 50,00% = 
+24,00%. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_F6SyC_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por vários conjuntos de testes. 
+  <UL>
+    <LI>Cada conjunto iniciará com dois inteiros positivos (<I>B</I> e 
+    <I>P</I>), representando respectivamente o número de bombas e de posições da 
+    instância de teste. O número de bombas <I>B</I> será tal que 1 &#8804; <I>B</I> &#8804; 
+    100. 
+    <LI>A seguir serão fornecidos <I>B</I> trincas de números reais (<I>Pot</I>, 
+    <I>X</I> e <I>Y</I>), representando respectivamente a potência nominal e as 
+    coordenadas das <I>B</I> bombas. O número <I>Pot</I> será necessariamente 
+    positivo. 
+    <LI>Por último, serão fornecidas <I>P</I> duplas de números reais (<I>X</I> 
+    e <I>Y</I>), representando as coordenadas das <I>P</I> posições de 
+    interesse. </LI></UL>
+  <LI>A última linha da entrada conterá o par <B>0 0</B> indicando o seu final. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Em cada conjunto de teste, para cada umas das <I>P</I> posições de 
+  interesse do conjunto, deverá ser impressa a seguinte mensagem: 
+  <UL>
+    <LI>Posicao <I>i</I>: <I>X</I>% de chance de sobrevivencia </LI></UL>Onde 
+  <I>i</I> é o contador de posições de interesses de cada conjunto de teste e 
+  <I>X</I> é a porcentagem calculada pelo programa (com duas casas decimais de 
+  precição). A primeira posição de interesse de cada caso de teste é a número 1. 
+
+  <LI>Ao final de cada conjunto de teste deve ser impressa uma linha em branco. 
+  <LI>O par <B>0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ele. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>2 3<BR>1 0 0<BR>2 
+      4 1<BR>2 2<BR>2 3<BR>2 1<BR><BR>2 3<BR>1 0 0<BR>2 4 1<BR>2 0<BR>0 2<BR>4 
+      4<BR><BR>2 3<BR>1.3 0 0<BR>2.1 4 1<BR>1 0<BR>0 3<BR>3 4<BR><BR>0 
+    0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Posicao 1: 17.50% 
+      de chance de sobrevivencia<BR>Posicao 2: 46.15% de chance de 
+      sobrevivencia<BR>Posicao 3: 0.00% de chance de 
+      sobrevivencia<BR><BR>Posicao 1: 15.00% de chance de 
+      sobrevivencia<BR>Posicao 2: 57.35% de chance de sobrevivencia<BR>Posicao 
+      3: 53.82% de chance de sobrevivencia<BR><BR>Posicao 1: 0.00% de chance de 
+      sobrevivencia<BR>Posicao 2: 63.31% de chance de sobrevivencia<BR>Posicao 
+      3: 52.12% de chance de sobrevivencia<BR><BR></TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>1 3<BR>2 0 
+      0<BR>2.1 1.8<BR>1.2 2.6<BR>2.3 2.5<BR><BR>1 6<BR>2 0 0<BR>3 0<BR>4 0<BR>5 
+      0<BR>6 0<BR>7 0<BR>8 0<BR><BR>1 8<BR>1 0 0<BR>1 1<BR>2 2<BR>3 3<BR>4 
+      4<BR>1 0<BR>2 0<BR>3 0<BR>4 0<BR><BR>0 0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Posicao 1: 47.71% 
+      de chance de sobrevivencia<BR>Posicao 2: 51.22% de chance de 
+      sobrevivencia<BR>Posicao 3: 65.34% de chance de 
+      sobrevivencia<BR><BR>Posicao 1: 55.56% de chance de 
+      sobrevivencia<BR>Posicao 2: 75.00% de chance de sobrevivencia<BR>Posicao 
+      3: 84.00% de chance de sobrevivencia<BR>Posicao 4: 88.89% de chance de 
+      sobrevivencia<BR>Posicao 5: 91.84% de chance de sobrevivencia<BR>Posicao 
+      6: 93.75% de chance de sobrevivencia<BR><BR>Posicao 1: 50.00% de chance de 
+      sobrevivencia<BR>Posicao 2: 87.50% de chance de sobrevivencia<BR>Posicao 
+      3: 94.44% de chance de sobrevivencia<BR>Posicao 4: 96.88% de chance de 
+      sobrevivencia<BR>Posicao 5: 0.00% de chance de sobrevivencia<BR>Posicao 6: 
+      75.00% de chance de sobrevivencia<BR>Posicao 7: 88.89% de chance de 
+      sobrevivencia<BR>Posicao 8: 93.75% de chance de 
+    sobrevivencia<BR><BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+// Define uma posicao geografica
+typedef struct _posicao {
+  double x;
+  double y;
+} Posicao;
+
+// Define uma bomba
+typedef struct _bomba {
+  Posicao posicao;
+  double potencia;
+} Bomba;
+
+int main() {
+  int nBombas, nPosicoes, i;
+  double chance;
+
+  // Le uma entrada
+  scanf("%d %d", &amp;nBombas, &amp;nPosicoes);
+
+  // Enquanto a entrada for valida
+  while ((nBombas &gt; 0) &amp;&amp; (nPosicoes &gt; 0)) {
+
+    // Le as informacoes sobre as bombas
+
+
+    // Calcula, para cada posicao, o efeito das bombas
+    for (i = 0; i &lt; nPosicoes; i++) {
+
+      // Le uma nova posicao
+
+
+      // A principio, chance de sobrevivencia igual a 100%
+      chance = 1;
+
+
+      // Calcula o efeito das bombas sobre a posicao atual
+
+
+      // Imprime a resposta
+      printf("Posicao %d: %0.2lf%% de chance de sobrevivencia\n",
+             i + 1, chance * 100);
+    }
+
+    // Pula uma linha para separar os conjuntos de teste
+    printf("\n");
+
+    // Le uma nova entrada
+    scanf("%d %d", &amp;nBombas, &amp;nPosicoes);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>28/04/2007</I></SMALL> </BODY></HTML>

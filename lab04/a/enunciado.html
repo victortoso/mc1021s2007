@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_Nb31o_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 04a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 04a - BBB - Big Brother Birigüi</H3><B>Peso</B>: 3 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Inspirada em um programa de uma certa rede de TV carioca, a 
+direção da emissora de TV de Birigüi decidiu criar seu próprio <I>Reality 
+Show</I> para entreter a comunidade local. </P>
+<P align=justify>Contudo, o presidente da emissora, que adora interferir em toda 
+a programação da empresa, alegou que as regras do programa original eram muito 
+complicadas. "Anjo", "Prova do líder", "Paredão" não fazem muito sentido para o 
+presidente e, por isso, ele determinou que alguém criasse uma nova alternativa 
+para eliminação de pessoas do programa. </P>
+<P align=justify>Na realidade, o presidente é muito pão-duro e o que ele não 
+quer é gastar muito dinheiro na produção do programa. Sabendo disso, o diretor 
+do programa sugeriu que a eliminação dos participantes fosse feita por um 
+sorteio realizado por computador. </P>
+<P align=justify>O diretor fez a seguinte proposta: dados o número de 
+participantes <B>N</B> e um número inteiro positivo <B>M</B>, o programa criará 
+uma lista de participantes (numerados de <B>1</B> até <B>N</B>) e a percorrerá 
+eliminando uma pessoa a cada <B>M</B> pessoas ainda não eliminadas. O programa 
+repete o processo enquanto não tiver eliminado todos os participantes. O último 
+participante eliminado será declarado o vencedor do programa. Note que toda vez 
+que o programa chega ao fim da lista, ele continua a contagem a partir do início 
+da mesma. </P>
+<P align=justify>Por exemplo, suponha <B>N</B> = 9 e <B>M</B> = 4, o programa 
+realizaria o seguinte "sorteio": 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=2 border=1>
+  <TBODY>
+  <TR style="FONT-WEIGHT: bold" align=middle>
+    <TD width=100>Passo</TD>
+    <TD width=250>Participantes</TD>
+    <TD width=200>Eliminado</TD></TR>
+  <TR align=middle>
+    <TD><TT>Início</TT></TD>
+    <TD><TT>1 2 3 4 5 6 7 8 9</TT></TD>
+    <TD><TT>--</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>1</TT></TD>
+    <TD><TT>1 2 3 <B>X</B> 5 6 7 8 9</TT></TD>
+    <TD><TT>4</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>2</TT></TD>
+    <TD><TT>1 2 3 X 5 6 7 <B>X</B> 9</TT></TD>
+    <TD><TT>8</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>3</TT></TD>
+    <TD><TT>1 2 <B>X</B> X 5 6 7 X 9</TT></TD>
+    <TD><TT>3</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>4</TT></TD>
+    <TD><TT>1 2 X X 5 6 7 X <B>X</B></TT></TD>
+    <TD><TT>9</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>5</TT></TD>
+    <TD><TT>1 2 X X 5 <B>X</B> 7 X X</TT></TD>
+    <TD><TT>6</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>6</TT></TD>
+    <TD><TT>1 2 X X <B>X</B> X 7 X X</TT></TD>
+    <TD><TT>5</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>7</TT></TD>
+    <TD><TT>1 2 X X X X <B>X</B> X X</TT></TD>
+    <TD><TT>7</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>8</TT></TD>
+    <TD><TT>1 <B>X</B> X X X X X X X</TT></TD>
+    <TD><TT>2</TT></TD></TR>
+  <TR align=middle>
+    <TD><TT>9</TT></TD>
+    <TD><TT><B>X</B> X X X X X X X X</TT></TD>
+    <TD><TT>1</TT></TD></TR></TBODY></TABLE></CENTER><BR>Nesse caso o participante 
+<B>1</B> seria o vencedor. 
+<P></P>
+<P align=justify>O presidente gostou da idéia e o diretor encarregou você, um 
+pobre estagiário, de fazer o programa que determina a lista completa de 
+eliminados do <I>Reality Show</I>. </P>
+<P align=justify>Nesta tarefa você escreverá um programa em linguagem C 
+(<B>lab04a.c</B>) que imprime a lista de eliminados do <B>BBB - Big Brother 
+Birigüi</B>. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_Nb31o_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><BR><BR><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de duplas de números inteiros 
+  positivos <B>N &#8804; 100</B> e <B>M &#8804; 1000</B> (uma dupla por linha); 
+  <UL>
+    <LI><I>N</I>: Indica o número de participantes do programa; 
+    <LI><I>M</I>: Indica o número utilizado no sorteio para percorrer a lista de 
+    participantes não eliminados. </LI></UL>
+  <LI>A última linha da lista deverá ter a dupla <B>0 0</B> que indicará ao 
+  programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><BR><BR><B>Saída</B> 
+<UL>
+  <LI>Para cada dupla <B>N</B> e <B>M</B>, o programa deverá imprimir a lista de 
+  participantes eliminados, no seguinte formato: 
+  <UL>
+    <LI>Ordem de eliminacao: 4 8 3 9 6 5 7 2 1 </LI></UL>
+  <LI>A dupla <B>0 0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ela; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">9 4<BR>0 0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">Ordem de eliminacao: 4 
+      8 3 9 6 5 7 2 1<BR>&nbsp; </TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">12 9<BR>7 39<BR>1 
+      3<BR>0 0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">Ordem de eliminacao: 9 
+      6 4 3 5 8 12 10 11 7 1 2<BR>Ordem de eliminacao: 4 7 5 2 1 3 6<BR>Ordem de 
+      eliminacao: 1<BR>&nbsp; </TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  // Declara as variaveis
+  int bbb[100];
+  int pessoas, numero;
+
+  // Le a entrada
+  scanf("%d %d", &amp;pessoas, &amp;numero);
+
+  // Processa se existir pelo menos uma pessoa
+  while (pessoas &gt; 0) {
+
+    printf("Ordem de eliminacao:");
+
+
+    // Inicializa vetor que representa os participantes do programa
+
+
+
+    // Imprime a sequencia de candidatos eliminados
+
+
+
+    // Pula de linha apos imprimir todos os eliminados
+    printf("\n");
+
+
+    // Le uma nova entrada
+    scanf("%d %d", &amp;pessoas, &amp;numero);
+  }
+
+  return 0;
+}
+
+</PRE>
+<HR>
+<SMALL><I>30/03/2007</I></SMALL> </A></BODY></HTML>

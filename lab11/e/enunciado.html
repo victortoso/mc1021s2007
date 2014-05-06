@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_ysP9h_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 11e</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 11e - Continentes - Parte I</H3><B>Peso</B>: 8 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Neste laboratório você deverá escrever um programa em Linguagem 
+C (<B>lab11e.c</B>) que leia da entrada matrizes <B>M x N</B> representando 
+mapas em projeções cilíndricas e calcule a maior <B>área</B> entre todos os 
+<B>"continentes"</B>. </P>
+<P align=justify>As matrizes serão compostas pelos símbolos <FONT 
+color=blue><B>.</B></FONT> (ponto) e <FONT color=red><B>#</B></FONT> 
+(cerquinhas, sustenidos, jogos da velha, como você preferir). </P>
+<P align=justify>Os <FONT color=blue><B>.</B>s</FONT> denotam as áreas que 
+possuem água e os <FONT color=red><B>#</B>s</FONT> denotam as áreas de terra 
+firme. Um <B>"continente"</B> é composto por um ou mais <FONT 
+color=red><B>#</B>s</FONT> adjascentes. São considerados adjascentes apenas 
+quando dispostos <B>lado a lado</B> (na vertical ou na horizontal). 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 1</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 2</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 3</B></BIG></BIG></TT></TD></TR>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>.....</FONT><BR><FONT 
+      color=blue>..</FONT><FONT color=red>##</FONT><FONT 
+      color=blue>.</FONT><BR><FONT 
+      color=blue>.....</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>..</FONT><FONT 
+      color=red>#</FONT><FONT color=blue>..</FONT><BR><FONT 
+      color=blue>..</FONT><FONT color=red>#</FONT><FONT 
+      color=blue>..</FONT><BR><FONT 
+      color=blue>.....</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>.....</FONT><BR><FONT 
+      color=blue>..</FONT><FONT color=red>#</FONT><FONT 
+      color=blue>..</FONT><BR><FONT color=blue>.</FONT><FONT 
+      color=red>#</FONT><FONT color=blue>...</FONT><BR></B></BIG></BIG></TT></TD>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B>1 Continente</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>1 Continente</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>2 
+  Continentes</B></BIG></BIG></TT></TD></TR></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=justify>A matriz <B>5 x 5</B> abaixo representa um mapa muito simples. 
+Podemos ver que existem apenas dois continentes e que a maior área área é igual 
+a 2. 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>.....</FONT><BR><FONT 
+      color=blue>..</FONT><FONT color=red>##</FONT><FONT 
+      color=blue>.</FONT><BR><FONT color=blue>.....</FONT><BR><FONT 
+      color=blue>.</FONT><FONT color=red>##</FONT><FONT 
+      color=blue>..</FONT><BR><FONT 
+      color=blue>.....</FONT><BR></B></BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>A 
+matriz <B>10 x 10</B> abaixo representa um mapa bem mais complexo. Neste mapa a 
+área máxima tem tamanho 23 e está marcada em vermelho: 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>......</FONT><FONT 
+      color=red>##</FONT><FONT color=blue>..</FONT><BR><FONT 
+      color=red>###</FONT><FONT color=blue>..</FONT><FONT 
+      color=red>##</FONT><FONT color=blue>..</FONT><FONT 
+      color=red>#</FONT><BR><FONT color=red>##</FONT><FONT 
+      color=blue>.</FONT>#<FONT color=blue>..</FONT><FONT 
+      color=red>###</FONT><FONT color=blue>.</FONT><BR><FONT 
+      color=red>#</FONT><FONT color=blue>...</FONT><FONT 
+      color=red>###</FONT><FONT color=blue>.</FONT><FONT 
+      color=red>##</FONT><BR><FONT color=red>###</FONT><FONT 
+      color=blue>...</FONT><FONT color=red>#</FONT><FONT 
+      color=blue>...</FONT><BR><FONT color=blue>...</FONT>##<FONT 
+      color=blue>..</FONT>##<FONT color=blue>.</FONT><BR>##<FONT 
+      color=blue>.</FONT>#<FONT color=blue>.</FONT>#<FONT 
+      color=blue>.</FONT>##<FONT color=blue>.</FONT><BR><FONT 
+      color=blue>......</FONT>#<FONT color=blue>...</FONT><BR>########<FONT 
+      color=blue>..</FONT><BR><FONT color=blue>.......</FONT>##<FONT 
+      color=blue>.</FONT><BR></B></BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>Observe 
+que o mapa é cilíndrico e que, por isso, o continente selecionado é válido. 
+Áreas de terra presentes na coluna <B>0</B> estão <B>lado a lado</B> com as 
+áreas de terra da coluna <B>9</B> (na mesma linha). Note que esta relação só é 
+válida no sentido das colunas e não é válida no sentido das linhas. 
+<P></P>
+<P align=justify></P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_ysP9h_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será formada por diversos mapas. 
+  <LI>Cada mapa será lido da seguinte maneira: 
+  <UL>
+    <LI>Uma linha com dois números inteiros positivos <B>M</B> e <B>N</B> que 
+    significam: 
+    <UL>
+      <LI><B>M</B> número de linhas existentes na matriz que representa o mapa 
+      (1 &#8804; <B>M</B> &#8804; 20) 
+      <LI><B>N</B> número de colunas existentes na matriz que representa o mapa 
+      (1 &#8804; <B>N</B> &#8804; 20) </LI></UL>
+    <LI>Uma seqüência de <B>M</B> linhas contendo <B>N</B> caracteres (<B>.</B> 
+    ou <B>#</B>, representando água e terra respectivamente) </LI></UL>
+  <LI>A dupla <B>0 0</B> indica o final da entrada. 
+  <LI>Para melhor entendimento da entrada, observe os exemplos. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada mapa lido da entrada, seu programa deverá descobrir qual o valor 
+  máximo para a área de uma região contida nele. 
+  <LI>Seja <B>A</B> o valor da área máxima. Seu programa deverá escrever a 
+  seguinte mensagem: 
+  <UL>
+    <LI><BIG><TT>Maior area = <B>A</B></TT></BIG> </LI></UL>
+  <LI>A dupla <B>0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. </LI></UL><BR><BR><B>Exemplos</B> 
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>5 
+      5 <BR>..... <BR>..##. <BR>..... <BR>.##.. <BR>..... <BR></FONT><FONT 
+      color=red><BR>10 10 <BR>......##.. <BR>###..##..# <BR>##.#..###. 
+      <BR>#...###.## <BR>###...#... <BR>...##..##. <BR>##.#.#.##. <BR>......#... 
+      <BR>########.. <BR>.......##. <BR></FONT><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Maior area = 2</FONT><BR><FONT color=red>Maior area = 
+      23</FONT><BR></TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>5 
+      5 <BR>..... <BR>..##. <BR>..#.. <BR>.##.. <BR>..... <BR></FONT><FONT 
+      color=red><BR>10 10 <BR>.......... <BR>.##..##... <BR>.#.#..###. 
+      <BR>....###.#. <BR>.##...#... <BR>...##..##. <BR>##.#.#.##. <BR>......#... 
+      <BR>########.. <BR>.......##. </FONT><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Maior area = 5</FONT><BR><FONT color=red>Maior area = 
+      11</FONT><BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 11e - Continentes - Parte I
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+
+int main() {
+  char mapa[20][21];
+  int linhas, colunas;
+
+
+
+
+}
+</PRE>
+<HR>
+<SMALL><I>02/06/2007</I></SMALL> </BODY></HTML>

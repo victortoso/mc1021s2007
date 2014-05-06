@@ -1,0 +1,74 @@
+66
+Ituiutaba 	3 x 1 	Tupi 
+Atletico 	2 x 3 	Villa_Nova 
+Democrata-SL 	1 x 0 	Ipatinga 
+Caldense 	2 x 1 	Democrata-GV 
+Rio_Branco 	1 x 2 	Cruzeiro 
+America 	1 x 0 	Ituiutaba 
+Cruzeiro 	4 x 0 	Guarani 
+Tupi 	2 x 0 	Atletico 
+Ipatinga 	3 x 1 	Caldense 
+Villa_Nova 	1 x 1 	Rio_Branco 
+Democrata-GV 	1 x 0 	Democrata-SL 
+Caldense 	2 x 1 	America 
+Atletico 	0 x 0 	Rio_Branco 
+Ituiutaba 	0 x 0 	Guarani 
+Villa_Nova 	2 x 2 	Cruzeiro 
+Democrata-SL 	0 x 2 	Tupi 
+Ipatinga 	3 x 5 	Democrata-GV 
+Guarani 	4 x 3 	America 
+Cruzeiro 	1 x 3 	Atletico 
+Ituiutaba 	1 x 1 	Caldense 
+Democrata-SL 	1 x 1 	Villa_Nova 
+America 	0 x 1 	Ipatinga 
+Guarani 	1 x 0 	Tupi 
+Rio_Branco 	1 x 0 	Democrata-GV 
+Guarani 	0 x 0 	Rio_Branco 
+Democrata-GV 	1 x 1 	America 
+Caldense 	1 x 1 	Atletico 
+Cruzeiro 	4 x 1 	Ituiutaba 
+Tupi 	2 x 2 	Villa_Nova 
+Rio_Branco 	1 x 0 	Democrata-SL 
+Ipatinga 	3 x 0 	Guarani 
+Guarani 	0 x 4 	Atletico 
+America 	1 x 2 	Cruzeiro 
+Tupi 	1 x 1 	Democrata-GV 
+Villa_Nova 	2 x 1 	Ipatinga 
+Rio_Branco 	1 x 1 	Caldense 
+Democrata-SL 	3 x 0 	Ituiutaba 
+Ipatinga 	3 x 1 	Cruzeiro 
+America 	0 x 2 	Tupi 
+Ituiutaba 	2 x 1 	Rio_Branco 
+Caldense 	0 x 1 	Guarani 
+Atletico 	3 x 0 	Democrata-SL 
+Democrata-GV 	2 x 0 	Villa_Nova 
+Cruzeiro 	6 x 2 	Tupi 
+Atletico 	2 x 0 	America 
+Ipatinga 	1 x 2 	Rio_Branco 
+Villa_Nova 	4 x 1 	Caldense 
+Democrata-SL 	1 x 0 	Guarani 
+Democrata-GV 	2 x 1 	Ituiutaba 
+America 	1 x 2 	Villa_Nova 
+Ituiutaba 	0 x 2 	Atletico 
+Cruzeiro 	3 x 2 	Democrata-GV 
+Tupi 	3 x 2 	Ipatinga 
+Caldense 	0 x 1 	Democrata-SL 
+Rio_Branco 	2 x 0 	America 
+Democrata-SL 	1 x 3 	Cruzeiro 
+Guarani 	2 x 3 	Democrata-GV 
+Caldense 	1 x 3 	Tupi 
+Ituiutaba 	2 x 1 	Villa_Nova 
+Atletico 	1 x 0 	Ipatinga 
+Cruzeiro 	3 x 0 	Caldense 
+America 	2 x 2 	Democrata-SL 
+Democrata-GV 	2 x 0 	Atletico 
+Tupi 	1 x 0 	Rio_Branco 
+Villa_Nova 	2 x 1 	Guarani 
+Ipatinga 	1 x 0 	Ituiutaba 
+5
+TUPI  0x0  CRUZEIRO
+DEMOCRATA-GV  1x2  ATLETICO
+ATLETICO  1x1  DEMOCRATA-GV
+CRUZEIRO  4x0  TUPI
+ATLETICO  4x0  CRUZEIRO
+0

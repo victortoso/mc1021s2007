@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_aUNa0_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 05b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 05b - Robô - Parte I</H3><B>Peso</B>: 3 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Um pequeno robô foi programado para seguir as intruções que ele 
+encontra em seu caminho. </P>
+<P align=justify>A área onde o robô caminha é um tabuleiro que contém símbolos 
+representando os quatro pontos cardeais (<B>N</B> - Norte, <B>S</B> - Sul, 
+<B>E</B> - Leste e <B>W</B> - Oeste). </P>
+<P align=justify>O robô, quando colocado em uma determinada posição do 
+tabuleiro, lê a instrução contida nela e a executa. As possíveis instruções são: 
+
+<UL>
+  <LI><B>N</B> anda uma casa para cima 
+  <LI><B>S</B> anda uma casa para baixo 
+  <LI><B>E</B> anda uma casa para a direita 
+  <LI><B>W</B> anda uma casa para a esquerda </LI></UL>
+<P></P>
+<P align=justify>O robõ executa as instruções até conseguir sair do tabuleiro. 
+Eventualmente, conforme a posição inicial e a configuração do tabuleiro, ele 
+pode entrar em loop. A figura abaixo demonstra as duas situações. Note que a 
+posição <B>(0,0)</B> é a do canto superior esquerdo do tabuleiro. </P>
+<CENTER><IMG title="Exemplos Robô" src="enunciado_arquivos/robo.gif"></TD> 
+</CENTER>
+<P align=justify>Sua tarefa é escrever um programa em linguagem C 
+(<B>lab05b.c</B>) que, dados o tabuleiro de instruções e a posição inicial do 
+robô, determine o número de passos que o robô dá até sair do tabuleiro ou que 
+indique o número de passos que o robô levou para entrar em loop e o tamanho do 
+loop. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_aUNa0_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada poderá conter vários mapas de instruções. 
+  <LI>A entrada será composta por uma seqüências de 4 números inteiros <I>M</I>, 
+  <I>N</I>, <I>X</I> e <I>Y</I> tais que 0 &#8804; <I>M, N</I> &#8804; 100</I> e 0 &#8804; <I>X, 
+  Y</I> &lt; 100. Estes valores significam: 
+  <UL>
+    <LI><I>M</I> Número de linhas do tabuleiro de instruções 
+    <LI><I>N</I> Número de colunas do tabuleiro de instruções 
+    <LI><I>X</I> Índice da linha onde o robô iniciará o percurso 
+    <LI><I>Y</I> Índice da coluna onde o robô iniciará o percurso </LI></UL>
+  <LI>Após está seqüência de quatro números, a entrada terá <I>M</I> linhas 
+  contendo <I>N</I> símbolos representado os pontos cardeais. 
+  <LI>A última linha da entrada conterá a seqüência <B>0 0 0 0</B> indicando o 
+  seu final. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>O programa deverá calcular o número de passos dado pelo robô até sair do 
+  tabuleiro ou até entrar em loop. 
+  <LI>Seja <I>A</I> o número de passos que o robô gastou para sair do tabuleiro. 
+  A saída deverá ser impressa no formato: 
+  <UL>
+    <LI>Robo saiu do tabuleiro apos <I>A</I> passo(s) </LI></UL>
+  <LI>Sejam <I>B</I> o número de passos que o robô gastou para entrar em loop e 
+  <I>C</I> o tamanho do loop. A saída deverá ser impressa no formato: 
+  <UL>
+    <LI>Robo entrou em loop apos <I>B</I> passos (loop de tamanho <I>C</I>) 
+  </LI></UL>
+  <LI>A seqüência <B>0 0 0 0</B> indica o final da entrada e, por isso, nada 
+  deve ser impresso sobre ela. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>3 6 0 3<BR>N E E S 
+      W E<BR>W W W E S S<BR>S N W W W W<BR><BR>4 6 1 1<BR>S S E S W E<BR>N E E S 
+      N W<BR>E N W E E N<BR>W E W S E N<BR><BR>0 0 0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Robo saiu do 
+      tabuleiro apos 9 passo(s)<BR>Robo entrou em loop apos 10 passos (loop de 
+      tamanho 8) </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  int linhas, colunas, x, y, i, j;
+  char grid[100][100];
+
+  // Le a entrada
+  scanf("%d %d %d %d", &amp;linhas, &amp;colunas, &amp;x, &amp;y);
+
+  // Enquanto a entrada for valida
+  while ((linhas &gt; 0) &amp;&amp; (colunas &gt; 0)) {
+
+    // Le o grid onde o robo sera colocado
+    for (i = 0; i &lt; linhas; i++) {
+      for (j = 0; j &lt; colunas; j++) {
+        scanf(" %c", &amp;grid[i][j]);
+      }
+    }
+
+
+
+
+    // Le uma nova entrada
+    scanf("%d %d %d %d", &amp;linhas, &amp;colunas, &amp;x, &amp;y);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>14/04/2007</I></SMALL> </BODY></HTML>

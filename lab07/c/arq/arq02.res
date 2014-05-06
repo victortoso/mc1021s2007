@@ -1,0 +1,22 @@
+                TIME	 P	 J	 V	 E	 D	 GP	 GC	 SG
+              Santos	 50	 19	 16	  2	  1	 45	 19	 26
+           Sao_Paulo	 44	 19	 13	  5	  1	 41	 14	 27
+         Sao_Caetano	 36	 19	 11	  3	  5	 32	 22	 10
+          Bragantino	 35	 19	 10	  5	  4	 35	 17	 18
+           Palmeiras	 35	 19	 10	  5	  4	 39	 25	 14
+            Paulista	 31	 19	  9	  4	  6	 34	 31	  3
+            Noroeste	 30	 19	  9	  3	  7	 38	 30	  8
+         Ponte_Preta	 30	 19	  9	  3	  7	 29	 24	  5
+         Corinthians	 29	 19	  8	  5	  6	 35	 27	  8
+       Guaratingueta	 25	 19	  7	  4	  8	 29	 26	  3
+              Ituano	 25	 19	  7	  4	  8	 22	 25	 -3
+           Rio_Claro	 22	 19	  5	  7	  7	 23	 31	 -8
+            Juventus	 20	 19	  6	  2	 11	 18	 31	-13
+             Marilia	 20	 19	  5	  5	  9	 29	 30	 -1
+             Barueri	 20	 19	  5	  5	  9	 21	 31	-10
+         Sertaozinho	 19	 19	  4	  7	  8	 22	 33	-11
+             America	 17	 19	  4	  5	 10	 22	 36	-14
+           Sao_Bento	 16	 19	  4	  4	 11	 27	 48	-21
+          Rio_Branco	 13	 19	  3	  4	 12	 18	 40	-22
+         Santo_Andre	 10	 19	  2	  4	 13	 21	 40	-19
+

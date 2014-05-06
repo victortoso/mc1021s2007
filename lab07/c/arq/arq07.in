@@ -1,0 +1,122 @@
+12
+
+ElNacional	1 x 2	America
+Libertad	1 x 0	Banfield
+Banfield	4 x 1	ElNacional
+America	1 x 4	Libertad
+ElNacional	1 x 1	Libertad
+America	4 x 0	Banfield
+Banfield	3 x 1	America
+Libertad	1 x 0	ElNacional
+ElNacional	0 x 1	Banfield
+Libertad	1 x 2	America
+Banfield	0 x 1	Libertad
+America	2 x 1	ElNacional
+
+12
+
+AudaxItaliano	0 x 0	SaoPaulo
+AlianzaLima	1 x 2	Necaxa
+SaoPaulo	4 x 0	AlianzaLima
+Necaxa	2 x 0	AudaxItaliano
+AlianzaLima	1 x 3	AudaxItaliano
+Necaxa	2 x 1	SaoPaulo
+AudaxItaliano	1 x 0	AlianzaLima
+SaoPaulo	3 x 0	Necaxa
+AudaxItaliano	2 x 1	Necaxa
+AlianzaLima	0 x 1	SaoPaulo
+SaoPaulo	2 x 2	AudaxItaliano
+Necaxa	2 x 0	AlianzaLima
+
+12
+
+CucutaDeportivo	0 x 0	DeportesTolima
+CerroPorteno	0 x 1	Gremio
+Gremio	0 x 0	CucutaDeportivo
+DeportesTolima	1 x 0	CerroPorteno
+CucutaDeportivo	1 x 1	CerroPorteno
+DeportesTolima	1 x 0	Gremio
+CerroPorteno	2 x 1	CucutaDeportivo
+Gremio	1 x 0	DeportesTolima
+CerroPorteno	1 x 0	DeportesTolima
+CucutaDeportivo	3 x 1	Gremio
+Gremio	1 x 0	CerroPorteno
+DeportesTolima	3 x 4	CucutaDeportivo
+
+12
+
+Emelec	0 x 1	VelezSarsfield
+Nacional	3 x 1	Internacional
+Internacional	3 x 0	Emelec
+VelezSarsfield	1 x 1	Nacional
+VelezSarsfield	3 x 0	Internacional
+Emelec	1 x 0	Nacional
+Internacional	0 x 0	VelezSarsfield
+Nacional	3 x 1	Emelec
+Emelec	1 x 2	Internacional
+Nacional	2 x 0	VelezSarsfield
+Internacional	1 x 0	Nacional
+VelezSarsfield	1 x 0	Emelec
+
+12
+				
+RealPotosi	2 x 2	Flamengo
+UnionMaracaibo	2 x 4	Parana
+Flamengo	3 x 1	UnionMaracaibo
+Parana	2 x 0	RealPotosi
+UnionMaracaibo	1 x 1	RealPotosi
+Parana	0 x 1	Flamengo
+RealPotosi	2 x 2	UnionMaracaibo
+Flamengo	1 x 0	Parana
+UnionMaracaibo	1 x 2	Flamengo
+RealPotosi	3 x 1	Parana
+Flamengo	1 x 0	RealPotosi
+Parana	2 x 1	UnionMaracaibo
+
+12
+
+Caracas	1 x 0	LDU
+ColoColo	1 x 2	RiverPlate
+LDU	3 x 1	ColoColo
+RiverPlate	0 x 1	Caracas
+LDU	1 x 1	RiverPlate
+Caracas	0 x 4	ColoColo
+RiverPlate	0 x 0	LDU
+ColoColo	2 x 1	Caracas
+ColoColo	4 x 0	LDU
+Caracas	3 x 1	RiverPlate
+RiverPlate	1 x 0	ColoColo
+LDU	3 x 1	Caracas
+
+12
+
+Bolivar	0 x 0	BocaJuniors
+Cienciano	1 x 2	Toluca
+Toluca	1 x 2	Bolivar
+BocaJuniors	1 x 0	Cienciano
+Cienciano	5 x 1	Bolivar
+Toluca	2 x 0	BocaJuniors
+BocaJuniors	3 x 0	Toluca
+Bolivar	2 x 3	Cienciano
+Cienciano	3 x 0	BocaJuniors
+Bolivar	0 x 2	Toluca
+BocaJuniors	7 x 0	Bolivar
+Toluca	3 x 0	Cienciano
+
+12
+
+Defensor	3 x 0	GimnasiaLP
+DeportivoPasto	0 x 1	Santos
+Santos	1 x 0	Defensor
+GimnasiaLP	3 x 2	DeportivoPasto
+Santos	3 x 0	GimnasiaLP
+DeportivoPasto	1 x 2	Defensor
+GimnasiaLP	1 x 2	Santos
+Defensor	3 x 0	DeportivoPasto
+Defensor	0 x 2	Santos
+DeportivoPasto	0 x 2	GimnasiaLP
+GimnasiaLP	3 x 0	Defensor
+Santos	3 x 0	DeportivoPasto
+
+0
+

@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_ChodD_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 09b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 09b - Traduzindo DNA em Proteínas</H3><B>Peso</B>: 7 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>O ácido desoxirribonucléico (<B>DNA</B>) é composto por uma 
+seqüência de pares de bases de nucleotídeos que formam uma estrutura de dupla 
+hélice. Através de uma série de complexos processos bioquímicos a seqüência de 
+DNA é traduzida em proteínas, que são fundamentais para os seres vivos. </P>
+<P align=justify>Um DNA é composto por duas <B>fitas complementares</B> de 
+nucleotídeos. Cada fita de DNA é formada pelas bases nucleotídicas Adenina 
+(<B>A</B>), Citosina (<B>C</B>), Guanina (<B>G</B>) e Timina (<B>T</B>). Dada 
+uma fita de DNA é possível construir a fita complementar trocando cada base pela 
+sua complementar e invertendo a ordem das bases. Adenina e Timina são bases 
+complementares, assim como Citosina e Guanina. As direções de cada fita são 
+opostas. O pareamento das bases das fitas complementares é o que garante a 
+estabilidade do DNA. </P>
+<P align=justify>Tipicamente um DNA é representado apenas por uma de suas fitas, 
+já que é fácil obter a sua fita complementar. Por exemplo, a seqüência 
+CACTCGCTTGGAT representa uma fita de DNA cuja complementar é ATCCAAGCGAGTG. Veja 
+como ambas as fitas podem ser pareadas de tal forma que sejam unidas pelas suas 
+bases complementares: </P>
+<CENTER>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD><PRE>sentido de leitura &#8594; 
+
+</PRE>
+    <TD><PRE>CACTCGCTTGGAT
+GTGAGCGAACCTA
+</PRE>
+    <TD><PRE>
+ &#8592; sentido de leitura
+</PRE></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify></P>
+<P align=justify>A partir de uma fita de DNA, é produzido, num processo 
+conhecido como <B>transcrição</B>, um ácido ribonucléico (RNA), conhecido como 
+RNA mensageiro (ou mRNA). O RNA transcrito é idêntico a fita de DNA com exceção 
+que a base Timina é substituída pela base Uracila (<B>U</B>). Por exemplo, a 
+partir da fita CACTCGCTTGGAT é possível obter o RNA mensageiro CACUCGCUUGGAU. 
+</P>
+<P align=justify>É a seqüência de bases de um mRNA que determina a proteína que 
+será construída. As bases de um mRNA podem ser vistas como uma seqüência de 
+<B>codons</B>, sendo que cada codon é composto por exatamente três bases. No 
+processo de tradução cada codon é associado a um aminácido de modo a construir 
+uma proteína. </P>
+<P align=justify>Existem 64 codons e apenas 20 aminoácidos. A relação entre os 
+codons e os aminoácidos é conhecida como <B>código genético</B>. Toda proteína 
+inicia-se pelo codon AUG, chamado de start codon, e termina em um dos três 
+codons especiais UAA, UGA ou UAG, chamados de stop codons. </P>
+<P align=justify>O código genético completo que mostra como codons são 
+traduzidos em aminoácidos é mostrado na tabela abaixo. </P>
+<P>
+<CENTER>
+<TABLE id=Table_1 cellSpacing=0 cellPadding=3 border=1>
+  <TBODY>
+  <TR>
+    <TD colSpan=2 rowSpan=2></TD>
+    <TH colSpan=4>2<SUP>a</SUP> base</TH></TR>
+  <TR>
+    <TH>U</TH>
+    <TH>C</TH>
+    <TH>A</TH>
+    <TH>G</TH></TR>
+  <TR>
+    <TH rowSpan=4>1<SUP>a</SUP><BR>base</TH>
+    <TH>U</TH>
+    <TD>
+      <P>UUU (<B><TT>F</TT></B>) Fenilalanina<BR>UUC (<B><TT>F</TT></B>) 
+      Fenilalanina<BR>UUA (<B><TT>L</TT></B>) Leucina<BR>UUG (<B><TT>L</TT></B>) 
+      Leucina<BR></P></TD>
+    <TD>
+      <P>UCU (<B><TT>S</TT></B>) Serina<BR>UCC (<B><TT>S</TT></B>) Serina<BR>UCA 
+      (<B><TT>S</TT></B>) Serina<BR>UCG (<B><TT>S</TT></B>) Serina<BR></P></TD>
+    <TD>
+      <P>UAU (<B><TT>Y</TT></B>) Tirosina<BR>UAC (<B><TT>Y</TT></B>) 
+      Tirosina<BR>UAA (<B><TT>*</TT></B>) (<I>Stop</I></TT></B>)<BR>UAG 
+      (<B><TT>*</TT></B>) (<I>Stop</I></TT></B>)<BR></P></TD>
+    <TD>
+      <P>UGU (<B><TT>C</TT></B>) Cisteína<BR>UGC (<B><TT>C</TT></B>) 
+      Cisteína<BR>UGA (<B><TT>*</TT></B>) (<I>Stop</I></TT></B>)<BR>UGG 
+      (<B><TT>W</TT></B>) Triptofano<BR></P></TD></TR>
+  <TR>
+    <TH>C</TH>
+    <TD>
+      <P>CUU (<B><TT>L</TT></B>) Leucina<BR>CUC (<B><TT>L</TT></B>) 
+      Leucina<BR>CUA (<B><TT>L</TT></B>) Leucina<BR>CUG (<B><TT>L</TT></B>) 
+      Leucina<BR></P></TD>
+    <TD>
+      <P>CCU (<B><TT>P</TT></B>) Prolina<BR>CCC (<B><TT>P</TT></B>) 
+      Prolina<BR>CCA (<B><TT>P</TT></B>) Prolina<BR>CCG (<B><TT>P</TT></B>) 
+      Prolina<BR></P></TD>
+    <TD>
+      <P>CAU (<B><TT>H</TT></B>) Histidina<BR>CAC (<B><TT>H</TT></B>) 
+      Histidina<BR>CAA (<B><TT>Q</TT></B>) Glutamina<BR>CAG (<B><TT>Q</TT></B>) 
+      Glutamina<BR></P></TD>
+    <TD>
+      <P>CGU (<B><TT>R</TT></B>) Arginina<BR>CGC (<B><TT>R</TT></B>) 
+      Arginina<BR>CGA (<B><TT>R</TT></B>) Arginina<BR>CGG (<B><TT>R</TT></B>) 
+      Arginina<BR></P></TD></TR>
+  <TR>
+    <TH>A</TH>
+    <TD>
+      <P>AUU (<B><TT>I</TT></B>) Isoleucina<BR>AUC (<B><TT>I</TT></B>) 
+      Isoleucina<BR>AUA (<B><TT>I</TT></B>) Isoleucina<BR>AUG 
+      (<B><TT>M</TT></B>) Metionina (<I>Start</I>)<BR></P></TD>
+    <TD>
+      <P>ACU (<B><TT>T</TT></B>) Treonina<BR>ACC (<B><TT>T</TT></B>) 
+      Treonina<BR>ACA (<B><TT>T</TT></B>) Treonina<BR>ACG (<B><TT>T</TT></B>) 
+      Treonina<BR></P></TD>
+    <TD>
+      <P>AAU (<B><TT>N</TT></B>) Asparagina<BR>AAC (<B><TT>N</TT></B>) 
+      Asparagina<BR>AAA (<B><TT>K</TT></B>) Lisina<BR>AAG (<B><TT>K</TT></B>) 
+      Lisina<BR></P></TD>
+    <TD>
+      <P>AGU (<B><TT>S</TT></B>) Serina<BR>AGC (<B><TT>S</TT></B>) Serina<BR>AGA 
+      (<B><TT>R</TT></B>) Arginina<BR>AGG (<B><TT>R</TT></B>) 
+  Arginina<BR></P></TD></TR>
+  <TR>
+    <TH>G</TH>
+    <TD>
+      <P>GUU (<B><TT>V</TT></B>) Valina<BR>GUC (<B><TT>V</TT></B>) Valina<BR>GUA 
+      (<B><TT>V</TT></B>) Valina<BR>GUG (<B><TT>V</TT></B>) Valina<BR></P></TD>
+    <TD>
+      <P>GCU (<B><TT>A</TT></B>) Alanina<BR>GCC (<B><TT>A</TT></B>) 
+      Alanina<BR>GCA (<B><TT>A</TT></B>) Alanina<BR>GCG (<B><TT>A</TT></B>) 
+      Alanina<BR></P></TD>
+    <TD>
+      <P>GAU (<B><TT>D</TT></B>) Ácido aspártico<BR>GAC (<B><TT>D</TT></B>) 
+      Ácido aspártico<BR>GAA (<B><TT>E</TT></B>) Ácido glutâmico<BR>GAG 
+      (<B><TT>E</TT></B>) Ácido glutâmico<BR></P></TD>
+    <TD>
+      <P>GGU (<B><TT>G</TT></B>) Glicina<BR>GGC (<B><TT>G</TT></B>) 
+      Glicina<BR>GGA (<B><TT>G</TT></B>) Glicina<BR>GGG (<B><TT>G</TT></B>) 
+      Glicina<BR></P></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Uma protéina pode ser traduzida a partir de qualquer uma das 
+duas fitas do DNA. Fitas diferentes podem gerar proteínas diferentes. Um trecho 
+de DNA produz uma <B>proteína válida</B> apenas se a partir de um start codon é 
+possível encontrar um stop codon, separados exatamente por um número de 
+nucleotídeos múltiplo de 3, ou seja, entre o start e o stop codon devem existir 
+apenas codons válidos. O codon AUG, além de servir como start codon, também é 
+responsável pela tradução do aminoácido Metionina. </P>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab09b.c</B>) que dado um trecho de uma seqüência de DNA (limitado a <B>200 
+nucleotídeos</B>) determina se é possível obter a tradução de uma proteína. A 
+tradução deve ser tentada no trecho fornecido e em seu complemento reverso. Note 
+que computacionalmente a tradução de um DNA para uma proteína pode ser feita sem 
+o passo intermediário da obtenção do RNA mensageiro. Para tanto basta adaptar a 
+tabela acima para lidar com trincas de nucleotídios (A, C, G e T). </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_ChodD_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>Neste laboratório, cada arquivo de teste será composto por diversas 
+  seqüências de DNA (limitadas em <B>200 nucleotídeos</B> cada), uma por linha. 
+  <LI>A última linha é composta apenas por um <B>*</B> indicando o fim da 
+  entrada. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada seqüência de DNA fornecida como entrada, o programa deverá 
+  tentar traduzir uma proteína válida. Caso exista tal proteína, o programa 
+  deverá imprimí-la. Caso exista mais de uma proteína válida, seu programa pode 
+  imprimir qualquer uma delas. O start (representado pelo aminoácido <B>M</B>) e 
+  o stop codon (representado pelo caracter <B>*</B>) devem ser impressos antes e 
+  depois dos aminoácidos da proteína. Para este problema, também consideraremos 
+  como válida uma proteína composta apenas por um start e por um stop codon 
+  (neste caso o programa deverá imprimir apenas <B>M*</B>). 
+  <LI>Caso não exista nenhuma tradução válida, em nenhuma das fitas, seu 
+  programa deverá imprimir a seguinte mensagem: 
+  <UL>
+    <LI><TT>Impossivel traduzir</TT> </LI></UL></LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+<A name=exemplos></A>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" vAlign=top><PRE>GGGGGTGGACCCTGTCCTGCGCCTCGCCGGCGGTGAACATGCCGGTGTACACAAAGCCGTGCGTCAGCTTGTCCGGCGGCCAGGTCATGGGGATGTTCAGGGCGCCGGAGGGG
+TTGAGGAGGGGTCACACCCGTTCCCATTCCGAACACGGTAGTTAAGCCCTCCATCGCCGATGATACTGCATGGTTGTGTGTGGGAAATGGTCGCT
+GGGGGGGGAACCCGGTGTGAGAACGGTTCTCCCCAGACGGCTCTTCTCAGACGTACCGTGCTTCAGGGCAGATGACGGTCAGGATCGTCCCAGAAAGTCATGCACCTTGGGCG
+TGCGCAGATCGTGGCTGATGTTGGCCAGGAAGGCGCTTTTGGCGGCGTTGGCCAGCTCGGCCGTGAGTTTGGCTTCCCTGAGGGCCTCTTCCGCCTGCCG
+CGCTCTGCAGGGTATAGATGCTGAAACAGGGCGAGAAGGCCAGAAAATGCTCACTTTCCGGCCGGGCGCGGACGCGGATGAGCAGGTCGATGATTT
+CAGCCCCAGTTAGGCGGCGCGCCAAGTTCCAGAGCCTCGGGCGGCATGTCCATGATGCCGCCGATCACCCGCTCGCCCACCTTGACGATGGCATA
+GAAGAGCATTGCCAAGGTGGGCAAGTCCACCTCCTAAAAAATAACGCGCTTTTCCGAGGA
+CGGTGCTTTGCATATGCAAGGCGTTGCTGCTCAGACCAATCAAGAT
+GGAGCGGATGAGTTCCTGATCCACCAGGGAGAGGATCTCTTCCATCCGCGGCTCGCAAATCTCGGCCAGCACCCGACGGGAGAGCCGTCGGGACTCTCGCCCG
+CAGGACTCTGCCCAGAAGGCGTTGGAGGCGTTGAAGACAGCCATCACATCCAAGGACAAGATCCGCGCCAA
+*
+</PRE></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><PRE>Impossivel traduzir
+MQYHRRWRA*
+MTFWDDPDRHLP*
+Impossivel traduzir
+Impossivel traduzir
+MPSSRWASG*
+Impossivel traduzir
+Impossivel traduzir
+MSS*
+M*
+
+</PRE></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B> 
+<A name=esboco></A><BR><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+// Traduz um codon em um aminoacido (PROIBIDO ALTERAR)
+char translateCodonToAminoacid(char dna[], int position) {
+
+  char result = 'X';
+  int i = 0;
+
+  char codons[64][3] = 
+    {"GCT","GCC","GCA","GCG","CGT","CGC","CGA","CGG","AGA","AGG",
+     "AAT","AAC","GAT","GAC","TGT","TGC","CAA","CAG","GAA","GAG",
+     "GGT","GGC","GGA","GGG","CAT","CAC","ATT","ATC","ATA","TTA",
+     "TTG","CTT","CTC","CTA","CTG","AAA","AAG","ATG","TTT","TTC",
+     "CCT","CCC","CCA","CCG","TCT","TCC","TCA","TCG","AGT","AGC",
+     "ACT","ACC","ACA","ACG","TGG","TAT","TAC","GTT","GTC","GTA",
+     "GTG","TAG","TGA","TAA"};
+
+  char aminoacidos[64] = 
+    {'A','A','A','A','R','R','R','R','R','R','N','N','D','D','C','C',
+     'Q','Q','E','E','G','G','G','G','H','H','I','I','I','L','L','L',
+     'L','L','L','K','K','M','F','F','P','P','P','P','S','S','S','S',
+     'S','S','T','T','T','T','W','Y','Y','V','V','V','V','*','*','*'};
+
+  while (result == 'X') {
+    if ((dna[position+0] == codons[i][0]) &amp;&amp;
+	(dna[position+1] == codons[i][1]) &amp;&amp;
+	(dna[position+2] == codons[i][2])) {
+      result = aminoacidos[i];
+    }
+
+    i++;
+  }
+
+  return result;
+}
+
+
+// Traduz uma sequencia de nucleotideos (DNA) em uma sequencia de
+// aminoacidos (proteina). Retorna verdadeiro caso seja possivel
+// traduzir e falso caso contrario
+int translate(char dna[], char protein[]) {
+
+  int startCodon = 0;
+  int stopCodon = 0;
+
+
+  // Retorna verdadeiro caso tenha achado o stop codon
+  return stopCodon;
+}
+
+
+// Dada uma sequencia de DNA constroi uma nova sequencia revertida e
+// complementada (rc)
+void reverseComplement(char dna[], char rc[]) {
+
+}
+
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  char dna[201], rc[201], protein[67];
+  
+  // Le um DNA
+  scanf("%s", dna);
+
+  // Enquanto a entrada for valida
+  while (strcmp(dna,"*") != 0) {
+
+    reverseComplement(dna, rc);
+
+    // Tenta traduzir o DNA
+    if (translate(dna, protein) ||
+	translate(rc, protein)) {
+      printf("%s\n", protein);
+    } else {
+      printf("Impossivel traduzir\n");
+    }
+
+    // Le um novo DNA
+    scanf("%s", dna);
+  }
+
+  return 0;
+}
+
+</PRE>
+<HR>
+<SMALL><I>19/05/2007</I></SMALL> </BODY></HTML>

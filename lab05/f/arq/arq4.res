@@ -1,0 +1,11 @@
+Existe(m) 1 forma(s) de se escolher 50 elemento(s) num conjunto de tamanho 50
+Existe(m) 50 forma(s) de se escolher 49 elemento(s) num conjunto de tamanho 50
+Existe(m) 1225 forma(s) de se escolher 48 elemento(s) num conjunto de tamanho 50
+Existe(m) 19600 forma(s) de se escolher 47 elemento(s) num conjunto de tamanho 50
+Existe(m) 230300 forma(s) de se escolher 46 elemento(s) num conjunto de tamanho 50
+Existe(m) 2118760 forma(s) de se escolher 45 elemento(s) num conjunto de tamanho 50
+Existe(m) 15890700 forma(s) de se escolher 44 elemento(s) num conjunto de tamanho 50
+Existe(m) 99884400 forma(s) de se escolher 43 elemento(s) num conjunto de tamanho 50
+Existe(m) 536878650 forma(s) de se escolher 42 elemento(s) num conjunto de tamanho 50
+Existe(m) 2505433700 forma(s) de se escolher 41 elemento(s) num conjunto de tamanho 50
+Existe(m) 10272278170 forma(s) de se escolher 40 elemento(s) num conjunto de tamanho 50

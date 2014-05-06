@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_7DLa8_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 10b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 10b - Asterix e Obelix</H3><B>Peso</B>: 4 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Estamos no ano 50 antes de Cristo. Toda a <B>Gália</B> foi 
+ocupada pelas legiões romanas de Júlio César... Toda? Não! Uma aldeia povoada 
+por irredutíveis gauleses ainda resiste ao poder de Roma. </P>
+<P align=justify>Você e seu amigo <B>Obelix</B> são os encarregados de proteger 
+o povoado dos frequentes ataques dos romanos. Ao contrário do que Roma pensa, os 
+gauleses tem outros recursos além da força para lidar com seus invasores. </P>
+<P align=justify>Obelix é o responsável por interceptar as mensagens enviadas 
+pelo próprio Júlio César para seus generais na Gália. Cortar a comunicação entre 
+Roma e a Gália foi passo importante, mas melhor ainda seria se os gauleses 
+conseguissem ler os <B>planos de ataque</B> contidos nas mensagens. </P>
+<P align=justify>Os gauleses descobriram que as mensagens são codificadas usando 
+uma <B>criptografia de troca</B>. Assim, bastaria usar <B>força bruta</B> (ou 
+seja, testar todas os possíveis valores de deslocamento) para quebrar a 
+codificação. E em força bruta os gauleses são bons. Porém para ter certeza que 
+as mensagens decriptografadas está corretas eles contam com uma informação 
+extra: <B>fragmentos não criptografados</B> das mensagens originais, normalmente 
+extraídos, com um pouco de persuasão, dos próprios encarregados de entregar as 
+mensagens aos generais na Gália. </P>
+<P align=justify>Sua missão será escrever um programa em Linguagem C 
+(<B>lab10b.c</B>) que receba, como entrada, <B>uma palavra não cifrada</B> e 
+<B>uma frase cifrada</B> e produza, como saída, o texto decifrado segundo o 
+deslocamento que foi possível inferir a partir das informações de entrada. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_7DLa8_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho, incluir comentários 
+pertinentes e remover os comentários em letras maiúsculas. </P>
+<P align=justify><B>Observação importante:</B> Neste laboratório é expressamente 
+proibida a utilização da biblioteca <B>string.h</B>. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por apenas uma linha no seguinte formato: 
+  <UL>
+    <LI><B>&lt;palavra&gt;</B> # <B>&lt;frase&gt;</B> 
+    <LI><B>&lt;palavra&gt;</B> é uma seqüência de letras maiúsculas ou 
+    minúsculas que representa a palavra que supostamente se encontra no texto 
+    original (<I>não existem caracteres diferentes de letras no meio da 
+    palavra</I>). 
+    <LI><B>&lt;frase&gt;</B> é uma seqüência de caracteres (<I>letras, números, 
+    espaços e caracteres de pontuação</I>) terminada por um ponto final 
+    <B>"."</B> (<I>não existem pontos finais no meio da frase</I>). 
+    <LI><B>&lt;palavra&gt;</B> terá tamanho máximo de <B>20</B> caracteres. 
+    <LI><B>&lt;frase&gt;</B> terá tamanho máximo de <B>200</B> caracteres 
+    (incluindo o ponto final). </LI></UL></LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Se for possível encontrar a palavra fornecida na frase, o programa deverá 
+  imprimir a saída no seguinte formato: 
+  <UL>
+    <LI><B>n</B> # <B>&lt;frase decifrada&gt;</B> 
+    <LI><B>n</B> é é o <B>menor</B> número inteiro não negativo que indica o 
+    tamanho do deslocamento que é preciso ser feito para se obter a frase 
+    original a partir da frase cifrada. 
+    <LI><B>&lt;frase decifrada&gt;</B> é a frase que deu origem a frase recebida 
+    na entrada. </LI></UL>
+  <LI>Se não for possível encontrar a palavra fornecida na frase, o programa 
+  deverá imprimir a saída no seguinte formato: 
+  <UL>
+    <LI><BIG><TT>Impossivel decifrar</TT></BIG> </LI></UL></LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+<A name=exemplos></A>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=red>gol</FONT> # Nskehe irwemehe ryqivs 3: Vskivms jmrki uyi glyxe 
+      hmvixs teve s <FONT color=red>ksp</FONT>, qew egefe xsgerhs teve uyiq ziq 
+      hi xvew fexiv. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>4 # Jogada 
+      ensaiada numero 3: Rogerio finge que chuta direto para o <FONT 
+      color=red>gol</FONT>, mas acaba tocando para quem vem de tras bater. 
+    </TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=red>ataque</FONT> # Guecpvgkq eqdtcfq pc rtkogktc vtcxg; cvcecpvg 
+      fgxg uwdkt pq dkeq fc rgswgpc ctgc. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Impossivel 
+      decifrar </TT></TD></TR><!-- Exemplo 3 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=red>recua</FONT> # Wbnpt <FONT color=red>sfdvb</FONT>s qbsb ufoubs 
+      tvsqsffoefs op dpousb-bubrvf. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>1 # Vamos <FONT 
+      color=red>recua</FONT>r para tentar surpreender no contra-ataque. </TT></TD><!-- Exemplo 4 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=red>claro</FONT> # Outro texto <FONT color=red>claro</FONT>. 
+</TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>0 # Outro texto 
+      <FONT color=red>claro</FONT>. </TT></TD><!-- Exemplo 5 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=red>frase</FONT> # F bhpsb Kptf? Dpnp tfsb rvf gjdbsb ftub <FONT 
+      color=red>gsbtf</FONT>? Ejgjdjm qsfwfs. </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>1 # E agora Jose? 
+      Como sera que ficara esta <FONT color=red>frase</FONT>? Dificil prever. 
+      </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// PROIBIDO USAR QUALQUER OUTRA BIBLIOTECA
+#include &lt;stdio.h&gt;
+
+// Programa principal
+int main() {
+
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>26/05/2007</I></SMALL> </BODY></HTML>

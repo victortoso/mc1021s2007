@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_uDGnT_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 05d</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 05d - Intersecção de Retângulos</H3><B>Peso</B>: 4 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Uma maneira de se representar um retângulo é listando as 
+coordenadas de seus quatro vértices. Contudo, se o retângulo tiver seus lados 
+paralelos aos eixos x e y, a sua representação pode ser feita listando apenas as 
+coordenadas de seus vértices superior esquerdo e inferior direito. </P>
+<P align=justify>Nesta tarefa você deverá escrever um programa em linguagem C 
+(<B>lab05d.c</B>) que receberá uma lista de retângulos, representados pelos seus 
+vértices superior esquerdo e inferior direito, e calculará a área da intersecção 
+existente entre todos eles. </P>
+<P align=justify><I>Observação:</I> Neste laboratório é proibida a alteração do 
+trecho de código, contido no esboço, responsável pela leitura dos vértices dos 
+retângulos. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_uDGnT_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por uma lista de conjuntos de retângulos 
+  representados pelos vértices superior esquerdo e inferior direito, sendo que 
+  cada conjunto será representado da seguinte forma: 
+  <TABLE cellSpacing=0 cellPadding=2 border=0>
+    <TBODY>
+    <TR>
+      <TD><I>N<I></I></I></TD></TR>
+    <TR>
+      <TD><I>XS<SUB>1</SUB>&nbsp;YS<SUB>1</SUB><I>&nbsp;<I>XI<SUB>1</SUB>&nbsp;YI<SUB>1</SUB></I></I></I></TD></TR>
+    <TR>
+      <TD><I>XS<SUB>2</SUB>&nbsp;YS<SUB>2</SUB><I>&nbsp;<I>XI<SUB>2</SUB>&nbsp;YI<SUB>2</SUB></I></I></I></TD></TR>
+    <TR>
+      <TD>...&nbsp;...&nbsp;...&nbsp;...</TD></TR>
+    <TR>
+      <TD><I>XS<SUB>N</SUB>&nbsp;YS<SUB>N</SUB><I>&nbsp;<I>XI<SUB>N</SUB>&nbsp;YI<SUB>N</SUB></I></I></I></TD></TR></TBODY></TABLE>
+  <LI>Nesta representação de conjunto de retângulos: 
+  <UL>
+    <LI><I>N</I> é um inteiro que indica o número de retângulos que compõem o 
+    conjunto (1 &#8804; <I>N</I> &#8804; 100). 
+    <LI><I>XS<SUB>i</SUB></I> e <I>YS<SUB>i</SUB></I> representam as coordenadas 
+    do vértice superior esquerdo S<SUB>i</SUB></I> do retângulo <I>i</I> (1 &#8804; i 
+    &#8804; N) 
+    <LI><I>XI<SUB>i</SUB></I> e <I>YI<SUB>i</SUB></I> representam as coordenadas 
+    do vértice inferior direito I<SUB>i</SUB></I> do retângulo <I>i</I> (1 &#8804; i &#8804; 
+    N) </LI></UL>
+  <LI>A entrada termina quando for lido <I>N</I> igual a zero. 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada conjunto de retângulos lido da entrada, a área <I>A</I> (da 
+  intersecção de todos os retângulos) calculada deverá ser impressa no seguinte 
+  formato: 
+  <UL>
+    <LI>Area = <I>A</I></LI></UL>
+  <LI>Note que a área deve ter precisão de três casas. 
+  <LI>A saída deverá ser escrita na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>2<BR>0 1 1 0<BR>2 
+      1 3 0<BR><BR>4<BR>0 100 100 0<BR>10 90 90 10<BR>20 80 50 5<BR>25 120 40 
+      30<BR><BR>2<BR>10 10 20 5<BR>15 15 100 0<BR><BR>1<BR>-10 20 -5 
+      -10<BR><BR>3<BR>10 10 20 0<BR>20 20 30 0<BR>30 30 40 
+0<BR><BR>0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Area = 
+      0.000<BR>Area = 750.000<BR>Area = 25.000<BR>Area = 150.000<BR>Area = 
+      0.000<BR></TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>4<BR>00.434 100.25 
+      100.43 00.50<BR>10.424 090.25 090.43 10.50<BR>20.456 080.25 050.43 
+      05.50<BR>25.345 120.25 040.43 30.50<BR><BR>2<BR>0.10 0.10 0.20 
+      0.05<BR>0.15 0.15 1.00 0.01<BR><BR>1<BR>10.34597 20.23466 20.32648 
+      20.164348<BR><BR>3<BR>10 10 31 2<BR>20 20 31 3<BR>30 30 31 
+      4<BR><BR>0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Area = 
+      750.479<BR>Area = 0.003<BR>Area = 0.702<BR>Area = 
+  6.000<BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+// Define um ponto
+typedef struct _ponto {
+  double x;
+  double y;
+} Ponto;
+
+// Define um retangulo
+typedef struct _retangulo {
+  Ponto superior;
+  Ponto inferior;
+} Retangulo;
+
+// Calcula o minimo de dois valores
+double min(double x, double y) {
+
+  // Implementar esta funcao
+
+  // A proxima linha deve ser removida apos a funcao ter sido
+  // implemetada. Ela foi incluida apenas para que o esboco pudesse
+  // ser compilado, mesmo ainda incompleto
+  return 0;
+}
+
+// Calcula o maximo de dois valores
+double max(double x, double y) {
+
+  // Implementar esta funcao
+
+  // A proxima linha deve ser removida apos a funcao ter sido
+  // implemetada. Ela foi incluida apenas para que o esboco pudesse
+  // ser compilado, mesmo ainda incompleto
+  return 0;
+}
+
+// Calcula a interseccao de dois retangulos
+Retangulo intersection(Retangulo a, Retangulo b) {
+  Retangulo c;
+
+  // Implementar esta funcao
+
+  return c;
+}
+
+// Calcula a area de um retangulo
+double area(Retangulo r) {
+
+  // Implementar esta funcao
+
+  // A proxima linha deve ser removida apos a funcao ter sido
+  // implemetada. Ela foi incluida apenas para que o esboco pudesse
+  // ser compilado, mesmo ainda incompleto
+  return 0;
+}
+
+int main() {
+  Retangulo retangulos[100];
+  int n, i;
+
+  // Le o numero de retangulos
+  scanf("%d", &amp;n);
+
+  // Enquanto a entrada for valida
+  while (n &gt; 0) {
+
+    // Le todos os n retangulos
+    for (i = 0; i &lt; n; i++) {
+      scanf("%lf %lf %lf %lf",
+            &amp;retangulos[i].superior.x, &amp;retangulos[i].superior.y,
+            &amp;retangulos[i].inferior.x, &amp;retangulos[i].inferior.y);
+    }
+
+
+
+
+
+    // Le o proximo numero de retangulos
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>14/04/2007</I></SMALL> </BODY></HTML>

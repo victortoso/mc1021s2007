@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_eVS6z_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 13b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 13b - Lista duplamente ligada</H3><B>Peso</B>: 10 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Nesta tarefa você escreverá um programa em linguagem C 
+(<B>lab13b.c</B>) que executará uma série de operações sobre uma lista 
+duplamente ligada. </P>
+<P align=justify>A operações possíveis estão listadas na seção <B>Entrada</B>. 
+</P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_eVS6z_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><BR><BR><B>Entrada</B> 
+<UL>
+  <LI>Cada caso de teste será formado por uma única lista de comandos que 
+  manipularão os elementos da lista duplamente ligada. 
+  <LI>O seu programa deverá responder aos seguintes comandos: 
+  <UL>
+    <LI><TT><BIG><BIG>p</BIG></BIG></TT><BR>Imprime todos os elementos das 
+    lista. 
+    <LI><TT><BIG><BIG>i N</BIG></BIG></TT><BR>Insere o inteiro <I>N</I> no 
+    início da lista. 
+    <LI><TT><BIG><BIG>I N</BIG></BIG></TT><BR>Insere o inteiro <I>N</I> no fim 
+    da lista. 
+    <LI><TT><BIG><BIG>v N</BIG></BIG></TT><BR>Remove todos os elementos da lista 
+    cujos valores são iguais ao inteiro <I>N</I>. 
+    <LI><TT><BIG><BIG>t</BIG></BIG></TT><BR>Remove todos os elementos da lista. 
+    <LI><TT><BIG><BIG>r</BIG></BIG></TT><BR>Remove o primeiro elemento da lista. 
+
+    <LI><TT><BIG><BIG>R</BIG></BIG></TT><BR>Remove o último elemento da lista. 
+    <LI><TT><BIG><BIG>o</BIG></BIG></TT><BR>Ordena os elementos da lista. 
+    <LI><TT><BIG><BIG>V</BIG></BIG></TT><BR>Inverte a lista. 
+    <LI><TT><BIG><BIG>X</BIG></BIG></TT><BR>Sai do programa. 
+</LI></UL></LI></UL><BR><BR><B>Saída</B> 
+<UL>
+  <LI>Todos os procedimentos de impressão da saída já estão implementados no 
+  esboço. Em caso de dúvidas, verifique os exemplos. 
+</LI></UL><BR><BR><B>Exemplos</B>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" 
+      vAlign=top><TT><BIG><FONT color=blue>i 4 <BR>i 5 <BR>i 7 <BR>i 8 <BR>i 9 
+      <BR>I 3 <BR>I 4 <BR>I 1 <BR>p <BR>V <BR>p <BR>v 4 <BR>p <BR>i 10 <BR>I 4 
+      <BR>p <BR>V <BR>p <BR>o <BR>p <BR>r <BR>p <BR>R <BR>p <BR>t <BR>i 3 <BR>p 
+      <BR>X </FONT></BIG></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" 
+      vAlign=top><TT><BIG><FONT color=blue>Inserido 4 no inicio <BR>Inserido 5 
+      no inicio <BR>Inserido 7 no inicio <BR>Inserido 8 no inicio <BR>Inserido 9 
+      no inicio <BR>Inserido 3 no fim <BR>Inserido 4 no fim <BR>Inserido 1 no 
+      fim <BR>NULL &lt;- 9 &lt;-&gt; 8 &lt;-&gt; 7 &lt;-&gt; 5 &lt;-&gt; 4 
+      &lt;-&gt; 3 &lt;-&gt; 4 &lt;-&gt; 1 -&gt; NULL <BR>Lista invertida 
+      <BR>NULL &lt;- 1 &lt;-&gt; 4 &lt;-&gt; 3 &lt;-&gt; 4 &lt;-&gt; 5 &lt;-&gt; 
+      7 &lt;-&gt; 8 &lt;-&gt; 9 -&gt; NULL <BR>Removidas todas as copias de 4 
+      <BR>NULL &lt;- 1 &lt;-&gt; 3 &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 &lt;-&gt; 
+      9 -&gt; NULL <BR>Inserido 10 no inicio <BR>Inserido 4 no fim <BR>NULL 
+      &lt;- 10 &lt;-&gt; 1 &lt;-&gt; 3 &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 
+      &lt;-&gt; 9 &lt;-&gt; 4 -&gt; NULL <BR>Lista invertida <BR>NULL &lt;- 4 
+      &lt;-&gt; 9 &lt;-&gt; 8 &lt;-&gt; 7 &lt;-&gt; 5 &lt;-&gt; 3 &lt;-&gt; 1 
+      &lt;-&gt; 10 -&gt; NULL <BR>Lista ordenada <BR>NULL &lt;- 1 &lt;-&gt; 3 
+      &lt;-&gt; 4 &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 &lt;-&gt; 9 &lt;-&gt; 10 
+      -&gt; NULL <BR>Removido 1 do inicio <BR>NULL &lt;- 3 &lt;-&gt; 4 &lt;-&gt; 
+      5 &lt;-&gt; 7 &lt;-&gt; 8 &lt;-&gt; 9 &lt;-&gt; 10 -&gt; NULL <BR>Removido 
+      10 do fim <BR>NULL &lt;- 3 &lt;-&gt; 4 &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 
+      &lt;-&gt; 9 -&gt; NULL <BR>Removidos todos os elementos <BR>Inserido 3 no 
+      inicio <BR>NULL &lt;- 3 -&gt; NULL </FONT></BIG></TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" 
+      vAlign=top><TT><BIG><FONT color=red>I 4 <BR>i 5 <BR>I 7 <BR>i 8 <BR>i 9 
+      <BR>I 3 <BR>i 4 <BR>I 1 <BR>p <BR>I 10 <BR>I 4 <BR>p <BR>r <BR>V <BR>R 
+      <BR>p <BR>o <BR>r <BR>p <BR>r <BR>p <BR>R <BR>p <BR>t <BR>p <BR>X 
+      </FONT></BIG></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" 
+      vAlign=top><TT><BIG><FONT color=red>Inserido 4 no fim <BR>Inserido 5 no 
+      inicio <BR>Inserido 7 no fim <BR>Inserido 8 no inicio <BR>Inserido 9 no 
+      inicio <BR>Inserido 3 no fim <BR>Inserido 4 no inicio <BR>Inserido 1 no 
+      fim <BR>NULL &lt;- 4 &lt;-&gt; 9 &lt;-&gt; 8 &lt;-&gt; 5 &lt;-&gt; 4 
+      &lt;-&gt; 7 &lt;-&gt; 3 &lt;-&gt; 1 -&gt; NULL <BR>Inserido 10 no fim 
+      <BR>Inserido 4 no fim <BR>NULL &lt;- 4 &lt;-&gt; 9 &lt;-&gt; 8 &lt;-&gt; 5 
+      &lt;-&gt; 4 &lt;-&gt; 7 &lt;-&gt; 3 &lt;-&gt; 1 &lt;-&gt; 10 &lt;-&gt; 4 
+      -&gt; NULL <BR>Removido 4 do inicio <BR>Lista invertida <BR>Removido 9 do 
+      fim <BR>NULL &lt;- 4 &lt;-&gt; 10 &lt;-&gt; 1 &lt;-&gt; 3 &lt;-&gt; 7 
+      &lt;-&gt; 4 &lt;-&gt; 5 &lt;-&gt; 8 -&gt; NULL <BR>Lista ordenada 
+      <BR>Removido 1 do inicio <BR>NULL &lt;- 3 &lt;-&gt; 4 &lt;-&gt; 4 
+      &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 &lt;-&gt; 10 -&gt; NULL <BR>Removido 3 
+      do inicio <BR>NULL &lt;- 4 &lt;-&gt; 4 &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 
+      &lt;-&gt; 10 -&gt; NULL <BR>Removido 10 do fim <BR>NULL &lt;- 4 &lt;-&gt; 
+      4 &lt;-&gt; 5 &lt;-&gt; 7 &lt;-&gt; 8 -&gt; NULL <BR>Removidos todos os 
+      elementos <BR>NULL 
+</FONT></BIG></TT></TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 13b - Lista duplamente ligada
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct elemento {
+  int valor;
+  struct elemento * anterior;
+  struct elemento * proximo;
+} Elemento;
+
+typedef Elemento * apLista;
+
+// Inicializa a lista (PROIBIDO ALTERAR)
+void inicializa(apLista * lista) {
+  (*lista) = NULL;
+}
+
+// Insere no comeco da lista (PROIBIDO ALTERAR)
+void insereInicio(apLista * lista, int valor) {
+
+  Elemento * novo;
+
+  novo = (Elemento *) malloc(sizeof(Elemento));
+  novo-&gt;valor = valor;
+  novo-&gt;anterior = NULL;
+
+  if (*lista) {
+    novo-&gt;proximo = (*lista);
+    (*lista)-&gt;anterior = novo;
+  } else {
+    novo-&gt;proximo = NULL;
+  }
+
+  (*lista) = novo;
+}
+
+// Insere no fim da lista (IMPLEMENTACAO OBRIGATORIA)
+void insereFim(apLista * lista, int valor) {
+
+}
+
+// Remove do comeco da lista. Retorna o ponteiro para o elemento que
+// estava armazenado na primeira posicao da lista ligada. Retorna NULL
+// caso a lista estava vazia antes da tentativa remocao (PROIBIDO
+// ALTERAR)
+apLista removeInicio(apLista * lista) {
+
+  Elemento * primeiro = (*lista);
+
+  if (primeiro) {
+
+    (*lista) = (*lista)-&gt;proximo;
+
+    if (*lista) {
+      (*lista)-&gt;anterior = NULL;
+    }
+  }
+
+  return primeiro;
+}
+
+// Remove do fim da lista. Retorna o ponteiro para o elemento que
+// estava armazenado na ultima posicao da lista ligada. Retorna NULL
+// caso a lista estava vazia antes da tentativa remocao (IMPLEMENTACAO
+// OBRIGATORIA)
+apLista removeFim(apLista * lista) {
+
+  Elemento * ultimo;
+
+
+  return ultimo;
+}
+
+// Inverte uma lista (IMPLEMENTACAO OBRIGATORIA)
+void inverte(apLista * inicio, apLista atual) {
+
+}
+
+// Imprime os valores da lista (PROIBIDO ALTERAR)
+void imprime(apLista lista) {
+
+  if (lista) {
+
+    if (lista-&gt;anterior) {
+      printf("&lt;-&gt; %d ", lista-&gt;valor);
+    } else {
+      printf("NULL &lt;- %d ", lista-&gt;valor);
+    }
+
+    if (lista-&gt;proximo) {
+      imprime(lista-&gt;proximo);
+    } else {
+      printf("-&gt; NULL\n");
+    }
+  } else {
+    printf("NULL\n");
+  }
+}
+
+// Encontra o menor elemento de uma lista nao vazia (USO OPCIONAL)
+apLista minimo(apLista lista) {
+  apLista aux;
+
+  if (lista-&gt;proximo) {
+    aux = minimo(lista-&gt;proximo);
+  } else {
+    aux = lista;
+  }
+
+  if (lista-&gt;valor &lt; aux-&gt;valor) {
+    return lista;
+  } else {
+    return aux;
+  }
+}
+
+// Ordena uma lista
+// IMPORTANTE: proibido alocar vetores estaticos ou qualquer nova
+// posicao dinamica de memoria (malloc). Permitido apenas o uso de
+// variaveis auxiliares do tipo ponteiro. (IMPLEMENTACAO OBRIGATORIA)
+void ordena(apLista * lista) {
+
+}
+
+// Remove todas as ocorrencia de um dado valor na lista ligada
+// (libera a memoria dos elementos removidos)
+// (IMPLEMENTACAO OBRIGATORIA)
+void removeValor(apLista * lista, int valor) {
+
+}
+
+// Remove todos os elementos da lista (libera a memoria dos elementos
+// removidos). No final, lista deve apontar para uma lista duplamente
+// ligada vazia valida (IMPLEMENTACAO OBRIGATORIA)
+void removeTudo(apLista * lista) {
+
+}
+
+// Programa Principal (PROIBIDO ALTERAR)
+int main() {
+
+  apLista lista, removido;
+  int i;
+  char c;
+
+  inicializa(&amp;lista);
+
+  do {
+
+    scanf("%c", &amp;c);
+
+    switch(c) {
+
+    case 'p':
+      // Imprime todos os elementos da lista
+      imprime(lista);
+      break;
+
+    case 'i':
+      scanf(" %d", &amp;i);
+      // Insere no inicio
+      insereInicio(&amp;lista, i);
+      printf("Inserido %d no inicio\n", i);
+      break;
+
+    case 'I':
+      scanf(" %d", &amp;i);
+      // Insere no fim
+      insereFim(&amp;lista, i);
+      printf("Inserido %d no fim\n", i);
+      break;
+
+    case 'v':
+      scanf(" %d", &amp;i);
+      // Remove todos os elementos cujos valores sÃ£o iguais a i
+      removeValor(&amp;lista, i);
+      printf("Removidas todas as copias de %d\n", i);
+      break;
+
+    case 't':
+      // Remove todos os elementos da lista
+      removeTudo(&amp;lista);
+      printf("Removidos todos os elementos\n");
+      break;
+
+    case 'r':
+      // Remove do inicio
+      removido = removeInicio(&amp;lista);
+      if (removido) {
+        printf("Removido %d do inicio\n", removido-&gt;valor);
+        free(removido);
+      } else {
+        printf("Nao ha elementos a remover\n");
+      }
+      break;
+
+    case 'R':
+      // Remove do fim
+      removido = removeFim(&amp;lista);
+      if (removido) {
+        printf("Removido %d do fim\n", removido-&gt;valor);
+        free(removido);
+      } else {
+        printf("Nao ha elementos a remover\n");
+     }
+      break;
+
+    case 'o':
+      // Ordena os elementos da lista
+      ordena(&amp;lista);
+      printf("Lista ordenada\n");
+      break;
+
+    case 'V':
+      // Inverte a lista
+      inverte(&amp;lista, lista);
+      printf("Lista invertida\n");
+      break;
+    }
+
+  } while(c != 'X');
+
+  // Antes de sair remove todo os elementos
+  removeTudo(&amp;lista);
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>23/06/2007</I></SMALL> </A></BODY></HTML>

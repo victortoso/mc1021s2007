@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_ciD9A_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 12a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 12a - Sudoku</H3><B>Peso</B>: 9 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify><B>Sudoku</B> é um <B>quebra-cabeça</B> baseado na colocação 
+lógica de números. O <B>quebra-cabeça</B> foi projetado anonimamente por Howard 
+Garns, um arquiteto aposentado de 74 anos de idade e construtor independente de 
+passatempos. </P>
+<P align=justify>Embora tenha se inspirado provavelmente no Quadrado Latino, 
+invenção do século XVIII do suíço Leonhard Euler, Garns adicionou uma terceira 
+dimensão (a limitação regional) à construção matemática e (ao contrário de 
+Euler) apresentou a criação como um quebra-cabeça, fornecendo uma matriz 
+parcialmente completa e necessitando que o resolvedor preenchesse o resto. O 
+enigma foi publicado pela primeira vez nos Estados Unidos em 1979 na revista 
+americana <I>Math Puzzles and Logic Problems</I>, da editora Dell Magazines, 
+especializada em desafios e quebra-cabeças. </P>
+<P align=justify>O objetivo do Sudoku é a colocação de <B>números de 1 a 9</B> 
+em cada uma das células vazias de uma <B>matriz</B> constituída por 9 
+submatrizes de tamanho <B>3 x 3</B>. Estas submatrizes são denominadas regiões. 
+</P>
+<P align=justify>A colocação dos números deve ser feita de modo que um número 
+não apareça mais de uma vez dentro de qualquer linha, coluna ou região. Abaixo, 
+podemos ver um exemplo de Sudoku. </P>
+<CENTER><IMG title="Um exemplo de Sudoku - Fonte Wikipedia" 
+src="enunciado_arquivos/300px-Sudoku-by-L2G-20050714.gif"> </CENTER>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab12a.c</B>) que resolva quebra-cabeças Sudoku. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_ciD9A_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada é composta por uma <B>matriz 9 x 9</B> de números inteiros que 
+  estão no intervalo de <B>0 a 9</B>. 
+  <LI>Nesta matriz, as posições preenchidas com <B>0</B> representam as 
+  <B>células vazias</B>. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>O programa deverá tentar resolver o quebra-cabeça e imprimir a saída da 
+  seguinte maneira: 
+  <UL>
+    <LI>Se o quebra-cabeça tem solução, o programa deverá imprimir a matriz 
+    solução no formato <B>9 x 9</B>. Lembre-se que sempre existe um espaço em 
+    branco após cada número impresso (inclusive antes do pulo de linha). 
+    <LI>Se o quebra-cabeça não tem solução, o programa deverá imprimir a 
+    seguinte mensagem: 
+    <UL>
+      <LI><BIG><TT>Impossivel resolver</TT></BIG></LI></UL></LI></UL></LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=red>5 
+      3 <FONT color=black>0</FONT> <FONT color=black>0</FONT> 7 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> <BR>6 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 1 9 5 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <BR><FONT 
+      color=black>0</FONT> 9 8 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      6 <FONT color=black>0</FONT> <BR>8 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 6 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      3 <BR>4 <FONT color=black>0</FONT> <FONT color=black>0</FONT> 8 <FONT 
+      color=black>0</FONT> 3 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 1 <BR>7 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 2 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      6 <BR><FONT color=black>0</FONT> 6 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      2 8 <FONT color=black>0</FONT> <BR><FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 4 1 9 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 5 <BR><FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> 8 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 7 9 </FONT></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>5 
+      3 4 6 7 8 9 1 2 <BR>6 7 2 1 9 5 3 4 8 <BR>1 9 8 3 4 2 5 6 7 <BR>8 5 9 7 6 
+      1 4 2 3 <BR>4 2 6 8 5 3 7 9 1 <BR>7 1 3 9 2 4 8 5 6 <BR>9 6 1 5 3 7 2 8 4 
+      <BR>2 8 7 4 1 9 6 3 5 <BR>3 4 5 2 8 6 1 7 9 </FONT></TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=red>1 
+      <FONT color=black>0</FONT> 3 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 5 <FONT 
+      color=black>0</FONT> 9 <BR><FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 2 1 <FONT color=black>0</FONT> 9 4 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <BR><FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      7 <FONT color=black>0</FONT> 4 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <BR>3 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 5 <FONT 
+      color=black>0</FONT> 2 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 6 <BR><FONT color=black>0</FONT> 6 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> <FONT color=black>0</FONT> 5 <FONT 
+      color=black>0</FONT> <BR>7 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 8 <FONT color=black>0</FONT> 3 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 4 <BR><FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      4 <FONT color=black>0</FONT> 1 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <BR><FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 9 2 <FONT 
+      color=black>0</FONT> 5 8 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <BR>8 <FONT color=black>0</FONT> 4 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      1 <FONT color=black>0</FONT> 7 </FONT></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>1 
+      4 3 6 2 8 5 7 9 <BR>5 7 2 1 3 9 4 6 8 <BR>9 8 6 7 5 4 2 3 1 <BR>3 9 1 5 4 
+      2 7 8 6 <BR>4 6 8 9 1 7 3 5 2 <BR>7 2 5 8 6 3 9 1 4 <BR>2 3 7 4 8 1 6 9 5 
+      <BR>6 1 9 2 7 5 8 4 3 <BR>8 5 4 3 9 6 1 2 7 </FONT></TT></TD></TR><!-- Exemplo 3 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=red>6 
+      7 4 3 <FONT color=black>0</FONT> <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 2 8 <BR><FONT color=black>0</FONT> 2 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 6 <FONT 
+      color=black>0</FONT> 5 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <BR><FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> 7 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <BR>5 6 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> 1 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <BR><FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 7 <FONT 
+      color=black>0</FONT> 4 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <BR><FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> <FONT color=black>0</FONT> 9 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <BR>2 <FONT color=black>0</FONT> <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 8 <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> 6 <FONT color=black>0</FONT> <BR><FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> 4 9 <BR>1 <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      <FONT color=black>0</FONT> <FONT color=black>0</FONT> <FONT 
+      color=black>0</FONT> <FONT color=black>0</FONT> <FONT color=black>0</FONT> 
+      </FONT></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>Impossivel 
+      resolver </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 12a - Sudoku
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+// Resolve recursivamente o jogo Sudoku
+int sudoku(int matriz[9][9]) {
+  int ok;
+
+
+  return ok;
+}
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  int matriz[9][9];
+  int i, j, ok;
+  
+  // Le a matriz parcialmente preenchida
+  for (i = 0; i &lt; 9; i++) {
+    for (j = 0; j &lt; 9; j++) {
+      scanf("%d", &amp;matriz[i][j]);
+    }
+  }
+
+  // Resolve o problema
+  ok = sudoku(matriz);
+
+  // Se tiver solucao, imprime a matriz preenchida
+  if (ok) {
+    for (i = 0; i &lt; 9; i++) {
+      for (j = 0; j &lt; 9; j++) {
+	printf("%d ", matriz[i][j]);
+      }
+      printf("\n");
+    }
+  } else {
+    printf("Impossivel resolver\n");
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>16/06/2007</I></SMALL> </BODY></HTML>

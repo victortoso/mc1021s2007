@@ -1,0 +1,49 @@
+i 1
+p
+t
+p
+I 7
+I 2
+r
+r
+i 8
+p
+i 3
+I 12
+i 9
+I 3
+p
+t
+I 4
+r
+i 4
+I 1
+i 5
+p
+I 2
+i 3
+I 6
+p
+r
+V
+I 3
+i 7
+R
+p
+I 29
+o
+p
+r
+I 8
+i 9
+p
+R
+i 9
+i -1
+p
+t
+i -10
+i 10
+o
+p
+X

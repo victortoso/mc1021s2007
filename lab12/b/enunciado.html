@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_jgSBZ_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 12b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 12b - Hipismo</H3><B>Peso</B>: 9 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>O tabuleiro e as peças de Xadrez são freqüentemente utilizados 
+para a criação de novos quebra-cabeças. Um problema muito famoso é o das <B>Oito 
+Rainhas</B> que consiste em descobrir uma maneira de dispor 8 rainhas em um 
+tabuleiro 8 x 8 de modo que elas não possam se atacar. </P>
+<P align=justify>Neste laboratório, iremos implementar um programa que solucione 
+outro problema envolvendo peças de Xadrez. </P>
+<P align=justify>Trata-se do problema do <B>Hipismo</B> que consiste em 
+movimentar um cavalo em um tabuleiro de modo que ele passe por todos os 
+obstáculos existentes na ordem definida. O tabuleiro <B>5 x 5</B> abaixo mostra 
+os <B>8</B> possíveis movimentos que um cavalo pode executar. O <B>C</B> 
+vermelho indica o local onde o cavalo se encontra e os <B>X</B>s azuis mostram 
+as posições para onde ele pode "pular". </P>
+<CENTER>
+<TABLE border=1>
+  <TBODY>
+  <TR>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; 
+  </TD></TR>
+  <TR>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD></TR>
+  <TR>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+      align=middle><TT><BIG><FONT color=red><B>C</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; 
+  </TD></TR>
+  <TR>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD></TR>
+  <TR>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+      align=middle><TT><BIG><FONT color=blue><B>X</B></FONT></BIG></TT> </TD>
+    <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black">&nbsp; 
+  </TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Porém, para resolver o problema, além de cumprir o percurso 
+definido, você deverá agir como <B>Rodrigo Pessoa</B> e sua égua <B>Baloubet du 
+Rouet</B> e tentar fazer o percurso de maneira ótima (e, de preferência, sem 
+refugar). Isso significa que você deverá fazer o percurso no menor número de 
+passos possível. </P>
+<P align=justify>Para isso, o programa receberá a dimensão do do tabuleiro em 
+linhas e colunas e uma lista de obstáculos que definem o percurso a ser 
+cumprido. O cavalo sempre começa no primeiro obstáculo e deverá chegar no 
+último, passando por todos os outros. </P>
+<P align=justify>Os tabuleiros abaixo mostram um exemplo de resolução do 
+problema. O tabuleiro da esquerda é uma matriz de tamanho 6 x 6 que possui 4 
+obstáculos que devem ser percorridos (<B>o1</B>, <B>o2</B>, <B>o3</B> e 
+<B>o4</B>). O tabuleiro da direita enumera os passos que o cavalo deve executar 
+para passar por todos os obstáculos. </P>
+<CENTER>
+<TABLE border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle>Tabuleiro com Obstáculos</TD>
+    <TD>&nbsp;</TD>
+    <TD align=middle>Passos executados</TD></TR>
+  <TR>
+    <TD align=middle>
+      <TABLE border=1>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle><TT><BIG><FONT color=red><B>o1</B></FONT></BIG></TT> 
+</TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle><TT><BIG><FONT color=red><B>o2</B></FONT></BIG></TT> 
+</TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle><TT><BIG><FONT color=red><B>o3</B></FONT></BIG></TT> 
+</TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle><TT><BIG><FONT color=red><B>o4</B></FONT></BIG></TT> 
+</TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD></TR></TBODY></TABLE></TD>
+    <TD style="WIDTH: 30px">&nbsp;</TD>
+    <TD align=middle>
+      <TABLE border=1>
+        <TBODY>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle><TT><BIG><FONT color=red><B>0</B></FONT></BIG></TT> </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle><TT><BIG><FONT color=red><B>1</B></FONT></BIG></TT> </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle><TT><BIG><FONT color=red><B>3</B></FONT></BIG></TT> </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle><TT><BIG><FONT color=red><B>2</B></FONT></BIG></TT> </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle><TT><BIG><FONT color=red><B>4</B></FONT></BIG></TT> 
+        </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle><TT><BIG><FONT color=red><B>5</B></FONT></BIG></TT> </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD></TR>
+        <TR>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: white" 
+          align=middle>&nbsp; </TD>
+          <TD style="WIDTH: 30px; HEIGHT: 15px; BACKGROUND-COLOR: black" 
+          align=middle>&nbsp; 
+</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab12b.c</B>) para resolver o problema proposto acima. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_jgSBZ_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será composta por diversas configurações de tabuleiros. 
+  <LI>Cada configuração será formatada da seguinte maneira: 
+  <UL>
+    <LI>Uma trinca de valores inteiros positivos <B>L</B>, <B>C</B> e <B>O</B> 
+    (4 &#8804; <B>L</B>, <B>C</B>&#8804; 20 e 2 &#8804; <B>O</B> &#8804; 20) com os seguintes 
+    significados: 
+    <UL>
+      <LI><B>L</B> número de linhas do tabuleiro. 
+      <LI><B>C</B> número de colunas do tabuleiro. 
+      <LI><B>O</B> número de obstáculos contidos no tabuleiro. </LI></UL>
+    <LI>Uma lista composta por <B>O</B> duplas de números inteiros <B>X</B> e 
+    <B>Y</B> (0 &#8804; <B>X</B> &lt; L, 0 &#8804; <B>Y</B> &lt; C) representado as posições 
+    onde os obstáculos se encontram. </LI></UL>
+  <LI>A última linha da entrada é composta pela trinca <B>0 0 0</B> que indica o 
+  seu final. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada configuração de tabuleiro lida da entrada, seu programa deverá 
+  calcular o número mínimo de passos <B>D</B> e imprimir a seguinte mensagem 
+  (uma linha para cada configuração): 
+  <UL>
+    <LI><TT><BIG>Distancia total = D</BIG></TT> </LI></UL>
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada e nada deve ser impresso 
+  sobre ela. </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>10 10 5 <BR>0 0 <BR>2 2 <BR>8 8 <BR>9 9 <BR>8 9 
+      <BR></FONT><FONT color=red><BR>15 10 6 <BR>0 0 <BR>14 1 <BR>14 0 <BR>13 0 
+      <BR>12 8 <BR>0 0 <BR></FONT><FONT color=blue><BR>20 20 8 <BR>0 0 <BR>1 1 
+      <BR>4 0 <BR>0 4 <BR>3 1 <BR>2 2 <BR>7 2 <BR>7 7 <BR></FONT><BR>0 0 0 
+    </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Distancia total = 15</FONT><BR><FONT color=red>Distancia total 
+      = 26</FONT><BR><FONT color=blue>Distancia total = 20</FONT> </TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>8 
+      8 5 <BR>0 0 <BR>2 2 <BR>7 7 <BR>6 6 <BR>4 5 <BR></FONT><FONT 
+      color=red><BR>10 10 6 <BR>0 0 <BR>4 1 <BR>4 0 <BR>3 0 <BR>2 8 <BR>0 0 
+      <BR></FONT><FONT color=blue><BR>20 20 8 <BR>0 0 <BR>1 1 <BR>4 0 <BR>0 4 
+      <BR>3 1 <BR>2 2 <BR>7 2 <BR>7 7 <BR></FONT><BR>0 0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Distancia total = 13</FONT><BR><FONT color=red>Distancia total 
+      = 18</FONT><BR><FONT color=blue>Distancia total = 20</FONT> 
+  </TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 12b - Hipismo
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+int main() {
+  int matriz[20][20];
+  int linhas, colunas, obstaculos;
+  int percurso;
+
+  // Le uma entrada
+  scanf("%d %d %d", &amp;linhas, &amp;colunas, &amp;obstaculos);
+
+  // Enquanto a entrada for valida
+  while((linhas &gt; 3) &amp;&amp; (colunas &gt; 3) &amp;&amp; (obstaculos &gt; 1)) {
+  
+    // Le os obstaculos
+
+    
+    // Inicializa o percurso
+    percurso = 0;
+
+
+    // Calcula a distancia entre cada par 
+    // de obstaculos consecutivos do percurso
+
+
+    // Imprime a resposta
+    printf("Distancia total = %d\n", percurso);
+
+    // Le uma nova entrada
+    scanf("%d %d %d", &amp;linhas, &amp;colunas, &amp;obstaculos);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>16/06/2007</I></SMALL> </BODY></HTML>

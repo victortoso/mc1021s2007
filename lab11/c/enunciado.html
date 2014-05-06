@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_RTiMc_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 11c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 11c - Robô - Parte II</H3><B>Peso</B>: 8 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Vocês devem se lembrar do Robô do <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_aUNa0_&amp;n=enunc.html&amp;user=mc102wy&amp;">laboratório 
+05b</A>. O seu criador continuou a trabalhar e agora ele é capaz de sair 
+<B>sozinho</B> de labirintos muito mais complexos do que aqueles tabuleiros com 
+direções Norte, Sul, Leste e Oeste. </P>
+<P align=justify>Os labirintos agora são <B>tridimensionais</B>. Além de ir nas 
+direções Norte, Sul, Leste e Oeste, o robô também Sobe e Desce níveis. E ele faz 
+tudo isso sem seguir intruções escritas no chão. </P>
+<P align=justify>Cada labirinto tem um único <B>ponto inicial</B> e um único 
+<B>ponto final</B> denotados por <B>I</B> e <B>F</B>, respectivamente. O 
+restante do labirinto é composto por áreas de trânsito livre representadas por 
+<B>.</B> (ponto final) e paredes representadas por <B>#</B>. Abaixo temos um 
+exemplo de uma labirinto formado por <B>3</B> níveis, onde cada nível é 
+representado por uma matriz de <B>4</B> linhas e <B>5</B> colunas: </P>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><I>Nível 0</I></BIG></TT></TD>
+    <TD align=middle><TT><BIG><I>Nível 1</I></BIG></TT></TD>
+    <TD align=middle><TT><BIG><I>Nível 2</I></BIG></TT></TD></TR>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT 
+      color=red>I....</FONT><BR>.###<FONT color=red>.</FONT><BR>.##<FONT 
+      color=red>..</FONT><BR>###<FONT 
+      color=red>.</FONT>#<BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>#####<BR>#####<BR>##.##<BR>##.<FONT 
+      color=red>..</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>#####<BR>#####<BR>#.###<BR>####<FONT 
+      color=red>F</FONT><BR></B></BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Em vermelho, podemos ver o caminho percorrido pelo robô do 
+ponto inicial até o ponto final. </P>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab11c.c</B>) que a partir da configuração inicial do labirinto, descubra se 
+o robô consegue sair ou se ele fica preso. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_RTiMc_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será formada pro diversas configurações de labirintos. 
+  <LI>Cada labirinto será lido da seguinte maneira: 
+  <UL>
+    <LI>Uma linha com três números inteiros positivos <B>N</B>, <B>L</B> e 
+    <B>C</B> que significam: 
+    <UL>
+      <LI><B>N</B> número de níveis do labirinto (1 &#8804; <B>N</B> &#8804; 10) 
+      <LI><B>L</B> número de linhas existentes nas matrizes que representam cada 
+      nível (1 &#8804; <B>L</B> &#8804; 10) 
+      <LI><B>C</B> número de colunas existentes nas matrizes que representam 
+      cada nível (1 &#8804; <B>C</B> &#8804; 10) </LI></UL>
+    <LI>Uma seqüência de <B>N</B> matrizes <B>L x C</B> representando cada um 
+    dos níveis. 
+    <LI>O ponto inicial será denotado pela letra <B>I</B> e aparecerá apenas uma 
+    vez no labirinto. 
+    <LI>O ponto final será denotado pela letra <B>F</B> e aparecerá apenas uma 
+    vez no labirinto. 
+    <LI>Áreas de trânsito livre são representadas por pontos (<B>.</B>). 
+    <LI>As paredes são representadas por <B>#</B>. </LI></UL>
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada. 
+  <LI>Para melhor entendimento da entrada, observe os exemplos. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada labirinto lido da entrada, seu programa deverá descobrir se o 
+  robô consegue sair ou não do labirinto. 
+  <LI>Se o robô consegue sair, a seguinte mensagem deverá ser impressa: 
+  <UL>
+    <LI><BIG><TT>Sai do labirinto</TT></BIG> </LI></UL>
+  <LI>Se o robô não consegue sair, a seguinte mensagem deverá ser impressa: 
+  <UL>
+    <LI><BIG><TT>Preso no labirinto</TT></BIG> </LI></UL>
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. </LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>3 
+      4 
+      5<BR>I....<BR>.###.<BR>.##..<BR>###.#<BR><BR>#####<BR>#####<BR>##.##<BR>##...<BR><BR>#####<BR>#####<BR>#.###<BR>####F<BR></FONT><BR><FONT 
+      color=red>4 5 
+      5<BR>I#..#<BR>.##.#<BR>..#.#<BR>#...#<BR>..#..<BR><BR>...##<BR>.##..<BR>..#..<BR>#...#<BR>..##.<BR><BR>#####<BR>###.#<BR>#...#<BR>..###<BR>#...#<BR><BR>##..F<BR>##.##<BR>#..##<BR>##..#<BR>###.#<BR></FONT><BR><FONT 
+      color=blue>4 5 
+      5<BR>I#..#<BR>.##.#<BR>..#.#<BR>##..#<BR>..#..<BR><BR>...##<BR>.##..<BR>.##..<BR>##..#<BR>..##.<BR><BR>#####<BR>###.#<BR>#.#.#<BR>#.###<BR>#...#<BR><BR>##..F<BR>##.##<BR>#..##<BR>###.#<BR>###.#<BR></FONT><BR><FONT 
+      color=red>4 5 
+      5<BR>I#..#<BR>.##.#<BR>..#.#<BR>#...#<BR>..#..<BR><BR>...##<BR>.##..<BR>.##..<BR>##..#<BR>..##.<BR><BR>#####<BR>###.#<BR>#.#.#<BR>#.###<BR>#...#<BR><BR>##..F<BR>##.##<BR>#..##<BR>###.#<BR>###.#<BR></FONT><BR><FONT 
+      color=blue>1 3 3<BR>I## <BR>#F# <BR>### <BR></FONT><BR>0 0 0<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Sai do labirinto</FONT> <BR><FONT color=red>Sai do 
+      labirinto</FONT> <BR><FONT color=blue>Preso no labirinto</FONT> <BR><FONT 
+      color=red>Sai do labirinto</FONT> <BR><FONT color=blue>Preso no 
+      labirinto</FONT> <BR></TT></TD></TR><!--
+<tr align="left">
+  <td style="padding-left: 10px; padding-right: 10px;"><tt>
+
+  </tt></td>
+  <td style="padding-left: 10px; padding-right: 10px;"><tt>
+
+  </tt></td>
+</tr>
+--></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 11c - Robo - Parte II
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+
+int main() {
+  char labirinto[10][10][11];
+  int niveis, linhas, colunas;
+
+
+
+}
+</PRE>
+<HR>
+<SMALL><I>02/06/2007</I></SMALL> </BODY></HTML>

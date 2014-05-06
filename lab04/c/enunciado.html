@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_FefCO_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 04c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 04c - Fatorando Fatoriais</H3><B>Peso</B>: 3 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>O fatorial de um número N (denotado por N!) é definido como o 
+produto de todos os inteiros de 1 a N. Ele é frequentemente defindo 
+recursivamente como se segue: 
+<P><PRE>
+   1! = 1
+
+   N! = N * (N - 1)!
+</PRE>
+<P align=justify>Fatoriais crescem muito rapidamente, por exemplo, 5! = 120, 10! 
+= 3.628.800. Apenas para registro, o valor exato de 100! é: <PRE> 93.326.215.443.944.152.681.699.238.856.266.700.490.715.968.264.381.621.
+    468.592.963.895.217.599.993.229.915.608.941.463.976.156.518.286.253.
+    697.920.827.223.758.251.185.210.916.864.000.000.000.000.000.000.000.000
+</PRE>
+<P align=justify>Escreva um programa em linguagem C (<B>lab04c.c</B>) que dado 
+um número N obtenha a fatoração em números primos de N!. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_FefCO_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><BR><BR><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de inteiros tais que <B>1 &lt; N &#8804; 
+  200</B> (um número por linha); 
+  <LI>A última linha da lista deverá ter o número <B>0</B> que indicará ao 
+  programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><BR><BR><B>Saída</B> 
+<UL>
+  <LI>Para cada inteiro <B>N</B>, o programa deverá imprimir a fatoração em 
+  números primos de N!, no seguinte formato: 
+  <UL>
+    <LI>5! = 2^3 3^1 5^1 </LI></UL>
+  <LI>Ou seja, os fatores primos devem ser impressos como potência, em ordem 
+  crescente dos fatores primos e com um espaço em branco entre cada potência de 
+  fatores primos. 
+  <LI>A número <B>0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">5<BR>10<BR>0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">5! = 2^3 3^1 
+      5^1<BR>10! = 2^8 3^4 5^2 7^1<BR>&nbsp; </TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">100<BR>53<BR>2<BR>0 
+</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">100! = 2^97 3^48 5^24 
+      7^16 11^9 13^7 17^5 19^5 23^4 29^3 31^3 37^2 41^2 43^2 47^2 53^1 59^1 61^1 
+      67^1 71^1 73^1 79^1 83^1 89^1 97^1<BR>53! = 2^49 3^23 5^12 7^8 11^4 13^4 
+      17^3 19^2 23^2 29^1 31^1 37^1 41^1 43^1 47^1 53^1<BR>2! = 2^1<BR>&nbsp; 
+  </TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  // Declara as variaveis
+  int n;
+
+  // Le um numero inteiro
+  scanf("%d", &amp;n);
+
+  // Processa se o numero for maior que 1
+  while(n &gt; 1) {
+
+    printf("%d! =", n);
+
+
+
+    // Encontra os fatores primos de n!
+
+
+
+    // Imprime a fatoracao de n!
+
+
+    // No final da fatoracao, pula de linha
+    printf("\n");
+
+    // Le outro numero inteiro
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>30/03/2007</I></SMALL> </A></BODY></HTML>

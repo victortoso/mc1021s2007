@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_zPEoh_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 09c</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 09c - Mr. Magoo</H3><B>Peso</B>: 7 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify><B>Miopia</B> é o nome dado ao erro de refração da luz no olho, 
+o que acarreta uma focalização da imagem antes de chegar à retina. Uma pessoa 
+míope consegue ver objetos próximos com nitidez, mas os objetos distantes são 
+visualizados como se estivessem embaçados (desfocados). </P>
+<P align=justify>Um dos primeiros sintomas de um míope é a <B>má visão de 
+longe</B>, estando a visão de perto preservada. </P>
+<P align=justify>No entanto, é evidente que se um indivíduo tiver um alto grau 
+de miopia, para ver bem, mesmo de perto, teria que aproximar-se muito dos 
+objetos, o que é geralmente é muito cansativo e incômodo. </P>
+<P align=justify><B>Mr. Quincy Magoo</B> é um aposentado bem disposto e 
+saudável. Ele possui um único problema de saúde (que ele se recusa a admitir): 
+<B>uma "pequena" miopia</B> (13 graus em ambos os olhos). </P>
+<P align=justify>Seu principal passatempo atualmente é visitar as comunidades 
+dedicadas a ele no Orkut. Existem várias, sendo a mais popular delas com 2127 
+membros. </P>
+<P align=justify>Os membros da comunidade participaram recentemente de um chat 
+com Mr. Magoo e descobriram que apesar de contente com existência da comunidade 
+ele considerava que o número que representa o tamanho da comunidade deveria ser 
+exibido no site com maior orgulho (leia-se com <B>dígitos grandes</B> o 
+suficiente para ele conseguir enxergar a uma distância razoável, digamos, a 5 cm 
+da tela do computador). </P>
+<P align=justify>Você como dono da comunidade "Mr. Magoo Rules", resolveu criar 
+um programa, para ser usado na comunidade, que permita exibir números em ASCII 
+de forma adequada para a visualização de Mr. Magoo. </P>
+<P align=justify>A sua tarefa será escrever um programa em Linguagem C 
+(<B>lab09c.c</B>) que dado um <B>grau de miopia</B> e um <B>número</B> qualquer 
+(limitado a <B>100 dígitos</B>) imprima na tela o número em um formato adequado 
+para a leitura. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_zPEoh_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>Neste laboratório, cada arquivo de teste será composto por diversas 
+  configurações de entrada. 
+  <LI>Cada configuração é composta por uma linha contendo um número inteiro 
+  positivo <B>grau</B> seguido por uma string <B>número</B> (limitada a 100 
+  caracteres). 
+  <LI><B>grau</B> refere-se a miopia do usuário e <B>número</B> contém os 
+  dígitos que devem ser impressos no formato adequado ao grau de miopia. 
+  <LI>A entrada termina quando <B>grau</B> for igual a zero. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada configuração de entrada o programa deverá imprimir o 
+  <B>número</B> usando dígitos similares aos usados em dispositivos como 
+  calculadoras eletrônicas. 
+  <LI>Cada dígito é composto por 7 traços sendo 3 deles horizontais e 4 
+  verticais. Quando <B>ligado</B>, o traço deverá ser formado por tantos 
+  <B>caracteres "#"</B> quanto for o grau de miopia fornecido. Quando 
+  <B>desligado</B> o traço deverá ser representado de forma similar, usando 
+  <B>caracteres "."</B>. 
+  <LI>A direita de cada dígito deve-se imprimir um espaço em branco. Ao final da 
+  impressão de cada número, uma linha em branco deve ser impressa. 
+  <LI>Veja detalhes do formato de saída no <A 
+  href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_zPEoh_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço</A> 
+  do programa e nos <A 
+  href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_zPEoh_&amp;n=enunc.html&amp;user=mc102wy&amp;#exemplos">exemplos</A>. 
+  </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+<A name=exemplos></A>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px" vAlign=top><TT><FONT 
+      color=blue><FONT color=blue>2 12345</FONT><BR><FONT color=red>3 
+      67890</FONT><BR><FONT color=blue>4 2127</FONT><BR><FONT color=red>10 
+      0</FONT><BR><FONT color=blue>0</FONT><BR></TT></FONT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><PRE><FONT color=blue>
+ ..   ##   ##   ..   ##
+.  # .  # .  # #  # #  .
+.  # .  # .  # #  # #  .
+ ..   ##   ##   ##   ##
+.  # #  . .  # .  # .  #
+.  # #  . .  # .  # .  #
+ ..   ##   ##   ..   ##
+</FONT><FONT color=red>
+ ###   ###   ###   ###   ###
+#   . .   # #   # #   # #   #
+#   . .   # #   # #   # #   #
+#   . .   # #   # #   # #   #
+ ###   ...   ###   ###   ...
+#   # .   # #   # .   # #   #
+#   # .   # #   # .   # #   #
+#   # .   # #   # .   # #   #
+ ###   ...   ###   ###   ###
+</FONT><FONT color=blue>
+ ####   ....   ####   ####
+.    # .    # .    # .    #
+.    # .    # .    # .    #
+.    # .    # .    # .    #
+.    # .    # .    # .    #
+ ####   ....   ####   ....
+#    . .    # #    . .    #
+#    . .    # #    . .    #
+#    . .    # #    . .    #
+#    . .    # #    . .    #
+ ####   ....   ####   ....
+</FONT><FONT color=red>
+ ##########
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+ ..........
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+#          #
+ ##########
+</FONT>
+</PRE></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B> 
+<A name=esboco></A><BR><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+
+// Imprime o numero num formato adequado ao grau de miopia
+void imprimeNumero(char numero[], int grau) {
+
+}
+
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  int grau;
+  char numero[101];
+  
+  // Le um grau de miopia
+  scanf("%d", &amp;grau);
+
+  // Enquanto for uma entrada valida
+  while (grau) {
+
+    // Le um numero (sequencia de digitos)
+    scanf("%s", numero);
+
+    imprimeNumero(numero, grau);
+
+    printf("\n");
+
+    // Le um novo grau de miopia
+    scanf("%d", &amp;grau);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>19/05/2007</I></SMALL> </BODY></HTML>

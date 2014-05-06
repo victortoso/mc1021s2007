@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_kApMb_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 04b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 04b - Estatística de Ordem</H3><B>Peso</B>: 3 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>A i-ésima estatística de ordem de um conjuto de n elementos é o 
+i-ésimo menor elemento. O mínimo é a primeira estatística de ordem, e o máximo é 
+a n-ésima estatística de ordem. Mediana é o ponto médio de um conjunto de 
+valores. Quando n é ímpar e m = (n + 1)/2, a mediana é a m-ésima estatística de 
+ordem. Quando n é par, existem duas medianas, a mediana inferior, que é a 
+i-ésima estatística de ordem (i = n/2), e a mediana superior, que é a j-ésima 
+estatística de ordem (j = (n/2) + 1). Neste contexto, conjunto é uma lista de 
+número não necessariamente distintos ou ordenados. 
+<P align=justify>Sua tarefa é escrever um programa em linguagem C 
+(<B>lab04b.c</B>) que, dado o tamanho de um conjunto <B>N</B> (1 &#8804; N &#8804; 100), um 
+inteiro positivo <B>K</B> (1 &#8804; K &#8804; N) e a lista de elementos do conjunto, 
+determina a K-ésima estatística de ordem do conjunto. 
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_kApMb_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><BR><BR><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber um ou mais conjuntos de testes (um conjunto por 
+  linha). Em cada linha, os dois primeiros valores serão, respectivamente, o 
+  tamanho do conjunto N e o a estatística de ordem desejada K. A seguir serão 
+  listados os N números (todos inteiros) que compõe o conjunto. 
+  <LI>A última linha da entrada deverá conter um único número <B>0</B> que 
+  indicará ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><BR><BR><B>Saída</B> 
+<UL>
+  <LI>Para cada conjunto de teste, o programa deverá imprimir a estatística de 
+  ordem desejada, no seguinte padrão: 
+  <UL>
+    <LI>15a estatistica de ordem: 97 </LI></UL>
+  <LI>A linha <B>0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ela; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">2 2 2 3<BR>10 1 8 5 3 
+      1 6 9 4 0 3 5<BR>15 15 43 23 67 54 21 34 67 97 09 76 54 32 63 47 53<BR>5 3 
+      0 1 0 2 1<BR>5 4 0 1 0 2 1<BR>0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">2a estatistica de 
+      ordem: 3<BR>1a estatistica de ordem: 0<BR>15a estatistica de ordem: 
+      97<BR>3a estatistica de ordem: 1<BR>4a estatistica de ordem: 1<BR>&nbsp; 
+    </TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+
+int main() {
+  // Declara as variaveis
+  int array[100];
+  int i, n, k;
+
+  // Le a entrada
+  scanf("%d ", &amp;n);
+
+  // Processa se o conjunto nao for nulo
+  while (n &gt; 0) {
+
+    // Le a estatistica de ordem a ser procurada
+    scanf("%d ", &amp;k);
+
+    // Le os elementos do conjunto
+    for (i = 0; i &lt; n; i++) {
+      scanf("%d", &amp;array[i]);
+    }
+
+    // Procura a k-esima estatistica de ordem
+
+    
+    // Imprime a resposta
+
+
+    // Le uma nova entrada
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>30/03/2007</I></SMALL> </A></BODY></HTML>

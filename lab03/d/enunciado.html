@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_MeAJI_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 03d</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 03d - Conversão de Base</H3><B>Peso</B>: 3 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Nesta tarefa você escreverá um programa em linguagem C 
+(<B>lab03d.c</B>) que faça a conversão de um número entre bases diferentes. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_MeAJI_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P>
+<P align=justify><I>Observação 1</I>: Neste laboratório não será permitida a 
+utilização da biblioteca matemática <I>math.h</I>. </P>
+<P align=justify><I>Observação 2</I>: É expressamente proibido alterar a forma 
+de leitura da entrada (<I>scanf</I>) e escrita da saída (<I>printf</I>) contidas 
+no esboço. </P><B>Entrada</B> 
+<P align=justify>
+<UL>
+  <LI>O programa deverá receber uma lista de trincas de números inteiros 
+  positivos <I>N1</I>, <I>B1</I> e <I>B2</I> (uma trinca por linha); 
+  <UL>
+    <LI><I>N1</I>: Indica o número que será convertido; 
+    <LI><I>B1</I>: Indica a base em que o número <I>N1</I> está representado; 
+    <LI><I>B2</I>: Indica a base na qual o número <I>N1</I> será convertido. 
+    </LI></UL>
+  <LI>2 &#8804; <I>B1</I> &#8804; 10 
+  <LI>2 &#8804; <I>B2</I> &#8804; 10 
+  <LI><I>N1</I> e <I>N2</I> (o número convertido) deverão ser armazenadas em 
+  variáveis do tipo <B>long long int</B>. Os casos de testes garantem que os 
+  números utilizados caberão em variáveis deste tipo; 
+  <LI>A última linha da lista deverá ter a trinca <B>0 0 0</B> que indicará ao 
+  programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Seja <I>N2</I> o número convertido. Para cada trinca <I>N1</I> <I>B1</I> 
+  <I>B2</I> o programa deverá escrever o resultado no formato: 
+  <UL>
+    <LI><I>N1</I> base <I>B1</I> = <I>N2</I> base <I>B2</I> </LI></UL>
+  <LI>Se o programa detectar que <I>N1</I> não é um número válido na base 
+  <I>B1</I>, ele deverá escrever o resultado no formato: 
+  <UL>
+    <LI><I>N1</I> base <I>B1</I> = invalido </LI></UL>
+  <LI>A trinca <B>0 0 0</B> indica o final da entrada e, portanto, nada deve ser 
+  impresso sobre ela; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. </LI></UL>
+<P></P><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">11111 2 3<BR>11111 3 
+      4<BR>11111 4 5<BR>11111 5 6<BR>11111 6 7<BR>11111 7 8<BR>11111 9 10<BR>0 0 
+      0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">11111 base 2 = 1011 
+      base 3<BR>11111 base 3 = 1321 base 4<BR>11111 base 4 = 2331 base 
+      5<BR>11111 base 5 = 3341 base 6<BR>11111 base 6 = 4351 base 7<BR>11111 
+      base 7 = 5361 base 8<BR>11111 base 9 = 7381 base 10<BR>&nbsp; </TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">10200 2 10<BR>410000 5 
+      10<BR>999 9 10<BR>666 7 10<BR>511 2 2<BR>1 3 4<BR>19 9 2<BR>0 0 0 </TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">10200 base 2 = 
+      invalido<BR>410000 base 5 = 13125 base 10<BR>999 base 9 = invalido<BR>666 
+      base 7 = 342 base 10<BR>511 base 2 = invalido<BR>1 base 3 = 1 base 4<BR>19 
+      base 9 = invalido<BR>&nbsp; 
+</TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A name=esboco><PRE>#include &lt;stdio.h&gt;
+
+int main() {
+  // b1: base de entrada
+  // b2: base de saida
+  // nb1: numero na base b1
+  // n10: numero na base decimal
+  // nb2: numero na base b2
+  // ok: indica se nb1 eh um numero valido na base b2
+  // Se necessario, declare outras variaveis "int" ou "long long int"
+  int b1, b2, ok;
+  long long int nb1, n10, nb2;
+
+  // Le a entrada
+  scanf("%Ld %d %d", &amp;nb1, &amp;b1, &amp;b2);
+
+  // Processa se o numero for maior que 0
+  while (nb1 &gt; 0) {
+
+    printf("%Ld base %d = ", nb1, b1);
+
+    // A principio nb1 eh um numero valido na base b1
+    ok = 1;
+
+
+    // Converte da base b1 para a base 10
+
+
+    // Converte da base 10 para a base b2
+
+
+    // Imprime a resposta
+    if (ok) {
+      // Imprime n na base b2
+      printf("%Ld base %d\n", nb2, b2);
+    } else {
+      // Imprime a mensagem de erro
+      printf("invalido\n");
+    }
+
+    // Le uma nova entrada
+    scanf("%Ld %d %d", &amp;nb1, &amp;b1, &amp;b2);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

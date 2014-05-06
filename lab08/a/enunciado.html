@@ -1,0 +1,433 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_F8sYq_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 08a</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 08a - Próximo!</H3><B>Peso</B>: 6 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Não muito tempo atrás, o governo impôs uma <B>determinação</B> 
+a todos os bancos do país: 
+<CENTER><I>"O tempo de espera para atendimento na fila do caixa não deve ser 
+maior do que <B>15 minutos</B>"</I>. </CENTER>
+<P></P>
+<P align=justify>Com muita <B>chiadeira</B> os bancos começaram a implementar as 
+soluções necessárias para que o atendimento fosse rápido e, dessa maneira, não 
+ser penalizado com multas. Desde então, <B>office-boys</B> e <B>motoboys</B> 
+cheios de contas para pagar viraram <B>inimigos públicos número 1</B> dos pobres 
+caixas de banco. </P>
+<P align=justify>Para <B>desespero</B> dos bancos, o governo decidiu tornar a 
+determinação mais <B>rígida</B>. Agora, multas serão aplicadas se o cliente 
+chegar ao banco e o encontrá-lo <B>lotado</B> <I>(sem lugar disponível na 
+fila)</I>. Além disso, todos os clientes devem esperar pelo atendimento 
+sentados. </P>
+<P align=justify><B>Seu Maneco</B> é gerente de um pequeno banco chamado 
+<B>Unibamp</B> - <B>UNI</B>ão dos <B>B</B>ancos de <B>AMP</B>aro</B> (<I>essa 
+doeu!</I>). Além disso, ele é <B>cunhado da prima da sogra da sua irmã</B> e 
+ficou super feliz de saber que você está cursando <B>Ciência da Computação</B>. 
+O motivo da felicidade? É óbvio que ele vai pedir para você ajudar! </P>
+<P align=justify>Assim, você terá que escrever, para esse laboratório, um 
+programa (<B>lab08a.c</B>) que faça o controle da fila do banco onde o Seu 
+Maneco trabalha. </P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_F8sYq_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>Neste laboratório, cada arquivo de teste terá apenas <B>uma</B> 
+  configuração de execução. 
+  <LI>A configuração de execução terá o seguinte formato: 
+  <UL>
+    <LI>Uma linha contendo <B>dois</B> números inteiros positivos <I>nCaixas</I> 
+    e <I>nAcentos</I> que indicam, respectivamente, o número de caixas 
+    existentes no banco e o número total de acentos (vagas) na fila (1 &#8804; 
+    <I>nCaixas</I> &#8804; 10 e 1 &#8804; <I>nAcentos</I> &#8804; 100). 
+    <LI>Uma linha contendo <B>três</B> números inteiros positivos no seguinte 
+    formato <BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;HH:MM:SS</TT><BR>Estes valores 
+    indicam o tempo de espera máximo (horas, minutos e segundos) que um cliente 
+    pode esperar sem que o banco leve uma multa. 
+    <LI>Uma lista de comandos de tamanho variável: 
+    <UL>
+      <LI>Comando <B>C</B>: indica o momento em que o cliente chegou ao banco. 
+      Tem o seguinte formato:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;C 
+      HH:MM:SS</TT><BR>onde <I>HH:MM:SS</I> indica o horário de chegada do 
+      cliente. 
+      <LI>Comando <B>I</B>: indica o instante em que o caixa chamou o próximo 
+      cliente a ser atendido. Tem o seguinte 
+      formato:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;I HH:MM:SS N</TT><BR>onde 
+      <I>HH:MM:SS</I> indica o horário de chamada e <I>N</I> indica o número do 
+      caixa que chamou o próximo cliente (1 &#8804; <I>N</I> &#8804; <I>nCaixas</I>). 
+      <LI>Comando <B>E</B>: indica o instante em que o caixa encerrou o 
+      atendimento ao cliente. Tem o seguinte 
+      formato:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;E HH:MM:SS N</TT><BR>onde 
+      <I>HH:MM:SS</I> indica o horário de em que o atendimento foi encerrado e 
+      <I>N</I> indica o número do caixa que foi liberado (1 &#8804; <I>N</I> &#8804; 
+      <I>nCaixas</I>). 
+      <LI>Comando <B>R</B>: indica o momento em que o Seu Maneco pediu o 
+      <I>relatório</I> do sistema. Este comando indica também o fim da entrada. 
+      Tem o seguinte formato:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;R 
+      HH:MM:SS</TT><BR>onde <I>HH:MM:SS</I> indica o horário de pedido do 
+      <I>relatório</I>. </LI></UL></LI></UL>
+  <LI>Para auxiliar o entendimento sobre o formato da entrada, olhe 
+  cuidadosamente o exemplo fornecido e os testes abertos. 
+  <LI>Observações importantes: 
+  <UL>
+    <LI>Todos os comandos estão em ordem cronológica. 
+    <LI>Um cliente só vai embora se encontrar a fila lotada. Uma vez na fila, o 
+    cliente aguarda até ser atendido (pode não ter sido ainda atendido no 
+    momento em que o relatório foi solicitado). </LI></UL></LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada comando lido, o seu programa deverá imprimir uma mensagem: 
+  <UL>
+    <LI>Comando <B>C</B> (Chegada de cliente) 
+    <UL>
+      <LI>Se <B>houver</B> vaga na 
+      fila:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Cliente <I>X</I> 
+      entrou na fila</TT><BR>onde <I>HH:MM:SS</I> é o horário lido e <I>X</I> é 
+      o número do cliente (<I>X</I> &#8805; 1). 
+      <LI>Se <B>não houver</B> vaga na 
+      fila:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Cliente <I>X</I> nao 
+      atendido (banco lotado)</TT><BR>onde <I>HH:MM:SS</I> é o horário lido e 
+      <I>X</I> é o número do cliente (<I>X</I> &#8805; 1). </LI></UL>
+    <LI>Comando <B>I</B> (Início de atendimento)<BR>
+    <UL>
+      <LI>Se o caixa já <B>estiver atendendo</B> algum 
+      cliente:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Caixa Y ja esta 
+      atendendo no momento</TT><BR>onde <I>HH:MM:SS</I> é o horário lido e 
+      <I>Y</I> é o número do caixa (1 &#8804; <I>Y</I> &#8804; <I>nCaixas</I>) 
+      <LI>Se <B>houver</B> alguém na 
+      fila:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Cliente <I>X</I> 
+      chamado pelo caixa <I>Y</I> (aguardou <I>AAhBBmCCs</I>)</TT><BR>onde 
+      <I>HH:MM:SS</I> é o horário lido, <I>X</I> é o número do cliente (<I>X</I> 
+      &#8805; 1), <I>Y</I> é o número do caixa que atendeu o cliente (1 &#8804; <I>Y</I> &#8804; 
+      <I>nCaixas</I>) e <I>AAhBBmCCs</I> indica o tempo que o cliente aguardou 
+      na fila (por exemplo, 00h09m58s). 
+      <LI>Se <B>não houver</B> alguém na 
+      fila:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Nao ha clientes 
+      esperando atendimento</TT> </LI></UL>
+    <LI>Comando <B>E</B> (Fim de atendimento)<BR>
+    <UL>
+      <LI>Se o caixa <B>estiver</B> atendendo 
+      alguém:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Cliente <I>X</I> 
+      atendido em <I>AAhBBmCCs</I> pelo caixa <I>Y</I></TT><BR>onde 
+      <I>HH:MM:SS</I> é o horário lido, <I>X</I> é o número do cliente (<I>X</I> 
+      &#8805; 1), <I>Y</I> é o número do caixa que atendeu o cliente (1 &#8804; <I>Y</I> &#8804; 
+      <I>nCaixas</I>) e <I>AAhBBmCCs</I> indica o tempo que o caixa levou para 
+      completar o atendimento ao cliente (por exemplo, 00h23m11s). 
+      <LI>Se o caixa <B>não estiver</B> atendendo 
+      alguém:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Caixa Y nao esta 
+      atendendo no momento</TT><BR>Onde <I>Y</I> é o número do caixa. </LI></UL>
+    <LI>Comando <B>R</B> (Pedido de <I>relatório</I>)<BR>Para esse comando, o 
+    seu programa deverá escrever a seguinte 
+    mensagem:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;<I>HH:MM:SS</I>: Fim do 
+    acompanhamento</TT><BR>onde <I>HH:MM:SS</I> é o horário lido. Após esta 
+    mensagem, o programa deverá imprimir uma linha em branco (veja exemplo). 
+    Finalmente, o programa deverá imprimir o seguinte relatório: 
+    <OL>
+      <LI>Para cada caixa existente no banco, o programa deverá imprimir (uma 
+      linha por caixa, não existe quebra de linha no meio das mensagens, veja 
+      exemplo abaixo ou as respostas dos testes abertos): 
+      <UL>
+        <LI>Se o caixa <B>estiver atendendo</B> alguém:<BR><TT>Caixa <I>X</I>: 
+        numero de atendimentos: <I>Y</I>; tempo de atendimento: 
+        <I>AAhBBmCCs</I>; atendendo cliente <I>Z</I> faz 
+        <I>DDhFFmGGs</I></TT><BR>onde <I>X</I> é o número do caixa (1 &#8804; <I>X</I> 
+        &#8804; <I>nCaixas</I>), <I>Y</I> indica o número de atendimentos completos 
+        (<I>Y</I> &#8805; 0), <I>AAhBBmCCs</I> indica a soma do tempo gasto pelo caixa 
+        em todos os atendimentos completos, <I>Z</I> indica o número do cliente 
+        que está sendo atendido no momento (<I>Z</I> &#8805; 1) e <I>DDhFFmGGs</I> 
+        indica a quanto tempo o caixa está atendendo o cliente. 
+        <LI>Se o caixa <B>não estiver atendendo</B> alguém:<BR><TT>Caixa 
+        <I>X</I>: numero de atendimentos: <I>Y</I>; tempo de atendimento: 
+        <I>AAhBBmCCs</I>; nao atendendo clientes no momento</TT><BR>onde 
+        <I>X</I> é o número do caixa (1 &#8804; <I>X</I> &#8804; <I>nCaixas</I>), <I>Y</I> 
+        indica o número de atendimentos completos (<I>Y</I> &#8805; 0) e 
+        <I>AAhBBmCCs</I> indica a soma do tempo gasto pelo caixa em todos os 
+        atendimentos completos. </LI></UL>
+      <LI>Para cada cliente que ainda está esperando na fila, o programa deverá 
+      imprimir (uma linha por cliente na fila, não existe quebra de linha no 
+      meio das mensagens, veja exemplo abaixo ou as respostas dos testes 
+      abertos): 
+      <UL>
+        <LI><TT>Cliente <I>X</I>: aguardando atendimento faz 
+        <I>AAhBBmCCs</I></TT><BR>onde <I>X</I> indica o número do cliente 
+        (<I>X</I> &#8805; 1) e <I>AAhBBmCCs</I> indica a quantidade de tempo que se 
+        passou entre a chegada do cliente ao banco e o pedido de 
+        <I>relatório</I>. </LI></UL>
+      <LI>Mensagem indicando o número de multas por banco 
+      lotado:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;Multas por banco lotado: 
+      <I>X</I></TT><BR>onde <I>X</I> é o número de multas que o banco levou por 
+      clientes que chegaram ao banco e não encontraram lugar na fila. 
+      <LI>Mensagem indicando o número de multas por tempo excedido de 
+      espera:<BR><TT>&nbsp;&nbsp;&nbsp;&nbsp;Multas por tempo excedido de 
+      espera: <I>X</I></TT><BR>onde <I>X</I> é o número de multas que o banco 
+      levou por clientes que aguardaram na fila mais do que o tempo máximo 
+      permitido. </LI></OL></LI></UL>
+  <LI>Para auxiliar o entendimento sobre o formato da saída, olhe cuidadosamente 
+  o exemplo fornecido e os testes abertos. </LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>2 
+      2<BR>00:15:00<BR>C 08:00:00<BR>C 08:05:00<BR>C 08:07:00<BR>I 08:09:00 
+      2<BR>I 08:30:00 1<BR>E 08:32:00 2<BR>E 08:32:01 2<BR>C 08:40:00<BR>R 
+      08:45:00<BR><BR><BR><BR><BR><BR><BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><BR><BR>08:00:00: 
+      Cliente 1 entrou na fila<BR>08:05:00: Cliente 2 entrou na 
+      fila<BR>08:07:00: Cliente 3 nao atendido (banco lotado)<BR>08:09:00: 
+      Cliente 1 chamado pelo caixa 2 (aguardou 00h09m00s)<BR>08:30:00: Cliente 2 
+      chamado pelo caixa 1 (aguardou 00h25m00s)<BR>08:32:00: Cliente 1 atendido 
+      em 00h23m00s pelo caixa 2<BR>08:32:01: Caixa 2 nao esta atendendo no 
+      momento<BR>08:40:00: Cliente 4 entrou na fila<BR>08:45:00: Fim do 
+      acompanhamento<BR><BR>Caixa 1: numero de atendimentos: 0; tempo de 
+      atendimento: 00h00m00s; atendendo cliente 2 faz 00h15m00s<BR>Caixa 2: 
+      numero de atendimentos: 1; tempo de atendimento: 00h23m00s; nao atendendo 
+      clientes no momento<BR>Cliente 4: aguardando atendimento faz 
+      00h05m00s<BR>Multas por banco lotado: 1<BR>Multas por tempo excedido de 
+      espera: 1<BR></TT></TD></TR><!-- Exemplo 2 -->
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>1 
+      2<BR>00:05:00<BR>C 08:00:10<BR>C 08:05:20<BR>C 08:07:30<BR>I 08:09:30 
+      1<BR>E 08:32:40 1<BR>E 08:33:01 1<BR>I 08:33:05 1<BR>E 08:42:06 1<BR>C 
+      08:50:04<BR>I 09:15:08 1<BR>E 09:18:45 1<BR>I 09:59:01 1<BR>E 10:59:30 
+      1<BR>I 11:02:15 1<BR>R 15:00:00<BR><BR><BR><BR><BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><BR><BR>08:00:10: 
+      Cliente 1 entrou na fila<BR>08:05:20: Cliente 2 entrou na 
+      fila<BR>08:07:30: Cliente 3 nao atendido (banco lotado)<BR>08:09:30: 
+      Cliente 1 chamado pelo caixa 1 (aguardou 00h09m20s)<BR>08:32:40: Cliente 1 
+      atendido em 00h23m10s pelo caixa 1<BR>08:33:01: Caixa 1 nao esta atendendo 
+      no momento<BR>08:33:05: Cliente 2 chamado pelo caixa 1 (aguardou 
+      00h27m45s)<BR>08:42:06: Cliente 2 atendido em 00h09m01s pelo caixa 
+      1<BR>08:50:04: Cliente 4 entrou na fila<BR>09:15:08: Cliente 4 chamado 
+      pelo caixa 1 (aguardou 00h25m04s)<BR>09:18:45: Cliente 4 atendido em 
+      00h03m37s pelo caixa 1<BR>09:59:01: Nao ha clientes esperando 
+      atendimento<BR>10:59:30: Caixa 1 nao esta atendendo no 
+      momento<BR>11:02:15: Nao ha clientes esperando atendimento<BR>15:00:00: 
+      Fim do acompanhamento<BR><BR>Caixa 1: numero de atendimentos: 3; tempo de 
+      atendimento: 00h35m48s; nao atendendo clientes no momento<BR>Multas por 
+      banco lotado: 1<BR>Multas por tempo excedido de espera: 
+  3<BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+// Define um horario (PROIBIDO ALTERAR)
+typedef struct _horario {
+  int horas, minutos, segundos;
+} Horario;
+
+
+// Define um cliente (PROIBIDO ALTERAR)
+typedef struct _cliente {
+  int id;
+  Horario horario;
+} Cliente;
+
+
+// Define um caixa (PROIBIDO ALTERAR)
+typedef struct _caixa {
+  int numeroAtendimentos;
+  int atendendo;
+  Cliente cliente;
+  Horario tempoAtendimento;
+  Horario inicioAtendimento;
+} Caixa;
+
+
+// Define uma fila de cliente (PROIBIDO ALTERAR)
+typedef struct _fila {
+  Cliente clientes[100];
+  int inicio, fim, tamanho, quantidade;
+} Fila;
+
+
+// Inicializa a fila de clientes
+void inicializaFila(Fila * fila, int nAcentos) {
+
+}
+
+
+// Verifica se a fila de clientes esta cheia
+int cheia(Fila * fila);
+
+
+// Verifica se a fila de clientes esta vazia
+int vazia(Fila * fila);
+
+
+// Insere um novo cliente na fila
+int insere(Fila *fila, Cliente cliente);
+
+
+// Retira um novo cliente da fila
+Cliente retira(Fila * fila);
+
+
+// Converte um tipo Horario em inteiro
+// (representando o numero de segundos)
+int converteSegundos(Horario horario) {
+
+  return horario.segundos + (horario.minutos*60) + (horario.horas*3600);
+}
+
+
+// Converte um inteiro (representando o
+// numero de segundos) em um tipo Horario
+Horario converteHorario(int segundos) {
+  Horario horario;
+
+  horario.segundos = segundos % 60;
+  horario.minutos = (segundos / 60) % 60;
+  horario.horas = (segundos / 3600);
+
+  return horario;
+}
+
+
+// Calcula o tempo total decorrido entre dois instantes de tempo
+Horario tempoTotal(Horario horarioInicial, Horario horarioFinal) {
+
+  return converteHorario(converteSegundos(horarioFinal) -
+                         converteSegundos(horarioInicial));
+}
+
+
+// Inicializa a lista de caixas do banco (PROIBIDO ALTERAR)
+void inicializaCaixas(Caixa caixas[], int nCaixas) {
+  Horario zero;
+  int i;
+
+  zero.segundos = 0;
+  zero.minutos = 0;
+  zero.horas = 0;
+
+  for (i = 0; i &lt; nCaixas; i++) {
+    caixas[i].numeroAtendimentos = 0;
+    caixas[i].atendendo = 0;
+    caixas[i].tempoAtendimento = zero;
+    caixas[i].inicioAtendimento = zero;
+  }
+}
+
+
+// Um novo cliente entra no banco. Caso exista espaco, ele aguarda na
+// fila, caso contrario, vai embora
+void novoCliente(Fila * fila, int id, Horario horario,
+                 int * multasBancoLotado) {
+
+}
+
+
+// Caixa inicia atendimento ao proximo cliente aguardando na fila,
+// caso exista pelo menos um cliente na fila
+void iniciaAtendimento(Fila * fila, Caixa caixas[],
+                       int caixa, Horario horario, Horario esperaMax,
+                       int * multaTempoExcedido) {
+
+}
+
+
+// Caixa encerra o atendimento ao cliente atual, caso ele realmente
+// esteja atendendo alguem no momento
+void encerraAtendimento(Caixa caixas[], int caixa, Horario horario) {
+
+}
+
+
+// Imprime o relatorio final de acompanhamento, com informacoes sobre
+// os caixas, os clientes aguardando atendimento na fila e as multas
+void relatorioFinal(Caixa caixas[], int nCaixas,
+                    Fila * fila, Horario horario,
+                    int multasBancoLotado, int multasTempoExcedido) {
+
+}
+
+
+// Programa principal (PROIBIDO ALTERAR)
+int main() {
+  int nClientes, nCaixas, nAcentos, caixa,
+    multasTempoExcedido, multasBancoLotado;
+  char action;
+  Fila fila;
+  Horario horario, esperaMax;
+  Caixa caixas[10];
+
+  // Le o numero de caixas e de acentos para clientes
+  scanf("%d %d", &amp;nCaixas, &amp;nAcentos);
+
+  // Inicializacoes
+  inicializaFila(&amp;fila, nAcentos);
+  inicializaCaixas(caixas, nCaixas);
+  nClientes = 0;
+  multasTempoExcedido = 0;
+  multasBancoLotado = 0;
+
+  // Le o tempo de espera maximo
+  scanf(" %d:%d:%d",
+        &amp;esperaMax.horas, &amp;esperaMax.minutos, &amp;esperaMax.segundos);
+
+  // Monitora os eventos do banco
+  do {
+
+    // Le a primeira acao
+    scanf(" %c", &amp;action);
+
+    // Le a hora do evento
+    scanf(" %d:%d:%d",
+          &amp;horario.horas, &amp;horario.minutos, &amp;horario.segundos);
+
+    // Imprime a hora do evento
+    printf("%02d:%02d:%02d: ",
+           horario.horas, horario.minutos, horario.segundos);
+
+    // Verifica a acao detectada
+    switch (action) {
+
+      // Cliente entra no banco
+      case 'C':
+        nClientes++;
+        novoCliente(&amp;fila, nClientes, horario, &amp;multasBancoLotado);
+        break;
+
+      // Caixa inicia novo atendimento
+      case 'I':
+        scanf("%d", &amp;caixa);
+        iniciaAtendimento(&amp;fila, caixas, caixa, horario,
+                          esperaMax, &amp;multasTempoExcedido);
+        break;
+
+      // Caixa encerra atendimento atual
+      case 'E':
+        scanf("%d", &amp;caixa);
+        encerraAtendimento(caixas, caixa, horario);
+        break;
+
+      // Fim do acompanhamento de eventos
+      case 'R':
+        relatorioFinal(caixas, nCaixas, &amp;fila, horario,
+                       multasBancoLotado, multasTempoExcedido);
+        break;
+    }
+
+  } while (action != 'R');
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>12/05/2007</I></SMALL> </BODY></HTML>

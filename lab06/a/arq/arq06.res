@@ -1,0 +1,9 @@
+Preco minimo para ladrilhar a piscina: R$1.50
+Preco minimo para ladrilhar a piscina: R$6.00
+Preco minimo para ladrilhar a piscina: R$10.00
+Preco minimo para ladrilhar a piscina: R$20.50
+Preco minimo para ladrilhar a piscina: R$34.00
+Preco minimo para ladrilhar a piscina: R$40.00
+Preco minimo para ladrilhar a piscina: R$59.50
+Preco minimo para ladrilhar a piscina: R$82.00
+Preco minimo para ladrilhar a piscina: R$90.00

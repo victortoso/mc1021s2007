@@ -1,0 +1,9 @@
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0
+Numero de movimentos = 0

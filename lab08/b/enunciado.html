@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_BooNe_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 08b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 08b - O Contador de Histórias</H3><B>Peso</B>: 6 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Era uma vez... em uma universidade <B>não muito distante</B>... 
+um aluno chamado <B>Felipe</B>. </P>
+<P align=justify>Felipe estudou durante muito tempo nesta universidade. Fez 
+graduação, mestrado e doutorado em <B>Biologia</B> e hoje é um pesquisador de 
+renome nacional. Apesar de estar ligado à área biológica, Felipe sempre foi 
+fissurado por tecnologia eletrônica: computadores, palms, câmeras digitais, não 
+importa, ele sempre estava por dentro das novidades. </P>
+<P align=justify>Esta paixão pela tecnologia fez com que Felipe se aproximasse 
+da <B>Computação</B>, da <B>Bioinformática</B> e da <B>Biologia 
+Computacional</B>. Assim, freqüentemente ele era visto perambulando pelo 
+Instituto de Computação. </P>
+<P align=justify>Mas, com certeza, o fato mais marcante na personalidade de 
+Felipe era a sua capacidade de contar histórias. <B>Todo mundo</B> se reunia 
+para ouví-las.</B> </P>
+<P align=justify>Contudo, acompanhar as histórias do Felipe era um verdadeiro 
+teste à capacidade de concentração dos ouvintes. O fluxo das histórias nunca era 
+linear e como o próprio Felipe dizia, toda hora ele "abria um novo 
+parêntesis..." (ou seja, começava uma nova história sem necessariamente ter 
+encerrado a história anterior). Às vezes, as histórias começavam e não 
+terminavam de tanto parêntesis que ele abria. </P>
+<P align=justify>Nesse laboratório você escreverá um programa em linguagem C 
+(<B>lab08b.c</B>) que irá analisar strings compostas por chaves, colchetes e 
+parêntesis que representam o fluxo das histórias contadas pelo Felipe. O seu 
+programa deverá indicar se a história foi contada inteiramente. </P>
+<P align=justify>Uma história válida é aquela em que os parêntesis, chaves e 
+colchetes casam corretamente. Por exemplo, o Felipe não pode fechar un 
+parêntesis que não abriu ou não pode fechar um parêntesis sem fechar um colchete 
+mais interior. </P>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=2 border=0>
+  <TBODY>
+  <TR align=middle>
+    <TD><B>Exemplos de "Histórias" bem contadas</B></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>{[()]}</BIG></BIG></TT></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>{}[]()</BIG></BIG></TT></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>(((()))((())))</BIG></BIG></TT></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>{[({}[]())][]({()})}</BIG></BIG></TT></TD></TR></TBODY></TABLE><BR><BR>
+<TABLE cellSpacing=0 cellPadding=2 border=0>
+  <TBODY>
+  <TR align=middle>
+    <TD><B>Exemplos de "Histórias" mal contadas</B></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>{[(])}</BIG></BIG></TT></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>}{][)(</BIG></BIG></TT></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>(((()()(()))</BIG></BIG></TT></TD></TR>
+  <TR align=middle>
+    <TD><TT><BIG><BIG>{[({}[())][]({(})}</BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_BooNe_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>O seu programa receberá uma lista de "histórias" 
+  <LI>A primeira linha da entrada é um número inteiro positivo indicando o 
+  número de histórias. 
+  <LI>As <I>N</I> linhas seguintes trarão as histórias que serão processadas. 
+  <LI>Cada história será representada por no máximo <B>100</B> símbolos. 
+  <LI>Cada história será formada por símbolos válidos: <B>{ } [ ] ( )</B>. Você 
+  não precisa se preocupar com outros símbolos. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada história lida você deve avaliar se ela tem sentido. 
+  <LI>Se a história estiver correta, você deverá imprimir: 
+  <UL>
+    <LI><TT>Historia bem contada</TT></LI></UL>
+  <LI>Se a história estiver incorreta, você deverá imprimir: 
+  <UL>
+    <LI><TT>Historia mal contada</TT></LI></UL></LI></UL><!-- Exemplos ########################################################### --><BR><BR><B>Exemplos</B> 
+
+<TABLE cellSpacing=2 cellPadding=2 border=1><!-- Cabecalho -->
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>10<BR>[]{{{{}()}([[]]())}}<BR>{()[({})]()[()()]}<BR>{{[[(()[])]{()}]}}}<BR>}[][][]{][][[{{}<BR>()(())()()()()()(()))))<BR>[][[[][][][[[[]]]]][][][[[]]]]<BR>{[{[{[{[]}]}]}]}<BR>{}{}{}{}{}}}{}{}{}{{}}{}<BR>[]{}()<BR>{<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>&nbsp;<BR>Historia 
+      bem contada<BR>Historia bem contada<BR>Historia mal contada<BR>Historia 
+      mal contada<BR>Historia mal contada<BR>Historia bem contada<BR>Historia 
+      bem contada<BR>Historia mal contada<BR>Historia bem contada<BR>Historia 
+      mal contada<BR></TT></TD></TR><!-- Exemplo 1 -->
+  <TR align=left>
+    <TD 
+      style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>8<BR>{()[({})](()[()()]}<BR>{{[[(()[])]{()}]}}<BR>[][][]{[[][[{{}}]]]}<BR>()(())()()()()()((((()))))<BR>[][[[][][][[[[]]]]][][][[[]]]<BR>{[{[{[{]}]}]}]}<BR>{}{}{}{}{{{}}}{}{}{}{{}}{}<BR>[{(}])<BR></TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT>&nbsp;<BR>Historia 
+      mal contada<BR>Historia bem contada<BR>Historia bem contada<BR>Historia 
+      bem contada<BR>Historia mal contada<BR>Historia mal contada<BR>Historia 
+      bem contada<BR>Historia mal contada<BR></TT></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+
+// Define uma pilha
+typedef struct _pilha {
+  char caracteres[100];
+  int topo;
+} Pilha;
+
+
+int main() {
+
+
+  return 0;
+}
+
+</PRE>
+<HR>
+<SMALL><I>12/05/2007</I></SMALL> </BODY></HTML>

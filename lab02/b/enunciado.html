@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_NP2li_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 02b</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white; text: black">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 02b - Fatoração</H3><B>Peso</B>: 2 
+<P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+
+<P></P>
+<P align=justify>Escreva um programa em linguagem C (<B>lab02b.c</B>) que 
+decomponha números inteiros maiores ou iguais a 2 em seus fatores 
+primos.<BR>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_NP2li_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber uma lista de números inteiros positivos (um 
+  número por linha) menores que 1000000; 
+  <LI>O último elemento da lista deverá ser um número inteiro menor ou igual a 1 
+  que indicará ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><B>Saída</B> 
+<UL>
+  <LI>Seja <I>N</I> um número pertencente à lista de entrada. Suponha que 
+  <I>N</I> possui <I>m</I> fatores primos (<I>m</I> &#8805; 1), não necessariamente 
+  distintos, e que <I>fi</I> (1 &#8804; <I>i</I> &#8804; <I>m</I>) denota o i-ésimo fator 
+  primo, tal que 1 &lt; <I>f1 &#8804; f2 &#8804; f3 &#8804; ... &#8804; fm</I>. A saída deverá ser 
+  escrita no formato: 
+  <UL>
+    <LI><I>N</I> = <I>f1*f2*f3*...*fm</I> </LI></UL>
+  <LI>O resultado de cada número deverá ser impresso em uma linha; 
+  <LI>O número inteiro menor ou igual a 1 presente na lista indica o final da 
+  entrada e, portanto, nada deve ser impresso sobre ele; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><B>Exemplos</B><BR><BR>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD width=15>#</TD>
+    <TD width=150><I>Entrada</I></TD>
+    <TD width=150><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD align=middle>1</TD>
+    <TD style="PADDING-LEFT: 50px">12<BR>21<BR>223<BR>2007<BR>2<BR>1</TD>
+    <TD style="PADDING-LEFT: 30px">12 = 2*2*3<BR>21 = 3*7<BR>223 = 223<BR>2007 
+      = 3*3*223<BR>2 = 2<BR>&nbsp;</TD></TR>
+  <TR align=left>
+    <TD align=middle>2</TD>
+    <TD 
+      style="PADDING-LEFT: 50px">103<BR>104<BR>105<BR>106<BR>107<BR>108<BR>109<BR>110<BR>-10</TD>
+    <TD style="PADDING-LEFT: 30px">103 = 103<BR>104 = 2*2*2*13<BR>105 = 
+      3*5*7<BR>106 = 2*53<BR>107 = 107<BR>108 = 2*2*3*3*3<BR>109 = 109<BR>110 = 
+      2*5*11<BR>&nbsp;</TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco><PRE>// Incluir cabecalho padrao
+#include &lt;stdio.h&gt;
+
+int main() {
+  // Se necessario, declarar outras variaveis inteiras
+  int n;
+
+  // Le um numero inteiro
+  scanf("%d", &amp;n);
+
+  // Processa se o numero for maior que 1
+  while(n &gt; 1) {
+
+    printf("%d = ", n);
+
+    // Executa a fatoracao do numero
+
+
+    // Apos a fatoracao, lembrar de pular de linha
+    printf("\n");
+
+    // Le outro numero inteiro
+    scanf("%d", &amp;n);
+  }
+
+  return 0;
+}
+</PRE>
+<HR>
+<SMALL><I>17/03/2007</I></SMALL> </A></BODY></HTML>

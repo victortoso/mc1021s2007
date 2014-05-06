@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_qBXE2_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 11f</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white"><!-- Cabecalho ########################################################## -->
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 11f - Continentes - Parte II</H3><B>Peso</B>: 2 (Bônus) 
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<HR>
+<!-- Enunciado ########################################################## -->
+<P align=justify>Este exercício é uma continuação do <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_ysP9h_&amp;n=enunc.html&amp;user=mc102wy&amp;">Laboratório 
+11e</A>. </P>
+<P align=justify>Neste laboratório você deverá escrever um programa em Linguagem 
+C (<B>lab11f.c</B>) que leia da entrada matrizes <B>M x N</B> representando 
+mapas em projeções cilíndricas e calcule o tamanho do maior litoral existente 
+entre todos os <B>"continentes"</B> presentes no mapa. </P>
+<P align=justify>Uma unidade de área de litoral é definida como sendo uma face 
+de uma porção de terra que está localizada <B>lado a lado</B> com uma posição de 
+água. </P>
+<P align=justify>Suponha, por exemplo, uma porção de terra (<B>#</B>) cercada 
+por água em todos os lados (<I>Mapa 1</I>). Esta porção de terra possui <B>4</B> 
+faces voltadas para a água e, portanto, o tamanho do seu litoral é <B>4</B>. O 
+exemplo do <I>Mapa 2</I> traz um continente de área <B>2</B> (lembre-se que o 
+mapa é cilíndrico). Podemos ver, facilmente que o litoral deste continente tem 
+tamanho <B>6</B>. O <I>Mapa 3</I> também traz outro continente de área <B>2</B>. 
+A diferença é que um dos lados do continente encosta no <B>"pólo norte"</B> do 
+mapa e, por isso, o litoral tem tamanho <B>5</B>. O exemplo do <I>Mapa 4</I> 
+reforça que o conceito de litoral é referente ao número de faces das áreas de 
+terra voltadas para a água e não ao número de posições de água. Podemos ver que 
+apenas <B>5</B> pontos de água encostam no continente, mas o tamanho do litoral 
+é <B>6</B> porque duas faces compartilham o mesmo ponto de água. Finalmente, o 
+exemplo do <I>Mapa 5</I> mostra que, neste laboratório, lagos dentro de 
+continentes também contribuem para o tamanho total do litoral. </P>
+<P align=justify>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=1>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 1</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 2</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 3</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 4</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Mapa 5</B></BIG></BIG></TT></TD></TR>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>.....<BR>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>..<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>..<BR>.....</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>.....<BR><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>...<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><BR><FONT 
+      color=red>#</FONT><FONT style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT 
+      color=red>#</FONT><BR><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>...<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><BR>.....</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>..<BR>.....<BR>.....</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B><FONT 
+      color=blue>.....<BR>.....<BR>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>..<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>##</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.</FONT><BR></B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT>..<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>###</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>###</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT>..</FONT><BR></B></BIG></BIG></TT></TD></TR>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B>Litoral: 4</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Litoral: 6</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Litoral: 5</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Litoral: 6</B></BIG></BIG></TT></TD>
+    <TD align=middle><TT><BIG><BIG><B>Litoral: 
+  16</B></BIG></BIG></TT></TD></TR></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=justify>A matriz <B>5 x 5</B> abaixo mostra dois continentes de área 
+igual a <B>2</B>. Eles também possuem o mesmo tamanho de litoral, que neste caso 
+é máximo e igual a <B>6</B>. 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">..</FONT>.<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>##</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT>.<BR><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>##</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT>.<BR>.<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">..</FONT>..</FONT><BR></B></BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>A 
+matriz <B>10 x 10</B> abaixo representa um mapa bem mais complexo. O continente 
+destacado em vermelho possui área <B>23</B>. Seu litoral é formado por diversas 
+<B>baías</B> e um <B>lago</B> e tem tamanho <B>44</B>. 
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=10 border=0>
+  <TBODY>
+  <TR>
+    <TD align=middle><TT><BIG><BIG><B><FONT color=blue><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT>..<FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT color=red>##</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">..</FONT><BR><FONT 
+      color=red>###</FONT><FONT style="BACKGROUND-COLOR: #eeeeee">..</FONT><FONT 
+      color=red>##</FONT><FONT style="BACKGROUND-COLOR: #eeeeee">..</FONT><FONT 
+      color=red>#</FONT><BR><FONT color=red>##</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT></FONT>#<FONT color=blue><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">..</FONT><FONT color=red>###</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">.</FONT><BR><FONT 
+      color=red>#</FONT><FONT style="BACKGROUND-COLOR: #eeeeee">...</FONT><FONT 
+      color=red>###</FONT><FONT style="BACKGROUND-COLOR: #eeeeee">.</FONT><FONT 
+      color=red>##</FONT><BR><FONT color=red>###</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT><FONT color=red>#</FONT><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT><BR><FONT 
+      style="BACKGROUND-COLOR: #eeeeee">...</FONT></FONT>##<FONT 
+      color=blue>.<FONT style="BACKGROUND-COLOR: #eeeeee">.</FONT></FONT>##<FONT 
+      color=blue>.</FONT><BR>##<FONT color=blue>.</FONT>#<FONT 
+      color=blue>.</FONT>#<FONT color=blue>.</FONT>##<FONT 
+      color=blue>.</FONT><BR><FONT color=blue>......</FONT>#<FONT 
+      color=blue>...</FONT><BR>########<FONT color=blue>..</FONT><BR><FONT 
+      color=blue>.......</FONT>##<FONT 
+      color=blue>.</FONT><BR></B></BIG></BIG></TT></TD></TR></TBODY></TABLE></CENTER>
+<P></P>
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_qBXE2_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><!-- Entrada ############################################################ --><BR><BR><B>Entrada</B> 
+
+<UL>
+  <LI>A entrada será formada por diversos mapas. 
+  <LI>Cada mapa será lido da seguinte maneira: 
+  <UL>
+    <LI>Uma linha com dois números inteiros positivos <B>M</B> e <B>N</B> que 
+    significam: 
+    <UL>
+      <LI><B>M</B> número de linhas existentes na matriz que representa o mapa 
+      (1 &#8804; <B>M</B> &#8804; 20) 
+      <LI><B>N</B> número de colunas existentes na matriz que representa o mapa 
+      (1 &#8804; <B>N</B> &#8804; 20) </LI></UL>
+    <LI>Uma seqüência de <B>M</B> linhas contendo <B>N</B> caracteres (<B>.</B> 
+    ou <B>#</B>, representando água e terra respectivamente) </LI></UL>
+  <LI>A dupla <B>0 0</B> indica o final da entrada. 
+  <LI>Para melhor entendimento da entrada, observe os exemplos. </LI></UL><!-- Saida ############################################################## --><BR><BR><B>Saída</B> 
+
+<UL>
+  <LI>Para cada mapa lido da entrada, seu programa deverá descobrir qual o valor 
+  máximo para o tamanho de um litoral de algum continente contido nele. 
+  <LI>Seja <B>A</B> o valor da área de litoral máxima. Seu programa deverá 
+  escrever a seguinte mensagem: 
+  <UL>
+    <LI><BIG><TT>Maior litoral = <B>A</B></TT></BIG> </LI></UL>
+  <LI>A dupla <B>0 0</B> indica o final da entrada e, por isso, nada deve ser 
+  impresso sobre ela. </LI></UL><BR><BR><B>Exemplos</B> 
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>5 
+      5 <BR>..... <BR>..##. <BR>..... <BR>.##.. <BR>..... <BR></FONT><FONT 
+      color=red><BR>10 10 <BR>......##.. <BR>###..##..# <BR>##.#..###. 
+      <BR>#...###.## <BR>###...#... <BR>...##..##. <BR>##.#.#.##. <BR>......#... 
+      <BR>########.. <BR>.......##. <BR></FONT><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Maior litoral = 6</FONT><BR><FONT color=red>Maior litoral = 
+      44</FONT><BR></TT></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT color=blue>5 
+      5 <BR>..... <BR>..##. <BR>..#.. <BR>.##.. <BR>..... <BR></FONT><FONT 
+      color=red><BR>10 10 <BR>.......... <BR>.##..##... <BR>.#.#..###. 
+      <BR>....###.#. <BR>.##...#... <BR>...##..##. <BR>##.#.#.##. <BR>......#... 
+      <BR>########.. <BR>.......##. </FONT><BR>0 0 </TT></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><TT><FONT 
+      color=blue>Maior litoral = 12</FONT><BR><FONT color=red>Maior litoral = 
+      22</FONT><BR></TT></TD></TR></TBODY></TABLE><!-- Esboco ############################################################# --><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>// Laboratorio 11e - Continentes - Parte II
+// Aluno:
+// RA:
+// Turma:
+// Data:
+
+#include &lt;stdio.h&gt;
+
+int main() {
+  char mapa[20][21];
+  int linhas, colunas;
+
+
+
+
+}
+</PRE>
+<HR>
+<SMALL><I>02/06/2007</I></SMALL> </BODY></HTML>

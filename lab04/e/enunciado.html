@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0087)http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&k=h&l=_da527_&n=enunc.html&user=mc102wy& -->
+<HTML><HEAD><TITLE>Laboratório 04e</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1595" name=GENERATOR></HEAD>
+<BODY style="BACKGROUND-COLOR: white">
+<H3>Instituto de Computação da UNICAMP</H3>
+<H3>Disciplina MC102WY: Algoritmos e Programação de Computadores</H3>
+<H3>Laboratório Nº 04e - Cajus</H3><B>Peso</B>: 4 
+<P></P>
+<TABLE cellSpacing=2 cellPadding=2>
+  <TBODY>
+  <TR>
+    <TD><I>Docente:</I></TD>
+    <TD><I>Zanoni Dias</I></TD></TR>
+  <TR>
+    <TD><I>Monitor:</I></TD>
+    <TD><I>Christian Baudet</I></TD></TR></TBODY></TABLE>
+<P></P>
+<HR>
+
+<P align=justify>Jerônimo é gerente em uma das fazendas de plantação de caju da 
+Sociedade de Beneficiamento de Caju (SBC), um grupo que cultiva caju em grandes 
+propriedades para o mercado externo. 
+<P align=justify>Os cajueiros são plantados dispostos em linhas e colunas, 
+formando uma espécie de grade. Na fazenda administrada por Jerônimo existem 
+<B>L</B> linhas de cajueiros, cada uma formada por <B>C</B> colunas. Nesta 
+semana Jerônimo deve executar a colheita da produção de um subconjunto contínuo 
+de cajueiros. Esse subconjunto é formado por <B>M</B> linhas e <B>N</B> colunas 
+de cajueiros. Há uma semana, seus funcionários analisaram cada cajueiro da 
+fazenda e estimaram a sua produtividade em número de cajus prontos para a 
+colheita. Recentemente alguns cajueiros foram identificados como doentes e 
+passaram por uma aplicação de fungicidas. Para estes cajueiros padronizou-se 
+adotar "-1" como o número de cajus prontos para a colheita. Devido ao tratamento 
+químico seria arriscado colher cajus até que a planta seja novamente 
+diagnosticada como sadia. Jerônimo agora precisa da sua ajuda para determinar 
+qual a produtividade máxima estimada (em número de cajus) de uma área de 
+cajueiros, livre de cajueiros doentes, de dimensões N x M. 
+<P align=justify>Sua tarefa é escrever um programa em linguagem C 
+(<B>lab04e.c</B>) que, dado as dimensões L e C da área plantada, o número de 
+cajus prontos para colheita em cada cajueiro (ou "-1" no caso das árvores 
+doentes), e as dimensões M e N da área a ser colhida, encontre qual o número 
+máximo de cajus que podem ser colhidos na fazenda em uma área de M x N 
+cajueiros, sempre desconsiderando todas as áreas que contenham árvores doentes. 
+<P align=justify>Seu programa deve imprimir, na saída padrão, uma única linha 
+que contenha o número máximo estimado de cajus que podem ser colhidos em uma 
+área contínua de tamanho M x N. Esse número não será superior a 1000000. 
+<P align=justify>Utilize o <A 
+href="http://susy.ic.unicamp.br:8889/EXHIBIT?op=file&amp;k=h&amp;l=_da527_&amp;n=enunc.html&amp;user=mc102wy&amp;#esboco">esboço 
+do programa</A> e lembre-se de colocar o cabeçalho e incluir comentários 
+pertinentes. </P><BR><BR><B>Entrada</B> 
+<UL>
+  <LI>O programa deverá receber um ou mais conjuntos de testes. A primeira linha 
+  de cada conjunto de teste será composto por quatro números inteiros, L, C, M e 
+  N. L e C representam, respectivamente, o número de linhas (1 &#8804; L &#8804; 100) e de 
+  colunas (1 &#8804; C &#8804; 100) de cajueiros existentes na fazenda. M e N representam, 
+  respectivamente, o número de linhas (1 &#8804; M &#8804; L) e de colunas (1 &#8804; N &#8804; C) de 
+  cajueiros a serem colhidos. As L linhas seguintes contém C inteiros cada, 
+  representando número de cajus prontos para colheita no cajueiro localizado 
+  naquela linha e coluna (ou "-1" caso o cajueiro esteja doente). 
+  <LI>A última linha da entrada deverá ser composta por <B>0 0 0 0</B> que 
+  indicará ao programa o fim da entrada e, portanto, o fim da execução; 
+  <LI>A leitura deverá ser feita a partir da entrada padrão. 
+</LI></UL><BR><BR><B>Saída</B> 
+<UL>
+  <LI>Para cada conjunto de teste, o programa deverá imprimir um único número 
+  inteiro indicando o número máximo de cajus que podem ser colhidos. 
+  <LI>A linha <B>0 0 0 0</B> indica o final da entrada e, portanto, nada deve 
+  ser impresso sobre ela; 
+  <LI>Os resultados do programa deverão ser escritos na saída padrão. 
+</LI></UL><BR><BR><B>Exemplos</B>
+<P>
+<TABLE cellSpacing=2 cellPadding=2 border=1>
+  <TBODY>
+  <TR align=middle>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Entrada</I></TD>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px"><I>Saída</I></TD></TR>
+  <TR align=left>
+    <TD style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">4 4 2 2<BR>01 02 03 
+      04<BR>04 03 02 01<BR>01 04 -1 02<BR>03 02 01 04<BR><BR>5 3 3 2<BR>08 09 
+      05<BR>07 -1 08<BR>04 06 08<BR>01 -1 08<BR>09 09 09<BR><BR>6 4 2 3<BR>-1 53 
+      54 87<BR>-1 48 58 74<BR>12 25 36 47<BR>74 10 25 69<BR>56 62 85 74<BR>97 45 
+      59 -1<BR><BR>0 0 0 0 </TD>
+    <TD 
+  style="PADDING-RIGHT: 10px; PADDING-LEFT: 10px">12<BR>0<BR>404<BR></TD></TR></TBODY></TABLE><BR><BR><B>Esboço</B><BR><A 
+name=esboco></A><PRE>#include &lt;stdio.h&gt;
+
+int main () {
+  // Declara as variaveis
+  int cajueiros[100][100];
+  int i, j, max,
+    linhaPlantacao, colunaPlantacao, linhaColheita, colunaColheita;
+  
+  // Le a entrada
+  scanf("%d %d %d %d", &amp;linhaPlantacao, &amp;colunaPlantacao, 
+	&amp;linhaColheita, &amp;colunaColheita);
+
+  // Processa se a area for maior que zero
+  while ((linhaPlantacao &gt; 0) &amp;&amp; (colunaPlantacao &gt; 0)) {
+
+    // Le a quantidade de caju estimada em cada cajueiro
+    for (i = 0; i &lt; linhaPlantacao; i++) {
+      for (j = 0; j &lt; colunaPlantacao; j++) {
+	scanf("%d", &amp;cajueiros[i][j]);
+      }
+    }
+
+    // Numero maximo de cajus
+    max = 0;
+
+
+
+    // Calcula a quantidade de cajus de toda possivel regiao 
+    // de tamanho linhaColheita por colunaColheita
+
+
+    
+    // Imprime a resposta
+    printf("%d\n", max);
+
+    // Le uma nova entrada
+    scanf("%d %d %d %d", &amp;linhaPlantacao, &amp;colunaPlantacao, 
+	  &amp;linhaColheita, &amp;colunaColheita);
+  }
+
+  return(0);
+}
+</PRE>
+<HR>
+<SMALL><I>30/03/2007</I></SMALL> </A></BODY></HTML>
