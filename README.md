@@ -1,4 +1,7 @@
 mc1021s2007
 ===========
 
-Learning C
+For those interested in learning C!
+
+Many thanks to Zanoni Dias!
+http://www.ic.unicamp.br/~zanoni/
